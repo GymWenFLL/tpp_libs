@@ -1,0 +1,104 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnn
+
+U system.dim.integer_io%b  s-diinio.adb		e12c66b0 NE OL PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_aux%s  a-tiinau.adb	a-tiinau.ali
+W ada.text_io.integer_io%s
+W system.dim%s		s-dim.ads		s-dim.ali
+
+U system.dim.integer_io%s  s-diinio.ads		06ef71b2 BN NE OL PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.integer_io%s
+W system.dim%s		s-dim.ads		s-dim.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-finali.ads		20111121113555 52ecdc1b
+D a-ioexce.ads		20091130110856 8b9de6cd
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-textio.ads		20110801102749 386df5d4
+D a-tiinau.ads		20090409150019 8114c8e4
+D a-tiinio.ads		20090409150019 aa04e5d6
+D a-tiinio.adb		20091130162119 df9cd7af
+D a-unccon.ads		20070406091342 f9eb8f06
+D interfac.ads		20110906094621 129923ea
+D i-cstrea.ads		20100622165701 1bd72c32
+D system.ads		20110829101445 6daf90c4
+D s-crtl.ads		20100617122610 ac77b159
+D s-dim.ads		20120217140711 ec3077cc
+D s-diinio.ads		20120208101354 d2b2f3aa
+D s-diinio.adb		20120208101354 339e951a
+D s-exctab.ads		20090417131547 66e51330
+D s-ficobl.ads		20110805141436 443b9d66
+D s-finmas.ads		20111024091915 b95bb341
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-parame.ads		20110830140625 b6e20cc0
+D s-pooglo.ads		20110804083314 542f33d0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stopoo.ads		20111013103733 7b8fbeee
+D s-traent.ads		20090417130712 5221ee41
+D s-unstyp.ads		20090409150019 6ae15c76
+D s-wchcon.ads		20090417130712 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 17|101r6 101r23 18|34r38 50r7 62r7
+X 7 a-textio.ads
+49K13*Text_IO 471e16 17|101w10 101r27 18|34r42 50r11 62r11
+52P9*File_Type(369R9) 17|112r17 18|41r17
+73I12*Field{integer} 17|108r20 114r17 120r17 18|43r17 55r17
+78I12*Number_Base{integer} 17|109r20 115r17 121r17 127r17 18|44r17 56r17
+. 68r17
+241U14*Put 18|50s19
+242U14*Put 18|62s19
+X 9 a-tiinio.ads
+45k21*Integer_IO 84e27 18|34r50
+59U14 Put 18|49s26[34]
+65U14 Put 18|61s26[34]
+75U14 Put 18|73s26[34]
+X 14 system.ads
+37K9*System 195e11 17|106r9 132r5 18|32r14 77r5
+X 16 s-dim.ads
+68K16*Dim 14|37k9 16|71e15 17|106r16 132r12 18|32r21 77r12
+X 17 s-diinio.ads
+104I9 Num_Dim_Integer 108r35 113r17 119r17 126r17 18|34r62 42r17 54r17 67r17
+106k20*Integer_IO 16|68k16 17|104z9 132l16 132e26 18|32b25 77l16 77t26
+108i4*Default_Width{7|73I12} 114r32 120r32 18|43r32 55r32
+109i4*Default_Base{7|78I12} 115r32 121r32 127r32 18|44r32 56r32 68r32
+111U14*Put 112>7 113>7 114>7 115>7 116>7 18|40b14 51l8 51t11
+112p7 File{7|52P9} 18|41b7 49r31 50r24
+113*7 Item{104I9} 18|42b7 49r37
+114i7 Width{7|73I12} 18|43b7 49r43
+115i7 Base{7|78I12} 18|44b7 49r50
+116s7 Symbols{string} 18|45b7 50r30
+118U14*Put 119>7 120>7 121>7 122>7 18|53b14 63l8 63t11
+119*7 Item{104I9} 18|54b7 61r31
+120i7 Width{7|73I12} 18|55b7 61r37
+121i7 Base{7|78I12} 18|56b7 61r44
+122s7 Symbols{string} 18|57b7 62r24
+124U14*Put 125<7 126>7 127>7 128>7 18|65b14 75l8 75t11
+125s7 To{string} 18|66b7 73m31 74m7 74r13
+126*7 Item{104I9} 18|67b7 73r35
+127i7 Base{7|78I12} 18|68b7 73r41
+128s7 Symbols{string} 18|69b7 74r18
+X 18 s-diinio.adb
+34K12 Num_Dim_Integer_IO[9|45] 49r7 61r7 73r7
+

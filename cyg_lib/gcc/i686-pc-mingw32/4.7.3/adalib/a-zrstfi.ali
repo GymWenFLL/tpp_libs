@@ -1,0 +1,59 @@
+V "GNAT Lib v4.7"
+M P W=b
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnn
+
+U ada.wide_wide_text_io.reset_standard_files%b  a-zrstfi.adb  75fc1586 NE OL SU
+W ada.wide_wide_text_io%s  a-ztexio.adb		a-ztexio.ali
+
+U ada.wide_wide_text_io.reset_standard_files%s  a-zrstfi.ads  fb30fa3a NE OL SU
+W ada.wide_wide_text_io%s  a-ztexio.adb		a-ztexio.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-finali.ads		20111121113555 52ecdc1b
+D a-ioexce.ads		20091130110856 8b9de6cd
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-unccon.ads		20070406091342 f9eb8f06
+D a-ztexio.ads		20110801102749 b1a2c6bb
+D a-zrstfi.ads		20120410060719 4a923c81
+D a-zrstfi.adb		20120410060719 3f6e2907
+D interfac.ads		20110906094621 129923ea
+D i-cstrea.ads		20100622165701 1bd72c32
+D system.ads		20110829101445 6daf90c4
+D s-crtl.ads		20100617122610 ac77b159
+D s-exctab.ads		20090417131547 66e51330
+D s-ficobl.ads		20110805141436 443b9d66
+D s-finmas.ads		20111024091915 b95bb341
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-parame.ads		20110830140625 b6e20cc0
+D s-pooglo.ads		20110804083314 542f33d0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stopoo.ads		20111013103733 7b8fbeee
+D s-traent.ads		20090417130712 5221ee41
+D s-unstyp.ads		20090409150019 6ae15c76
+D s-wchcon.ads		20090417130712 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 9|40r11 10|36r11 38r4 39r5
+X 8 a-ztexio.ads
+52K13*Wide_Wide_Text_IO 497e26 9|40r15 10|36r15 38r8 39r9
+462U14 Initialize_Standard_Files 10|38s26
+X 9 a-zrstfi.ads
+40U33*Reset_Standard_Files 8|52k13 10|36b33 39l27 39t47
+

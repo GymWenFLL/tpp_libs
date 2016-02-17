@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib/lua/5.2
+includedir=${prefix}/include/luacrypto
+
+Name: luacrypto
+Description: Lua Crypto Library
+Requires: openssl lua
+Version: 0.3.1
+Libs: ${libdir}/crypto.so
+Cflags: -I${includedir}

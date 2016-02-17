@@ -1,0 +1,107 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnnnnnnnnnvvnnnnnvnnvnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnn
+
+U system.file_control_block%s  s-ficobl.ads	b2907efe EE OL PF PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c_streams%s  i-cstrea.adb		i-cstrea.ali
+W system%s		system.ads		system.ali
+W system.crtl%s		s-crtl.ads		s-crtl.ali
+W system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+W system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-finali.ads		20111121113555 52ecdc1b
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-unccon.ads		20070406091342 f9eb8f06
+D interfac.ads		20110906094621 129923ea
+D i-cstrea.ads		20100622165701 1bd72c32
+D system.ads		20110829101445 6daf90c4
+D s-crtl.ads		20100617122610 ac77b159
+D s-exctab.ads		20090417131547 66e51330
+D s-ficobl.ads		20110805141436 443b9d66
+D s-finmas.ads		20111024091915 b95bb341
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-parame.ads		20110830140625 b6e20cc0
+D s-pooglo.ads		20110804083314 542f33d0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stopoo.ads		20111013103733 7b8fbeee
+D s-traent.ads		20090417130712 5221ee41
+X 1 ada.ads
+16K9*Ada 19e8 12|38r6 83r30
+X 4 a-stream.ads
+36K13*Streams 69e16 12|38w10 83r34
+39H9*Root_Stream_Type 67e64 12|83r42
+54x14*Read
+60x14*Write
+X 7 interfac.ads
+36K9*Interfaces 175e15 12|39r6 85r16
+X 8 i-cstrea.ads
+37K20*C_Streams 274e25 12|39w17 85r27
+41M12*FILEs{10|50M12} 12|85r37
+X 9 system.ads
+37K9*System 195e11 12|40r6 42r9 93r18 161r5
+64M9*Address
+X 10 s-crtl.ads
+38K16*CRTL 199e16 12|40w13 93r25
+50M12*FILEs{9|64M9}
+65E9*Filename_Encoding 65e62 12|93r30
+X 12 s-ficobl.ads
+42K16*File_Control_Block 9|37k9 12|161l12 161e30
+59P9*Pstring(string) 88r14 96r14
+62E9*File_Mode 62e66 63r30 101r14
+62n23*In_File{62E9} 63r46
+62n32*Inout_File{62E9} 63r57
+62n44*Out_File{62E9}
+62n54*Append_File{62E9}
+63E12*Read_File_Mode{62E9}
+68E9*Shared_Status_Type 68e46 121r23
+68n32*Yes{68E9}
+68n37*No{68E9}
+68n41*None{68E9}
+80R9*AFCB 81r32 83c9 143r44 149r49 155r48
+81P9*AFCB_Ptr(83R9) 128r14 129r14 143r57
+83H9*AFCB<4|39R9> 4|54p14 60p14 12|133e14 143p13 149p14 155p14
+85m7*Stream{8|41M12}
+88p7*Name{59P9}
+93e7*Encoding{10|65E9}
+96p7*Form{59P9}
+101e7*Mode{62E9}
+105b7*Is_Regular_File{boolean}
+108b7*Is_Temporary_File{boolean}
+115b7*Is_System_File{boolean}
+118b7*Is_Text_File{boolean}
+121e7*Shared_Status{68E9}
+124e7*Access_Method{character}
+128p7*Next{81P9}
+129p7*Prev{81P9}
+143y13*AFCB_Allocate{81P9} 143>28
+143r28 Control_Block{83R9}
+149x14*AFCB_Close 149^26
+149p26 File(83R9)
+155x14*AFCB_Free 155^25
+155p25 File(83R9)
+

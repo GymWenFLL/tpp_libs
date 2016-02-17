@@ -1,0 +1,78 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+U gnat.byte_swapping%b	g-bytswa.adb		18a01aec NE OL PK
+W ada%s			ada.ads			ada.ali
+W ada.unchecked_conversion%s
+W gnat%s		gnat.ads		gnat.ali
+W system%s		system.ads		system.ali
+
+U gnat.byte_swapping%s	g-bytswa.ads		3457540c BN NE OL PU PK
+W gnat%s		gnat.ads		gnat.ali
+W system%s		system.ads		system.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-unccon.ads		20070406091342 f9eb8f06
+D gnat.ads		20110801150502 fd2ad2f1
+D g-bytswa.ads		20111212143339 a4d21639
+D g-bytswa.adb		20120222141255 459983d3
+D system.ads		20110829101445 6daf90c4
+X 1 ada.ads
+16K9*Ada 19e8 5|35r6 35r36
+X 2 a-unccon.ads
+20v14*Unchecked_Conversion 5|35w10 57r30 58r31 73r30 74r31 86r30 87r31
+X 3 gnat.ads
+34K9*GNAT 37e9 4|162r9 206r5 5|37r14 126r5
+X 4 g-bytswa.ads
+162K14*Byte_Swapping 3|34k9 4|206l10 206e23 5|37b19 126l10 126t23
+178+12 Item 179r31 179r44 5|56r31 56r44 57r52 58r58 62r34
+179v13*Swapped2 179>23 204r40 5|56b13 66l8 66t16
+179*23 Input{178+12} 5|56b23 65r41
+183+12 Item 184r31 184r44 5|72r31 72r44 73r52 74r58 75r34
+184v13*Swapped4 184>23 204r50 5|72b13 79l8 79t16
+184*23 Input{183+12} 5|72b23 78r41
+188+12 Item 189r31 189r44 5|85r31 85r44 86r52 87r58 88r34
+189v13*Swapped8 189>23 204r60 5|85b13 92l8 92t16
+189*23 Input{188+12} 5|85b23 91r41
+192U14*Swap2 192>21 204r19 5|98b14 103l8 103t13
+192m21 Location{6|64M9} 5|98b21 100r25
+196U14*Swap4 196>21 204r26 5|109b14 114l8 114t13
+196m21 Location{6|64M9} 5|109b21 111r25
+200U14*Swap8 200>21 204r33 5|120b14 125l8 125t13
+200m21 Location{6|64M9} 5|120b21 122r25
+X 5 g-bytswa.adb
+39M9 U16 43r27 43r39 57r58 58r53 60r30 60r42 99r11
+40M9 U32 46r27 46r39 73r58 74r53 110r11
+41M9 U64 49r27 49r39 86r58 87r53 121r11
+43V13 Bswap_16{39M9} 43>23 102s12
+43m23 X{39M9} 43r47 43r58
+46V13 Bswap_32{40M9} 46>23 47b30 78s23 113s12
+46m23 X{40M9}
+49V13 Bswap_64{41M9} 49>23 50b30 91s23 124s12
+49m23 X{41M9}
+57V16 As_U16[2|20]{39M9} 65s33
+58V16 As_Item[2|20]{4|178+12} 65s14
+60V16 Bswap_16{39M9} 60>26 65s23
+60m26 X{39M9} 60r50 60r61
+73V16 As_U32[2|20]{40M9} 78s33
+74V16 As_Item[2|20]{4|183+12} 78s14
+86V16 As_U64[2|20]{41M9} 91s33
+87V16 As_Item[2|20]{4|188+12} 91s14
+99m7 X{39M9} 100m11 100r11 102m7 102r22
+110m7 X{40M9} 111m11 111r11 113m7 113r22
+121m7 X{41M9} 122m11 122r11 124m7 124r22
+X 6 system.ads
+37K9*System 4|160w6 192r32 196r32 200r32 5|98r32 109r32 120r32 6|195e11
+64M9*Address 4|192r39 196r39 200r39 5|98r39 109r39 120r39
+

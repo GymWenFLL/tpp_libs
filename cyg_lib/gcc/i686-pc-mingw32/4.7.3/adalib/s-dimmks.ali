@@ -1,0 +1,142 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnvnnnnnnnnnnnnnn
+
+U system.dim.mks%s	s-dimmks.ads		6101fa75 NE OL PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W system.dim%s		s-dim.ads		s-dim.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-numeri.ads		20080324174807 bb51c45a
+D a-unccon.ads		20070406091342 f9eb8f06
+D system.ads		20110829101445 6daf90c4
+D s-dim.ads		20120217140711 ec3077cc
+D s-dimmks.ads		20120208101354 366049e3
+D s-exctab.ads		20090417131547 66e51330
+D s-stalib.ads		20110802143906 f78bcf95
+X 1 ada.ads
+16K9*Ada 19e8 6|40r6 44r21 45r21
+X 2 a-numeri.ads
+16K13*Numerics 32e17 6|40w10 44r25 45r25
+21N4*Pi 6|45r34
+29N4*e 6|44r34
+X 4 system.ads
+37K9*System 195e11 6|42r9 326r5
+X 5 s-dim.ads
+68K16*Dim 4|37k9 5|71e15 6|42r16 326r12
+X 6 s-dimmks.ads
+42K20*Mks 5|68k16 6|326l16 326e19
+44N4*e
+45N4*Pi
+49F9*Mks_Type<long_long_float> 61r22 66r20 71r20 76r32 81r41 86r35 91r34
+. 109r21 114r27 119r25 124r21 131r24 138r22 145r21 152r31 158r45 166r36 174r35
+. 182r36 190r29 198r37 205r26 213r35 218r29 223r27 229r29 234r29 240r31 246r34
+61F12*Length{49F9} 99r19 278r19 279r19 280r19 281r19 282r19 283r19 284r19
+. 285r19
+66F12*Mass{49F9} 100r19 289r19 290r19 291r19 292r19 293r19 294r19 295r19
+. 296r19
+71F12*Time{49F9} 101r19 300r19 301r19 302r19 303r19 304r19 305r19 306r19
+. 307r19 311r20 312r20 313r20 314r20
+76F12*Electric_Current{49F9} 102r19 318r19 319r19 320r19 321r19 322r19 323r19
+. 324r19
+81F12*Thermodynamic_Temperature{49F9} 103r19
+86F12*Amount_Of_Substance{49F9} 104r19
+91F12*Luminous_Intensity{49F9} 105r19
+99f4*m{61F12}
+100f4*kg{66F12}
+101f4*s{71F12} 311r35
+102f4*A{76F12}
+103f4*K{81F12}
+104f4*mol{86F12}
+105f4*cd{91F12}
+109F12*Angle{49F9} 253r19
+114F12*Solid_Angle{49F9} 254r19
+119F12*Frequency{49F9} 255r19
+124F12*Force{49F9} 256r19
+131F12*Pressure{49F9} 257r19
+138F12*Energy{49F9} 258r19
+145F12*Power{49F9} 259r19
+152F12*Electric_Charge{49F9} 260r19
+158F12*Electric_Potential_Difference{49F9} 261r19
+166F12*Electric_Capacitance{49F9} 262r19
+174F12*Electric_Resistance{49F9} 263r19
+182F12*Electric_Conductance{49F9} 264r19
+190F12*Magnetic_Flux{49F9} 265r19
+198F12*Magnetic_Flux_Density{49F9} 266r19
+205F12*Inductance{49F9} 267r19
+213F12*Celsius_Temperature{49F9} 268r19
+218F12*Luminous_Flux{49F9} 269r19
+223F12*Illuminance{49F9} 270r19
+229F12*Radioactivity{49F9} 271r19
+234F12*Absorbed_Dose{49F9} 272r19
+240F12*Equivalent_Dose{49F9} 273r19
+246F12*Catalytic_Activity{49F9} 274r19
+253f4*rad{109F12}
+254f4*sr{114F12}
+255f4*Hz{119F12}
+256f4*N{124F12}
+257f4*Pa{131F12}
+258f4*J{138F12}
+259f4*W{145F12}
+260f4*C{152F12}
+261f4*V{158F12}
+262f4*F{166F12}
+263f4*Ohm{174F12}
+264f4*Si{182F12}
+265f4*Wb{190F12}
+266f4*T{198F12}
+267f4*H{205F12}
+268f4*dC{213F12}
+269f4*lm{218F12}
+270f4*lx{223F12}
+271f4*Bq{229F12}
+272f4*Gy{234F12}
+273f4*Sv{240F12}
+274f4*kat{246F12}
+278f4*um{61F12}
+279f4*mm{61F12}
+280f4*cm{61F12}
+281f4*dm{61F12}
+282f4*dam{61F12}
+283f4*hm{61F12}
+284f4*km{61F12}
+285f4*Mem{61F12}
+289f4*ug{66F12}
+290f4*mg{66F12}
+291f4*cg{66F12}
+292f4*dg{66F12}
+293f4*g{66F12}
+294f4*dag{66F12}
+295f4*hg{66F12}
+296f4*Meg{66F12}
+300f4*us{71F12}
+301f4*ms{71F12}
+302f4*cs{71F12}
+303f4*ds{71F12}
+304f4*das{71F12}
+305f4*hs{71F12}
+306f4*ks{71F12}
+307f4*Mes{71F12}
+311f4*min{71F12} 312r35
+312f4*hour{71F12} 313r35
+313f4*day{71F12} 314r37
+314f4*year{71F12}
+318f4*mA{76F12}
+319f4*cA{76F12}
+320f4*dA{76F12}
+321f4*daA{76F12}
+322f4*hA{76F12}
+323f4*kA{76F12}
+324f4*MeA{76F12}
+

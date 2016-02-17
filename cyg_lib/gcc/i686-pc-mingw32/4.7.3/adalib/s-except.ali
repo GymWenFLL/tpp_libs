@@ -1,0 +1,38 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnvnnvnnnnnnnnnnnnnn
+
+U system.exceptions%b	s-except.adb		aad75561 NE OL PK
+W system%s		system.ads		system.ali
+
+U system.exceptions%s	s-except.ads		61515873 EE OL PR PK
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-unccon.ads		20070406091342 f9eb8f06
+D system.ads		20110829101445 6daf90c4
+D s-exctab.ads		20090417131547 66e51330
+D s-except.ads		20110829132145 0cfec8b7
+D s-except.adb		20120410060719 a6299dd6
+D s-stalib.ads		20110802143906 f78bcf95
+X 3 system.ads
+37K9*System 195e11 5|34r9 58r41 65r5 6|43r14 45r5
+141b4 ZCX_By_Default{boolean} 5|58r48
+X 5 s-except.ads
+34K16*Exceptions 3|37k9 5|65l12 65e22 6|43b21 45l12 45t22
+39b4*ZCX_By_Default{boolean} 58c4
+43I9 Require_Body 6|44c9
+60X4 Foreign_Exception 61r25
+

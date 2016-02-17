@@ -1,0 +1,69 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnnnnnnnnnvvnnnnnnnnvnnnnvnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnnnnnnnnnnvnnvnnnnnnnnnnnnnn
+
+U system.finalization_root%b  s-finroo.adb	f7ab51aa NE OL PK
+W system%s		system.ads		system.ali
+
+U system.finalization_root%s  s-finroo.ads	6cd32211 EE OL PF PR PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.streams%s		a-stream.ads		a-stream.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-unccon.ads		20070406091342 f9eb8f06
+D system.ads		20110829101445 6daf90c4
+D s-exctab.ads		20090417131547 66e51330
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-finroo.adb		20090409150019 da730d48
+D s-parame.ads		20110830140625 b6e20cc0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-traent.ads		20090417130712 5221ee41
+X 1 ada.ads
+16K9*Ada 19e8 8|34r6 50r35 54r35
+X 3 a-stream.ads
+36K13*Streams 69e16 8|34w10 50r39 54r39
+39H9*Root_Stream_Type 67e64 8|50r47 54r47
+X 6 system.ads
+37K9*System 195e11 8|36r9 60r5 9|32r14 63r5
+X 8 s-finroo.ads
+36K16*Finalization_Root 6|37k9 8|60l12 60e29 9|32b21 63l12 63t29
+42R9*Root_Controlled 42e46 44p14 44r42 45p14 45r42 46p14 46r42 51r23 55r19
+. 58r8 59r8 9|40r38 49r40 58r42
+44U14*Adjust 44=26 9|40b14 43l8 43t14
+44r26 Object{42R9} 9|40b22
+45U14*Finalize 45=26 9|49b14 52l8 52t16
+45r26 Object{42R9} 9|49b24
+46U14*Initialize 46=26 9|58b14 61l8 61t18
+46r26 Object{42R9} 9|58b26
+48K12*Stream_Attributes 56l8 56e25 58r34 59r34
+49U17*Read 50^10 51<10 58r52
+50p10 Stream(3|39R9)
+51r10 Item{42R9}
+53U17*Write 54^10 55>10 59r52
+54p10 Stream(3|39R9)
+55r10 Item{42R9}
+

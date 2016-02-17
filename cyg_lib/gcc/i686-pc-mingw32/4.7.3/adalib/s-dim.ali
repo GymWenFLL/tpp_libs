@@ -1,0 +1,24 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+R nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+
+U system.dim%s		s-dim.ads		819fe708 NE OL PU PK
+W system%s		system.ads		system.ali
+
+D system.ads		20110829101445 6daf90c4
+D s-dim.ads		20120217140711 ec3077cc
+X 1 system.ads
+37K9*System 195e11 2|68r9 71r5
+X 2 s-dim.ads
+68K16*Dim 1|37k9 2|71l12 71e15
+

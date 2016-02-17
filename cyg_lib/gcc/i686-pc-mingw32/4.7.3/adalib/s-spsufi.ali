@@ -1,0 +1,62 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnnnnvnnnnnnnnnnnnnn
+
+U system.storage_pools.subpools.finalization%b  s-spsufi.adb  0ab3de63 NE OL PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+U system.storage_pools.subpools.finalization%s  s-spsufi.ads  9d6bf8fe NE OL PK
+W system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-finali.ads		20111121113555 52ecdc1b
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-unccon.ads		20070406091342 f9eb8f06
+D system.ads		20110829101445 6daf90c4
+D s-exctab.ads		20090417131547 66e51330
+D s-finmas.ads		20111024091915 b95bb341
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-parame.ads		20110830140625 b6e20cc0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stopoo.ads		20111013103733 7b8fbeee
+D s-stposu.ads		20111220134744 3d79162d
+D s-spsufi.ads		20110829111217 a012eed3
+D s-spsufi.adb		20110829111217 aaa130b0
+D s-traent.ads		20090417130712 5221ee41
+X 7 system.ads
+37K9*System 195e11 20|35r9 44r5 21|33r14 62r5
+X 18 s-stopoo.ads
+39K16*Storage_Pools 7|37k9 18|99e25 20|35r16 44r12 21|33r21 62r12
+X 19 s-stposu.ads
+40K30*Subpools 18|39k16 19|352e34 20|35r30 44r26 21|33r35 62r26
+54P9*Subpool_Handle(50R9) 20|37r56 21|39r56
+94x14*Deallocate_Subpool 21|57R7
+112V13*Pool_Of_Subpool(43R9) 21|57s27
+158P9 Any_Storage_Pool_With_Subpools_Ptr(43R9)
+173P9 SP_Node_Ptr(172R9)
+241p7*Owner{158P9} 21|45r25
+247p7*Node{173P9} 21|46r25
+328U14 Finalize_Subpool 21|53s7
+X 20 s-spsufi.ads
+35K39*Finalization 19|40k30 20|44l35 44e47 21|33b44 62l35 62t47
+37U14*Finalize_And_Deallocate 37=39 21|39b14 60l8 60t31
+37p39 Subpool{19|54P9} 21|39b39 44r10 45r17 46r17 53r25 57r44 57m58 59m7
+

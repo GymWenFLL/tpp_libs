@@ -1,0 +1,108 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnvvnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnn
+
+U system.dim.float_io%b	s-diflio.adb		68364a9f NE OL PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.float_aux%s  a-tiflau.adb		a-tiflau.ali
+W ada.text_io.float_io%s
+W system.dim%s		s-dim.ads		s-dim.ali
+
+U system.dim.float_io%s	s-diflio.ads		bb871e05 BN NE OL PK GE
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ada.text_io.float_io%s
+W system.dim%s		s-dim.ads		s-dim.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-finali.ads		20111121113555 52ecdc1b
+D a-ioexce.ads		20091130110856 8b9de6cd
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-textio.ads		20110801102749 386df5d4
+D a-tiflau.ads		20090409150019 c0393f21
+D a-tiflio.ads		20090409150019 56fbda09
+D a-tiflio.adb		20090409150019 fd9b1cfc
+D a-unccon.ads		20070406091342 f9eb8f06
+D interfac.ads		20110906094621 129923ea
+D i-cstrea.ads		20100622165701 1bd72c32
+D system.ads		20110829101445 6daf90c4
+D s-crtl.ads		20100617122610 ac77b159
+D s-dim.ads		20120217140711 ec3077cc
+D s-diflio.ads		20120208101354 6fda9c1d
+D s-diflio.adb		20120208101354 07ecd682
+D s-exctab.ads		20090417131547 66e51330
+D s-ficobl.ads		20110805141436 443b9d66
+D s-finmas.ads		20111024091915 b95bb341
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-parame.ads		20110830140625 b6e20cc0
+D s-pooglo.ads		20110804083314 542f33d0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stopoo.ads		20111013103733 7b8fbeee
+D s-traent.ads		20090417130712 5221ee41
+D s-unstyp.ads		20090409150019 6ae15c76
+D s-wchcon.ads		20090417130712 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 17|94r6 94r23 18|34r36 50r7 62r7
+X 7 a-textio.ads
+49K13*Text_IO 471e16 17|94w10 94r27 18|34r40 50r11 62r11
+52P9*File_Type(369R9) 17|106r17 18|41r17
+73I12*Field{integer} 17|101r19 102r19 103r19 108r17 109r17 110r17 115r17
+. 116r17 117r17 123r17 124r17 18|43r17 44r17 45r17 55r17 56r17 57r17 68r17
+. 69r17
+241U14*Put 18|50s19
+242U14*Put 18|62s19
+X 9 a-tiflio.ads
+45k21*Float_IO 88e25 18|34r48
+60U14 Put 18|49s24[34]
+67U14 Put 18|61s24[34]
+78U14 Put 18|73s24[34]
+X 14 system.ads
+37K9*System 195e11 17|99r9 129r5 18|32r14 77r5
+X 16 s-dim.ads
+68K16*Dim 14|37k9 16|71e15 17|99r16 129r12 18|32r21 77r12
+X 17 s-diflio.ads
+97F9 Num_Dim_Float 102r28 107r17 114r17 122r17 18|34r58 42r17 54r17 67r17
+99k20*Float_IO 16|68k16 17|97z9 129l16 129e24 18|32b25 77l16 77t24
+101i4*Default_Fore{7|73I12} 108r27 115r27 18|43r27 55r27
+102i4*Default_Aft{7|73I12} 109r27 116r27 123r27 18|44r27 56r27 68r27
+103i4*Default_Exp{7|73I12} 110r27 117r27 124r27 18|45r27 57r27 69r27
+105U14*Put 106>7 107>7 108>7 109>7 110>7 111>7 18|40b14 51l8 51t11
+106p7 File{7|52P9} 18|41b7 49r29 50r24
+107*7 Item{97F9} 18|42b7 49r35
+108i7 Fore{7|73I12} 18|43b7 49r41
+109i7 Aft{7|73I12} 18|44b7 49r47
+110i7 Exp{7|73I12} 18|45b7 49r52
+111s7 Symbols{string} 18|46b7 50r30
+113U14*Put 114>7 115>7 116>7 117>7 118>7 18|53b14 63l8 63t11
+114*7 Item{97F9} 18|54b7 61r29
+115i7 Fore{7|73I12} 18|55b7 61r35
+116i7 Aft{7|73I12} 18|56b7 61r41
+117i7 Exp{7|73I12} 18|57b7 61r46
+118s7 Symbols{string} 18|58b7 62r24
+120U14*Put 121<7 122>7 123>7 124>7 125>7 18|65b14 75l8 75t11
+121s7 To{string} 18|66b7 73m29 74m7 74r13
+122*7 Item{97F9} 18|67b7 73r33
+123i7 Aft{7|73I12} 18|68b7 73r39
+124i7 Exp{7|73I12} 18|69b7 73r44
+125s7 Symbols{string} 18|70b7 74r18
+X 18 s-diflio.adb
+34K12 Num_Dim_Float_IO[9|45] 49r7 61r7 73r7
+

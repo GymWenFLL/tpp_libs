@@ -1,0 +1,277 @@
+V "GNAT Lib v4.7"
+A -gnatwa
+A -nostdinc
+A -O2
+A -Wextra
+A -Wall
+A -g
+A -gnatp
+A -gnatg
+A -mtune=generic
+A -march=pentiumpro
+P SS ZX
+R nnnvnnnnnnnvvnnvnnvvnvvnnnvnnnnvnnnnnnnnnvnnvnnnnnnnnvvvnnvnnvnnnnvvnnvnnnnnnnnnnnnnn
+
+U system.storage_pools.subpools%b  s-stposu.adb	6da109c8 NE OL PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.unchecked_conversion%s
+W ada.unchecked_deallocation%s
+W system%s		system.ads		system.ali
+W system.address_image%s  s-addima.adb		s-addima.ali
+W system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+W system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+W system.io%s		s-io.adb		s-io.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+
+U system.storage_pools.subpools%s  s-stposu.ads	578cba01 EE OL PF PR PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.finalization%s	a-finali.adb		a-finali.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W system%s		system.ads		system.ali
+W system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
+W system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20110829141257 265fe451
+D a-finali.ads		20111121113555 52ecdc1b
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20111212115430 6c0509d0
+D a-unccon.ads		20070406091342 f9eb8f06
+D a-uncdea.ads		20070406091342 f15a5ed1
+D system.ads		20110829101445 6daf90c4
+D s-addima.ads		20090409150019 a1ec9d3a
+D s-exctab.ads		20090417131547 66e51330
+D s-finmas.ads		20111024091915 b95bb341
+D s-finroo.ads		20110803143626 2dd85ce2
+D s-imgboo.ads		20090409150019 f5d971eb
+D s-io.ads		20090409150019 9e42f74f
+D s-parame.ads		20110830140625 b6e20cc0
+D s-secsta.ads		20110830140625 eea35a36
+D s-soflin.ads		20110829130749 a3409513
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20110802143906 f78bcf95
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stopoo.ads		20111013103733 7b8fbeee
+D s-stposu.ads		20111220134744 3d79162d
+D s-stposu.adb		20111220134744 a14e1bdc
+D s-traent.ads		20090417130712 5221ee41
+X 1 ada.ads
+16K9*Ada 19e8 23|36r6 166r13 24|32r6 32r39 33r6 34r6 49r10 54r26
+X 2 a-except.ads
+53K13*Exceptions 347e19 24|32w10 32r43
+66R9*Exception_Occurrence 325e14 24|484r18
+99U14*Reraise_Occurrence 24|542s10
+126U14*Save_Occurrence 24|533s19
+X 3 a-finali.ads
+40K13*Finalization 73e21 23|36w10 166r17
+55H9*Limited_Controlled 71e55 23|166r30
+58U14*Initialize<12|46p14>
+59U14*Finalize<12|45p14>
+X 6 a-unccon.ads
+20v14*Unchecked_Conversion 24|33w10 49r14
+X 7 a-uncdea.ads
+20u15*Unchecked_Deallocation 24|34w10 54r30
+X 8 system.ads
+37K9*System 195e11 23|37r6 38r6 40r9 61r38 62r34 63r34 70r38 71r34 72r34
+. 89r34 90r34 91r34 126r14 128r8 244r24 260r29 261r25 262r25 299r23 300r23
+. 301r23 334r19 335r14 352r5 24|35r6 36r6 36r39 37r6 37r39 38r6 38r39 39r6
+. 39r39 41r14 65r38 66r34 67r34 91r29 92r25 93r25 348r23 349r23 350r23 577r19
+. 578r14 815r5
+64M9*Address 23|61r45 70r45 89r41 260r36 299r30 24|49r36 65r45 91r36 101r17
+. 348r30 353r16
+X 9 s-addima.ads
+39V17*Address_Image{string} 24|35w13 645s17 648s17 693s15 705s23 713s23 721s23
+. 749s20 753s17 765s20
+X 11 s-finmas.ads
+38K16*Finalization_Masters 209e32 23|37w13 244r31 258r25 259r25 24|36w13
+. 36r46 89r25 90r25
+47P9*Finalize_Address_Ptr 23|259r46 24|90r46
+52P9*FM_Node_Ptr(51R9) 24|49r45 102r17 354r16
+67R9*Finalization_Master<3|55R9> 187e14 23|244r52
+73P9*Finalization_Master_Ptr(67R9) 23|258r46 24|89r46 100r17
+80U14*Attach_Unprotected 24|271s10
+85U14*Delete_Finalize_Address_Unprotected 24|376s13
+93U14*Detach_Unprotected 24|406s10
+96U25*Finalize<3|59p14> 24|560s7
+111V13*Finalization_Started{boolean} 24|192s31
+114V13*Header_Offset{20|54I9} 24|264s52 397s50
+117V13*Header_Size{20|62I12} 24|580s40
+120V13*Is_Homogeneous{boolean} 24|288s20
+123V13*Objects{52P9} 24|271s37
+126U14*Print_Master 24|768s7
+135U14*Set_Finalize_Address_Unprotected 24|294s13
+140U14*Set_Heterogeneous_Finalize_Address_Unprotected 24|306s13
+148U14*Set_Is_Heterogeneous 24|812s7
+X 12 s-finroo.ads
+44U14*Adjust
+X 14 s-io.ads
+37K16*IO 64e14 24|37w13 37r46
+44U14*Put 24|644s7 647s7 650s7 653s7 692s10 693s10 700s10 708s10 716s10 745s7
+. 752s7 755s7 757s10
+45U14*Put_Line 24|645s7 648s7 651s7 655s10 657s10 662s10 677s13 682s13 687s13
+. 695s13 697s13 703s13 705s13 711s13 713s13 719s13 721s13 735s10 747s10 749s10
+. 753s7 760s13 762s13 765s10
+X 17 s-soflin.ads
+45K16*Soft_Links 410e22 24|38w13 38r46
+60P9*No_Param_Proc
+187p4*Lock_Task{60P9} 24|191r10 245r10 329r7 365r10 456r7
+197p4*Unlock_Task{60P9} 24|193r10 310r10 336r7 418r10 463r7
+X 20 s-stoele.ads
+42K16*Storage_Elements 117e28 23|38w13 62r41 63r41 71r41 72r41 90r41 91r41
+. 126r21 128r15 261r32 262r32 300r30 301r30 334r26 335r21 24|39w13 39r46
+. 66r41 67r41 92r32 93r32 349r30 350r30 577r26 578r21
+54I9*Storage_Offset<integer> 24|109r28 357r28
+62I12*Storage_Count{54I9} 23|62r58 63r58 71r58 72r58 90r58 91r58 126r38 128r32
+. 261r49 262r49 300r47 301r47 334r43 335r38 24|66r58 67r58 92r49 93r49 103r17
+. 349r47 350r47 355r16 577r43 578r38 580r23
+76V13*"+"{8|64M9} 24|264s29 276s25
+86V13*"-"{8|64M9} 24|264s50 397s48 411s25
+X 22 s-stopoo.ads
+39K16*Storage_Pools 8|37k9 22|99e25 23|40r16 352r12 24|41r21 815r12
+42H9*Root_Storage_Pool<3|55R9> 66e62 23|44r10 199r10 256r32 298r30 24|87r32
+. 347r30
+45x14*Allocate 24|239R10
+52x14*Deallocate 24|431R7
+X 23 s-stposu.ads
+40K30*Subpools 22|39k16 23|352l26 352e34 24|41b35 815l26 815t34
+43H9*Root_Storage_Pool_With_Subpools<22|42R9> 3|58P14 59P14 12|44p14 23|59P25
+. 60r41 68p14 69r41 81p13 82r21 87P25 88r41 94p14 95r24 106p13 107r14 114r21
+. 119r24 124P24 125r14 159r20 198c9 211r23 214e14 323p14 323r43 343p14 343r45
+. 346p14 346r33 24|64r41 74r10 79r13 98r41 127r18 138r15 232r13 439r14 482r43
+. 607r45 621r21 631r33 777r24
+50H9*Root_Subpool 54r38 240c9 250e14
+54P9*Subpool_Handle(50R9) 55r8 73r43 83r23 96r24 107r63 113r26 118r26 178r17
+. 257r25 328r51 349r39 24|88r25 104r17 439r63 550r51 620r26 732r39 776r26
+59U25*Allocate<22|45p14> 60=7 61<7 62>7 63>7 24|63b25 80l8 80t16
+60r7 Pool{43R9} 24|64b7 74m49 74r49 79r52
+61m7 Storage_Address{8|64M9} 24|65b7 75m10
+62i7 Size_In_Storage_Elements{20|62I12} 24|66b7 76r10
+63i7 Alignment{20|62I12} 24|67b7 77r10
+68x14*Allocate_From_Subpool 69=7 70<7 71>7 72>7 73>7 24|73R7 231R10
+69r7 Pool{43R9}
+70m7 Storage_Address{8|64M9}
+71i7 Size_In_Storage_Elements{20|62I12}
+72i7 Alignment{20|62I12}
+73p7 Subpool{54P9}
+81y13*Create_Subpool{54P9} 82=7
+82r7 Pool{43R9}
+87U25*Deallocate<22|52p14> 88=7 89>7 90>7 91>7
+88r7 Pool{43R9}
+89m7 Storage_Address{8|64M9}
+90i7 Size_In_Storage_Elements{20|62I12}
+91i7 Alignment{20|62I12}
+94x14*Deallocate_Subpool 95=7 96=7
+95r7 Pool{43R9}
+96p7 Subpool{54P9}
+106V13*Default_Subpool_For_Pool{54P9} 107>7 24|78R10 126R15 438b13 444l8
+. 444t32
+107r7 Pool{43R9} 24|439b7 443r14
+112V13*Pool_Of_Subpool(43R9) 113>7 24|619b13 625l8 625t23
+113p7 Subpool{54P9} 24|620b7 624r14
+117U14*Set_Pool_Of_Subpool 118>7 119=7 24|775b14 813l8 813t27
+118p7 Subpool{54P9} 24|776b7 785r10 797m7 797r7 804r24 805m7 805r7 812r29
+119c7 To<43R9> 24|777b7 792r10 797m24 797r24 807m22 807r22
+124V24*Storage_Size{20|62I12}<22|59p13> 125>7
+125r7 Pool{43R9}
+158P9 Any_Storage_Pool_With_Subpools_Ptr(43R9) 160r8 165r43 241r15
+165R9 Pool_Controller<3|55R9> 12|44p14 23|165d26 166e65 210r20 320P25 320r55
+. 340P25 340r57 24|473r55 598r57
+165p26*Enclosing_Pool{158P9} 24|475r33 600r35
+172R9 SP_Node 173r35 175c9 179e14 201r26 24|54r54 803r20
+173P9 SP_Node_Ptr(172R9) 176r17 177r17 247r14 24|51r35 51r61 54r63 56r35
+. 323r35 323r61 450r35 483r18 487r44 494r44 632r28 634r19 779r15
+175R9 SP_Node
+176p7*Prev{173P9} 24|140r33 327r24 331m14 334m9 454r48 458r9 459m14 459r24
+. 460m9 496r39 612m21 676r20 681r23 702r20 705r45
+177p7*Next{173P9} 24|141r33 327r47 331r9 332m9 332r19 333m9 454r24 458m14
+. 458r24 459r9 461m9 496r19 517r36 611m21 681r28 710r20 713r45 724r27
+178p7*Subpool{54P9} 24|443r28 527r40 718r20 721r45 804m13
+201r7 Subpools{175R9} 24|443r19 516m37 517r27 611m12 611m34 612m12 612m34
+. 632m48 648m37 807m25
+204b7 Finalization_Started{boolean} 24|505r15 514m12 651r22 792r13
+210r7 Controller{165R9} 24|654r15
+241p7*Owner{158P9} 24|137r21 554r18 624r22 746r18 749m43 759r21 785r18 797m15
+244r7*Master{11|67R9} 24|146m28 560m25 753m40 768r29 812m37
+247p7*Node{173P9} 24|139r28 140r28 141r28 554r47 564r23 569m21 756r18 765m43
+. 805m15
+255U14 Allocate_Any_Controlled 256=7 257>7 258>7 259>7 260<7 261>7 262>7
+. 263>7 264>7 24|86b14 317l8 317t31
+256c7 Pool<22|42R9> 24|87b7 98r33 127r57 138m54 138r54 232m52 232r52 239m20
+257p7 Context_Subpool{54P9} 24|88b7 124r13 132r24 163r16
+258p7 Context_Master{11|73P9} 24|89b7 155r13 176r20
+259p7 Fin_Address{11|47P9} 24|90b7 206r13 294r59 306r67
+260m7 Addr{8|64M9} 24|91b7 276m10 306r61 315m10
+261i7 Storage_Size{20|62I12} 24|92b7 217r20 222r20
+262i7 Alignment{20|62I12} 24|93b7 215r58 233r29 239r42
+263b7 Is_Controlled{boolean} 24|94b7 185r10 244r10
+264b7 On_Subpool{boolean} 24|95b7 171r16
+297U14 Deallocate_Any_Controlled 298=7 299>7 300>7 301>7 302>7 24|346b14
+. 432l8 432t33
+298c7 Pool<22|42R9> 24|347b7 431m19
+299m7 Addr{8|64M9} 24|348b7 376r50 397r43 411r20 421r20
+300i7 Storage_Size{20|62I12} 24|349b7 416r20 422r20
+301i7 Alignment{20|62I12} 24|350b7 382r58 431r41
+302b7 Is_Controlled{boolean} 24|351b7 364r10
+320U25 Finalize<3|59p14> 320=35 24|473b25 476l8 476t16
+320r35 Controller{165R9} 24|473b35 475r22
+323U14 Finalize_Pool 323=29 24|475R7 482b14 544l8 544t21
+323r29 Pool{43R9} 24|482b29 505r10 514m7 516m32 516r32 517r22
+328U14 Finalize_Subpool 328>32 24|527s13 550b14 570l8 570t24
+328p32 Subpool{54P9} 24|550b32 554r10 554r39 560r17 564r15 569r13
+333V13 Header_Size_With_Padding{20|62I12} 334>7 24|215s32 382s32 576b13 592l8
+. 592t32
+334i7 Alignment{20|62I12} 24|577b7 583r19 590r26 590r43 590r56
+340U25 Initialize<3|58p14> 340=37 24|598b25 601l8 601t18
+340r37 Controller{165R9} 24|598b37 600r24
+343U14 Initialize_Pool 343=31 24|600R7 607b14 613l8 613t23
+343r31 Pool{43R9} 24|607b31 611m7 611m29 611r29 612m7 612m29 612r29
+346U14 Print_Pool 346>26 24|631b14 726l8 726t18
+346r26 Pool{43R9} 24|631b26 632r43 645r32 648r32 651r17 654r10 654r43
+349U14 Print_Subpool 349>29 24|732b14 769l8 769t21
+349p29 Subpool{54P9} 24|732b29 734r10 746r10 749m35 749r35 753m32 753r32
+. 756r10 759r13 765m35 765r35 768r21
+X 24 s-stposu.adb
+43b4 Finalize_Address_Table_In_Use{boolean} 307m13 370r13
+48V13 Address_To_FM_Node_Ptr[6|20]{11|52P9} 263s19 397s19
+51U14 Attach 51>22 51>48 323b14 340l8 340t14 807s7
+51p22 N{23|173P9} 323b22 327r22 327r45 331r22 332m7 332r7 333r17 334m7 334r7
+51p48 L{23|173P9} 323b48 331m7 331r7 332r17 333m7 333r7 334r17
+54U14 Free[7|20] 569s7
+56U14 Detach 56>22 450b14 467l8 467t14 564s7
+56p22 N{23|173P9} 450b22 454r22 454r46 458m7 458r7 458r22 459m7 459r7 459r22
+. 460m7 460r7 461m7 461r7
+97b7 Is_Subpool_Allocation{boolean} 119r10 230r10
+100p7 Master{11|73P9} 146m10 176m10 192r53 271r46 288r13 294r47
+101m7 N_Addr{8|64M9} 233m13 233r13 239m26 239r26 264r22 276r18 315r18
+102p7 N_Ptr{11|52P9} 263m10 271r30
+103i7 N_Size{20|62I12} 217m10 222m10 233r21 239r34
+104p7 Subpool{23|54P9} 125m13 132m13 137r13 139r20 140r20 141r20 146m20 146r20
+. 233r40
+106b7 Allocation_Locked{boolean} 192m10 198r13
+109i7 Header_And_Padding{20|54I9} 215m10 217r35 264r31 276r27
+353m7 N_Addr{8|64M9} 411m10 421m10 431r25
+354p7 N_Ptr{11|52P9} 397m10 406r30
+355i7 N_Size{20|62I12} 416m10 422m10 431r33
+357i7 Header_And_Padding{20|54I9} 382m10 411r27 416r35
+483p7 Curr_Ptr{23|173P9} 517m10 527r31
+484r7 Ex_Occur{2|66R9} 533m36 533r36 542r30
+485b7 Raised{boolean} 531r23 532m19 541r10
+487V16 Is_Empty_List{boolean} 487>31 494b16 497l11 497t24 516s17
+487p31 L{23|173P9} 494b31 496r17 496r26 496r37 496r46
+530r18 Fin_Occur{2|66R9} 533r46
+580i7 Size{20|62I12} 583r10 584r17 590r19
+632p7 Head{23|173P9} 660r17 667r22 694r22
+633b7 Head_Seen{boolean} 668r23 670m13
+634p7 SP_Ptr{23|173P9} 660m7 661r13 667r13 676r13 681r16 681r35 693r30 694r13
+. 702r13 705r38 710r13 713r38 718r13 721r38 724m10 724r20
+779p7 N_Ptr{23|173P9} 803m7 804m7 804r7 805r23 807r15
+

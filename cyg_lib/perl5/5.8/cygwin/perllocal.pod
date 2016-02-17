@@ -1,0 +1,22 @@
+=head2 Thu Feb 14 21:46:23 2008: C<Module> L<grepmail|grepmail>
+
+=over 4
+
+=item *
+
+C<installed into: /usr/lib/perl5/site_perl/5.8>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 5.3033>
+
+=item *
+
+C<EXE_FILES: grepmail>
+
+=back
+
