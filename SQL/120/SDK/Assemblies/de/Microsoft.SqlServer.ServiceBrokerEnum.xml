@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SqlServer.ServiceBrokerEnum</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState" />-Enumeration enthält konstante Werte, die den Status des Endpunkts für den Dienst angeben.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.ClosedWait">
+      <summary>Der Endpunkt ist geschlossen und wartet, dass das Wiederholungstimeout abläuft.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.ClosingWait">
+      <summary>Der Endpunkt ist geschlossen und nicht funktionsfähig,da er auf das Schließen des gegenüberliegenden Endpunkts wartet.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.Disabled">
+      <summary>Der Endpunkt wurde deaktiviert. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.ErrorWait">
+      <summary>Der Endpunkt hat einen Fehler deklariert und wartet auf eine Antwort vom gegenüberliegenden Endpunkt. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.Open">
+      <summary>Der Dialog ist geöffnet und kommuniziert auf normale Weise.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogEndPointState.OpenWait">
+      <summary>Der Endpunkt wurde erstelltund wartet auf eine Antwort vom gegenüberliegenden Endpunkt.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Broker.DialogType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.Broker.DialogType" />-Enumeration enthält konstante Werte, die den Typ des Dialogs zwischen Service Broker-Endpunkten angeben.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogType.MonologPublish">
+      <summary>
+            Nur für Informationszwecke identifiziert. Nicht unterstützt. Zukünftige Kompatibilität wird nicht sichergestellt.
+          </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogType.MonologReceive">
+      <summary>
+            Nur für Informationszwecke identifiziert. Nicht unterstützt. Zukünftige Kompatibilität wird nicht sichergestellt.
+          </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.DialogType.Regular2Way">
+      <summary>Ein regulärer bidirektionaler Dialog.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Broker.MessageSource">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.Broker.MessageSource" />-Enumeration enthält konstante Werte, die angeben, von welchem Endpunkt die Nachricht gesendet wurde.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageSource.Initiator">
+      <summary>Gibt an, dass die Nachricht vom Initiatorendpunkt des Dialogs gesendet wurde.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageSource.InitiatorAndTarget">
+      <summary>Gibt an, dass die Nachricht entweder vom Initiatorendpunkt oder vom Zielendpunkt gesendet wurde.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageSource.Target">
+      <summary>Gibt an, dass die Nachricht vom Zielendpunkt gesendet wurde.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation" />-Enumeration enthält konstante Werte, die die Arten der für den Service Broker-Nachrichtentext ausgeführten Überprüfungen angeben.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.Empty">
+      <summary>Der Nachrichtentext muss für diesen Nachrichtentyp NULL sein.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.None">
+      <summary>Es wird keine Überprüfung ausgeführt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.Xml">
+      <summary>Der Nachrichtentext muss wohlgeformte XML-Daten enthalten.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Broker.MessageTypeValidation.XmlSchemaCollection">
+      <summary>Der Nachrichtentext muss XML-Daten enthalten, die der für den Nachrichtentyp angegebenen XML-Schemaauflistung entsprechen.</summary>
+    </member>
+  </members>
+</doc>

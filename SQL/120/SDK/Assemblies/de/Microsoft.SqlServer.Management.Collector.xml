@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SqlServer.Management.Collector</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionItem">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionItem" />-Klasse erstellt eine Instanz eines Sammelelements.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.#ctor(Microsoft.SqlServer.Management.Collector.CollectionSet,System.String)">
+      <summary>Erstellt eine Instanz eines Sammelelements mit dem angegebenen Sammlungssatz- und Elementnamen.</summary>
+      <param name="set">Ein <see cref="T:System.Name" />-Wert, der den übergeordneten Sammlungssatz angibt.</param>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des Sammelelements angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Alter">
+      <summary>Ändert ein Sammelelement, indem die Änderungen auf den Konfigurationsspeicher angewendet werden.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.CollectionFrequency">
+      <summary>Ruft die Sammelhäufigkeit für dieses Element ab, wenn der Sammlungssatz mit CollectionMode = "continuous" ausgeführt wird, oder legt sie fest.</summary>
+      <returns>Gibt einen <see cref="T:System.TimeSpan" />-Wert zurück.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Discover(Microsoft.SqlServer.Management.Sdk.Sfc.ISfcDependencyDiscoveryObjectSink)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <param name="sink">Ein <see cref="T:IsfcDependencyDiscoveryObjectSink" />-Objekt</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.GetObjectFactory">
+      <summary>Instanziiert eine Instanz des für Sammelelemente verwendeten Konstruktors.</summary>
+      <returns>Eine Instanz des für Sammelelemente verwendeten Konstruktors.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.Id">
+      <summary>Ruft die Sammelelement-ID ab.</summary>
+      <returns>Gibt einen <see cref="T:System.Int32" />-Wert zurück, der der lokalen ID des Sammelelements entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.IdentityKey">
+      <summary>Ruft den Identitätsschlüssel für das Sammelelement ab.</summary>
+      <returns>Das <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionItem.Key" />-Objekt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.MarkForDrop(System.Boolean)">
+      <summary>Diese Methode markiert ein Sammelelement zum Löschen, wenn sich das Sammelelement geändert hat.</summary>
+      <param name="dropOnAlter">Ein <see cref="T:Boolean" />-Wert, der angibt, ob sich ein Sammelelement geändert hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcAlterable#ScriptAlter">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein ISfcScript-Objekt, das das Skript enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcRenamable#Rename(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <param name="newKey">Das SfcKey-Objekt, das den neuen Namen enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcRenamable#ScriptRename(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein ISfcScript-Objekt, das das Skript enthält.</returns>
+      <param name="newKey">Das SfcKey-Objekt, das den neuen Namen enthält.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.Name">
+      <summary>Ruft den Sammelelementnamen ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen des Sammelelements enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.Parameters">
+      <summary>Ruft die Parameter des Sammelelements ab oder legt sie fest.</summary>
+      <returns>Gibt einen <see cref="T:System.String" />-Wert zurück.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.Parent">
+      <summary>Ruft das übergeordnete Objekt in der Objektmodellhierarchie ab oder legt es fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet" />-Objekt, das das übergeordnete Element in der Objektmodellhierarchie angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Rename(System.String)">
+      <summary>Benennt ein Sammelelement um.</summary>
+      <param name="newName">Ein <see cref="T:System.String" />-Wert, der dem neuen Namen des Sammelelements entspricht.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.TypeName">
+      <summary>Ruft den Namen des Sammlertyps ab, der vom Sammelelement implementiert wird, oder legt ihn fest.</summary>
+      <returns>Gibt einen <see cref="T:System.String" />-Wert zurück, der dem Namen des Sammlertyps entspricht.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionItem.Key">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionItem.Key" />-Klasse erbt von SfcAbstractKey und wird für Identifikationsschlüsselvorgänge verwendet.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.#ctor(Microsoft.SqlServer.Management.Collector.CollectionItem.Key)">
+      <summary>Erstellt eine Instanz eines <see cref="T:" /><see cref="Microsoft.SqlServer.Management.Collector.CollectionItem.Key" />-Objekts.</summary>
+      <param name="other">Ein <see cref="T:Key" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.#ctor(System.String)">
+      <summary>Erstellt eine Instanz eines Schlüssels mit dem angegebenen Schlüsselnamen.</summary>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der dem Schlüsselnamen entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.Equals(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Instanziiert eine Instanz der <see cref="T:" /><see cref="Microsoft.SqlServer.Management.Collector.CollectionItem.Key.Equals" />-Klasse, die für boolesche Operationen verwendet wird.</summary>
+      <returns>Ein <see cref="T:Key" />-Objekt, das den Schlüssel darstellt.</returns>
+      <param name="key">Ein <see cref="T:Key" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.Equals(System.Object)">
+      <summary>Führt eine boolesche Operation aus, um zu bestimmen, ob das als Parameter übergebene Objekt ein Schlüssel ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn das Objekt ein Schlüssel ist.</returns>
+      <param name="obj">Ein <see cref="T:System.Object" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.Equals(System.Object,System.Object)">
+      <summary>Führt einen booleschen Vergleich zwischen zwei Objekten aus, die als Parameter übergeben werden.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn beide Objekte ungleich NULL und (AND) gleich sind.</returns>
+      <param name="obj1">
+        <see cref="T:System.Object" />
+      </param>
+      <param name="obj2">
+        <see cref="T:System.Object" />
+      </param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.GetHashCode">
+      <summary>Ruft den Hashcode für einen Schlüssel ab.</summary>
+      <returns>Ein <see cref="T:System.Int" />-Wert, der den Hash darstellt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.GetUrnFragment">
+      <summary>Ruft ein urn-Fragment ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das URN-Fragment darstellt.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.name">
+      <summary>Deklariert die Namensvariable.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.Name">
+      <summary>Ruft den Schlüsselnamen ab oder legt ihn fest.</summary>
+      <returns>Eine <see cref="T:System.String" />, die dem Schlüsselnamen entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.op_Equality(Microsoft.SqlServer.Management.Collector.CollectionItem.Key,Microsoft.SqlServer.Management.Collector.CollectionItem.Key)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen der linken und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind und (AND) lsh ein Schlüssel ist und (AND) rhs ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.op_Equality(Microsoft.SqlServer.Management.Collector.CollectionItem.Key,System.Object)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der linken Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten NULL sind.beide Seiten ungleich NULL sind und (AND) lsh ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.op_Equality(System.Object,Microsoft.SqlServer.Management.Collector.CollectionItem.Key)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten NULL sind.beide Seiten ungleich NULL sind und (AND) rhs ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.op_Inequality(Microsoft.SqlServer.Management.Collector.CollectionItem.Key,Microsoft.SqlServer.Management.Collector.CollectionItem.Key)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen der linken und rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:eine Seite NULL ist oder (OR) lhs kein Schlüssel ist oder (OR) rhs kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.op_Inequality(Microsoft.SqlServer.Management.Collector.CollectionItem.Key,System.Object)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der linken Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind.beide Seiten NULL sind und (AND) lsh kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.op_Inequality(System.Object,Microsoft.SqlServer.Management.Collector.CollectionItem.Key)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind.beide Seiten NULL sind und (AND) lsh kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItem.Key.ToString">
+      <summary>Ruft eine Zeichenfolgendarstellung des Schlüssels ab, um einen Standardvergleich auszuführen.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der der Zeichenfolgendarstellung des Schlüssels entspricht.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionItemCollection">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionItemCollection" />-Klasse ist eine Sammelklasse für Sammelelementobjekte.Sie wird von der SFC::SfcCollectionBase-Klasse abgeleitet.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItemCollection.#ctor(Microsoft.SqlServer.Management.Collector.CollectionSet)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionItemCollection" />-Klasse.</summary>
+      <param name="parent">Ein <see cref="T:CollectionSet" />-Objekt, durch das der Sammlungssatz identifiziert wird, dem ein Sammelelement angehört.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItemCollection.AddCollectionItem(Microsoft.SqlServer.Management.Collector.CollectionItem)">
+      <summary>Fügt dem Sammlungssatz ein Sammelelement hinzu.</summary>
+      <param name="item">Ein <see cref="T:CollectionItem" />-Objekt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionItemCollection.Item(System.String)">
+      <summary>Ruft den Namen des Sammelelements ab.</summary>
+      <returns>Ein <see cref="T:System.Sting" />-Wert, der dem Namen des Sammelelements entspricht.</returns>
+      <param name="name">Der Name des Sammelelements.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionItemCollection.RemoveCollectionItem(Microsoft.SqlServer.Management.Collector.CollectionItem)">
+      <summary>Entfernt ein Sammelelement aus dem Sammlungssatz.</summary>
+      <param name="item">Ein <see cref="T:CollectionItem" />-Objekt.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSet">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet" />-Klasse wird von SFC::SfcInstanceBase abgeleitet und implementiert SFC::ICreatable, SFC::IDropable und SFC::IAlterable.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.#ctor">
+      <summary>Instanziiert ein Sammlungssatzobjekt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.#ctor(Microsoft.SqlServer.Management.Collector.CollectorConfigStore,System.String)">
+      <summary>Initialisiert eine Instanz von <see cref="T:CollectionSet" /> mit einem <see cref="T:CollectorConfigStore" />-Objekt als übergeordnetes Element und einem Sammlungssatznamen.</summary>
+      <param name="store">Ein <see cref="CollectorConfigStore" />-Objekt.</param>
+      <param name="name">Eine <see cref="T:System.String" />, die dem Name des Sammlungssatzes entspricht.Dieser Name ist für jeden Datensammlerspeicher eindeutig.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Alter">
+      <summary>Ändert Sammlungssatzinformationen im Konfigurationsspeicher. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Cleanup"></member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.CollectionItems">
+      <summary>Ruft die Sammelelemente in einem Sammlungssatz ab.</summary>
+      <returns>Gibt das <see cref="CollectionItemCollection" />-Objekt zurück, das die Sammelelemente enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.CollectionMode">
+      <summary>Ruft den Sammlungsmodus für den Sammlungssatz ab oder legt ihn fest.</summary>
+      <returns>Zählt den <see cref="T:CollectionSet.CollectionModes" />-Typ auf und gibt ein Objekt zurück, das die Sammlungsmoduseinstellung für den Sammlungssatz enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Create">
+      <summary>Erstellt einen Sammlungssatz.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.DaysUntilExpiration">
+      <summary>Ruft die Anzahl der Tage ab, die die gesammelten Daten im Verwaltungs-Data Warehouse gespeichert bleiben, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int16" />-Wert, der der Anzahl der Tage entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.Description">
+      <summary>Ruft die Beschreibung des Sammlungssatzes ab oder legt sie fest.</summary>
+      <returns>Ruft einen <see cref="T:System.String" />-Wert ab, der der Beschreibung des Sammlungssatzes entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Drop">
+      <summary>Löscht einen Sammlungssatz.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.EnumCollectionSetExecutionHistory">
+      <summary>Ein Enumerator, der die Verlaufsdatensätze für einen bestimmten Sammlungssatz abruft.</summary>
+      <returns>Eine <see cref="T:System.DataTable" />, die die Verlaufsdatensätze enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.EnumCollectionSetExecutionHistory(System.Int64)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein DataTable-Objekt.</returns>
+      <param name="parentLogId">Ein <see cref="T:System.Int64" />-Wert, der der Protokoll-ID des übergeordneten Elements eines Sammlungssatzes entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.EnumCollectionSetExecutionHistoryDetail(System.Int64)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Eine <see cref="T:System.DataTable" />, die die detaillierten Verlaufsdatensätze enthält.</returns>
+      <param name="logId">Ein <see cref="T:System.Int64" />-Wert, der der Protokoll-ID für einen Sammlungssatz entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.GetLastUploadTime">
+      <summary>Ruft den Zeitpunkt ab, zu dem Sammlungssatzdaten zuletzt hochgeladen wurden.</summary>
+      <returns>Ein DateTime-Objekt, das angibt, wann die Sammlungssatzdaten hochgeladen wurden.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.GetObjectFactory">
+      <summary>Ruft den Objektfactorykonstruktor für das <see cref="CollectorConfigStore" />-Objekt ab.</summary>
+      <returns>Gibt eine Objektfactory für die <see cref="T:CollectionSet" />-Klasse zurück.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.Id">
+      <summary>Ruft die lokale ID für den Sammlungssatz ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der der ID entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.IdentityKey">
+      <summary>Ruft den Identitätsschlüssel für den Sammlungssatz ab.</summary>
+      <returns>Das <see cref="T:Key" />-Objekt für den Sammlungssatz.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.IsRunning">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob der Sammlungssatz ausgeführt wird.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Sammlung ausgeführt wird.Bei True wird der Sammlungssatz ausgeführt.Bei False wird der Sammlungssatz wird nicht ausgeführt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.IsSystem">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob der Sammlungssatz ein Systemsammlungssatz ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, dass der Sammlungssatz ein Systemsammlungssatz ist.Bei True ist der Sammlungssatz ein Systemsammlungssatz.Bei False ist der Sammlungssatz kein Systemsammlungssatz.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.IsTransactionPerformance"></member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.LoggingLevel">
+      <summary>Ruft den Protokolliergrad für den Sammlungssatz ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.SmallInt" />-Wert, der den für den Sammlungssatz verwendeten Protokolliergrad angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcCreatable#ScriptCreate">
+      <summary>Generiert das Skript, um dieses Objekt in seinem aktuellen Status im Speicher zu erstellen.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <returns>Gibt <see cref="T:Microsoft.SqlServer.Management.Sdk.Sfc.ISfcScript" /> zurück.Ein ISfcScript-Objekt, das das Skript enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDiscoverObject#Discover(Microsoft.SqlServer.Management.Sdk.Sfc.ISfcDependencyDiscoveryObjectSink)">
+      <summary>Ermöglicht es dem Objekt, Beziehungen für Anforderungen zur Ermittlung von Abhängigkeiten über die übergebene Senke anzugeben.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <param name="sink">Die übergebene Senke.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDroppable#ScriptDrop">
+      <summary>Generiert das Skript zum Löschen dieses Objekts aus dem Speicher.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <returns>Gibt <see cref="T:Microsoft.SqlServer.Management.Sdk.Sfc.ISfcScript" /> zurück.Ein ISfcScript-Objekt, das das Skript enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcRenamable#Rename(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Benennt dieses Objekt in den angegebenen Schlüssel um und aktualisiert den Speicher.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <param name="newKey">Das SfcKey-Objekt, das den neuen Namen enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcRenamable#ScriptRename(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Erstellt das Skript, um dieses Objekt in den angegebenen Schlüssel umzubenennen.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <returns>Gibt <see cref="T:Microsoft.SqlServer.Management.Sdk.Sfc.ISfcScript" /> zurück.Ein ISfcScript-Objekt, das das Skript enthält.</returns>
+      <param name="newKey">Das SfcKey-Objekt, das den neuen Namen enthält.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.Name">
+      <summary>Ruft den Namen des Sammlungssatzes ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Sammlungssatznamen entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.Parent">
+      <summary>Ruft den übergeordneten Speicher ab, dem dieser Sammlungssatz angehört, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:CollectorConfigStore" />-Objekt, das den übergeordneten Speicher für den Sammlungssatz identifiziert.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.ProxyName">
+      <summary>Ruft den Namen des Proxykontos des SQL Server-Agents ab, unter dem der Sammlungssatz ausgeführt wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Namen des Proxykontos entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Rename(System.String)">
+      <summary>Benennt einen Sammlungssatz um.</summary>
+      <param name="newName">Ein <see cref="T:System.String" />-Wert, der dem neuen Namen des Sammlungssatzes entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.RunOnce">
+      <summary>Legt fest, dass der Sammlungssatz einmal ausgeführt wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.ScheduleName">
+      <summary>Ruft den Namen des Zeitplans des SQL Server-Agents ab, der dem Sammlungssatz zugeordnet ist, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Namen des Zeitplans entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.ScriptAlter">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein ISfcScript-Objekt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Start">
+      <summary>Startet einen Sammlungssatz.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.State">
+      <summary>Ruft den Status des Sammlungssatzes ab.</summary>
+      <returns>Gibt den aktuellen Status des Sammlungssatzes zurück, d. h., ob er ausgeführt wird oder beendet wurde.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Stop">
+      <summary>Beendet einen Sammlungssatz.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.TargetName">
+      <summary>Ruft den Namen des Ziels ab, von dem der Sammlungssatz Daten erfasst, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Zielnamen entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.UId">
+      <summary>Ruft die GUID (Globally Unique Identifier) für den Sammlungssatz ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Guid" />-Wert, der der GUID für den Sammlungssatz entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Upload">
+      <summary>Lädt einen Sammlungssatz bei Bedarf hoch.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSet.CollectionModes">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet.CollectionModes" />-Klasse listet die Sammlungsmodi des Sammlungssatzes auf.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.CollectionModes.Cached">
+      <summary>Modus mit Zwischenspeicherung. Daten werden nach einem unterschiedlichen Zeitplan gesammelt und hochgeladen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.CollectionModes.NonCached">
+      <summary>Modus ohne Zwischenspeicherung. Daten werden nach demselben Zeitplan gesammelt und hochgeladen.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSet.ExecutionStatus">
+      <summary>Listet den Sammlungssatz auf, um den aktuellen Ausführungsstatus abzurufen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.ExecutionStatus.Failed">
+      <summary>Gibt an, dass der Sammlungssatz fehlerhaft ist.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.ExecutionStatus.Finished">
+      <summary>Gibt an, dass der Sammlungssatz die Aufgaben zum Sammeln und Hochladen abgeschlossen hat.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.ExecutionStatus.Running">
+      <summary>Gibt an, dass der Sammlungssatz ausgeführt wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.ExecutionStatus.Warning">
+      <summary>Gibt an, dass ein Fehler aufgetreten ist und eine Warnung generiert wurde.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSet.Key">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet.Key" />-Klasse erbt von SfcAbstractKey und wird für Identifikationsschlüsselvorgänge verwendet.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.#ctor(Microsoft.SqlServer.Management.Collector.CollectionSet.Key)">
+      <summary>Erstellt eine Instanz eines <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet.Key" />-Objekts.</summary>
+      <param name="other">Ein <see cref="T:Key" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.#ctor(System.String)">
+      <summary>Erstellt eine Instanz eines Schlüssels mit dem angegebenen Schlüsselnamen.</summary>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der dem Schlüsselnamen entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.Equals(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Instanziiert eine Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.Equals" />-Klasse, die für boolesche Operationen verwendet wird.</summary>
+      <returns>Ein <see cref="T:Key" />-Objekt, das den Schlüssel darstellt.</returns>
+      <param name="key">Ein <see cref="T:Key" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.Equals(System.Object)">
+      <summary>Führt eine boolesche Operation aus, um zu bestimmen, ob das als Parameter übergebene Objekt ein Schlüssel ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn das Objekt ein Schlüssel ist.</returns>
+      <param name="obj">Ein <see cref="T:System.Object" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.Equals(System.Object,System.Object)">
+      <summary>Führt einen booleschen Vergleich zwischen zwei Objekten aus, die als Parameter übergeben werden.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn beide Objekte ungleich NULL und (AND) gleich sind.</returns>
+      <param name="obj1">
+        <see cref="T:System.Object" />
+      </param>
+      <param name="obj2">
+        <see cref="T:System.Object" />
+      </param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.GetHashCode">
+      <summary>Ruft den Hashcode für einen Schlüssel ab.</summary>
+      <returns>Ein <see cref="T:System.Int" />-Wert, der den Hash darstellt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.GetUrnFragment">
+      <summary>Ruft ein urn-Fragment ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das URN-Fragment darstellt.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.name">
+      <summary>Konfiguriert die Namenseigenschaft für den Schlüssel.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.Name">
+      <summary>Ruft den Schlüsselnamen ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Schlüsselnamen entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.op_Equality(Microsoft.SqlServer.Management.Collector.CollectionSet.Key,Microsoft.SqlServer.Management.Collector.CollectionSet.Key)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen der linken und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind und (AND) lsh ein Schlüssel ist und (AND) rhs ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.op_Equality(Microsoft.SqlServer.Management.Collector.CollectionSet.Key,System.Object)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der linken Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten NULL sind.beide Seiten ungleich NULL sind und (AND) lsh ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.op_Equality(System.Object,Microsoft.SqlServer.Management.Collector.CollectionSet.Key)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten NULL sind.beide Seiten ungleich NULL sind und (AND) rhs ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.op_Inequality(Microsoft.SqlServer.Management.Collector.CollectionSet.Key,Microsoft.SqlServer.Management.Collector.CollectionSet.Key)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen der linken und rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:eine Seite NULL ist oder (OR) lhs kein Schlüssel ist oder (OR) rhs kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.op_Inequality(Microsoft.SqlServer.Management.Collector.CollectionSet.Key,System.Object)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der linken Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind.beide Seiten NULL sind und (AND) lsh kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.op_Inequality(System.Object,Microsoft.SqlServer.Management.Collector.CollectionSet.Key)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind.beide Seiten NULL sind und (AND) lsh kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSet.Key.ToString">
+      <summary>Ruft eine Zeichenfolgendarstellung des Schlüssels ab, um einen Standardvergleich auszuführen.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der der Zeichenfolgendarstellung des Schlüssels entspricht.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSet.RuntimeExecutionMode">
+      <summary>Die RuntimeExecutionMode-Enumeration enthält Werte, die verwendet werden, um den Laufzeitausführungsmodus anzugeben.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.RuntimeExecutionMode.Collection">
+      <summary> Der Laufzeitausführungsmodus ist Auflistung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectionSet.RuntimeExecutionMode.Upload">
+      <summary> Der Laufzeitausführungsmodus ist Hochladen. </summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSetCollection">
+      <summary>
+        <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSetCollection" /> ist eine SFC-Sammelklasse für Sammlungssätze.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSetCollection.#ctor(Microsoft.SqlServer.Management.Collector.CollectorConfigStore)">
+      <summary>Instanziiert einen neuen Sammlungssatz auf Grundlage des <see cref="T:CollectorConfigStore" />-Objekts, das als übergeordnetes Element für den Sammlungssatz bereitgestellt wird.</summary>
+      <param name="parent">Das übergeordnete Objekt des Sammlungssatzes.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectionSetCollection.Item(System.String)">
+      <summary>Ruft einen Sammlungssatz auf Grundlage des angegebenen Namens ab.</summary>
+      <returns>Ein <see cref="T:CollectionSetCollection" />-Objekt, das dem Sammlungssatz entspricht.</returns>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der dem Sammlungssatznamen entspricht.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectionSetExtender">
+      <summary> Ermöglicht das Hinzufügen neuer Eigenschaften zu <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet" /> und unterstützt zusätzlich das Herstellen von Abhängigkeiten zwischen einer erweiterten Eigenschaft und der ursprünglichen Eigenschaft.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSetExtender.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSetExtender" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSetExtender.#ctor(Microsoft.SqlServer.Management.Collector.CollectionSet)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSetExtender" />-Klasse.</summary>
+      <param name="collectionSet"> Das <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet" />-Element, das diese Instanz erweitert.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectionSetExtender.#ctor(Microsoft.SqlServer.Management.Collector.CollectorConfigStore,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSetExtender" />-Klasse.</summary>
+      <param name="collectorConfigStore"> Das <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore" />-Element für die Zuordnung zu dieser Instanz.</param>
+      <param name="name"> Der Name des <see cref="T:Microsoft.SqlServer.Management.Collector.CollectionSet" />-Elements, das diese Instanz erweitert. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore" />-Klasse implementiert den Konfigurationsspeicher für den Datensammler.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.#ctor">
+      <summary>Initialisiert ein <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore" />-Objekt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.#ctor(Microsoft.SqlServer.Management.Sdk.Sfc.SqlStoreConnection)">
+      <summary>Initialisiert ein <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore" />-Objekt.</summary>
+      <param name="connection">Ein <see cref="T:SqlStoreConnection" />-Objekt, das die Verbindungsinformationen enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Alter">
+      <summary>Ändert die Konfigurationseinstellungen des Konfigurationsspeichers.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.CacheDirectory">
+      <summary>Ruft den Pfad- und Ordnernamen des Cacheverzeichnisses ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Verzeichnispfad und den Ordnernamen enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.CacheWindow">
+      <summary>Ruft die Anzahl der Uploadversuche für erfasste Daten ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int" />-Wert, der der Anzahl der Uploadversuche entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.CollectionSets">
+      <summary>Ruft die Sammlungssätze im Konfigurationsspeicher ab.</summary>
+      <returns>Ein <see cref="T:CollectionSetObject" />, das die Sammlungssätze enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.ConfigureTransactionPerformanceCollectors(System.Data.SqlClient.SqlConnection)"></member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.DisableCollector">
+      <summary>Deaktiviert den Datensammler.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.EnableCollector">
+      <summary>Aktiviert den Datensammler.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Enabled">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob der Datensammler aktiviert ist, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Datensammler aktiviert ist.Bei True ist der Datensammler aktiviert.Bei False ist der Datensammler nicht aktiviert.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.EnumTypes">
+      <summary>Listet die Namen der Sammlertypen im Konfigurationsspeicher auf.</summary>
+      <returns>Ein <see cref="T:StringCollection" />-Wert, der die Namen der installierten Sammlertypen enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.IdentityKey">
+      <summary>Ruft den Identitätsschlüssel für den Konfigurationsspeicher ab.</summary>
+      <returns>Ein Schlüsselobjekt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.MDWDatabase">
+      <summary>Ruft den Namen der Datenbank ab, die die erfassten Daten enthält, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Datenbanknamen entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.MDWInstance">
+      <summary>Ruft die Instanz ab, in der sich das Verwaltungs-Data Warehouse befindet, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Instanznamen entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcAlterable#ScriptAlter">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein ISfcScript-Objekt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomain#GetExecutionEngine">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein ISfcExecutionEngine-Objekt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomain#GetKey(Microsoft.SqlServer.Management.Sdk.Sfc.IUrnFragment)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey" />-Objekt.</returns>
+      <param name="urnFragment">Ein <see cref="T:Microsoft.SqlServer.Management.Sdk.Sfc.IUrnFragment" />-Wert.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomain#GetType(System.String)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein <see cref="T:System.Type" />, der dem Sammlertyp entspricht.</returns>
+      <param name="typeName">Ein <see cref="T:System.String" />-Wert, der dem Typnamen entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomain#GetTypeMetadata(System.String)">
+      <summary>Diese Methode dient nur zur internen Verwendung.</summary>
+      <returns>Ein SfcTypeMetadata-Objekt, das die Metadaten für den Sammlertyp angibt.</returns>
+      <param name="typeName">Ein <see cref="T:System.String" />-Wert, der dem Namen des Sammlertyps entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomain#UseSfcStateManagement">
+      <summary>Diese Eigenschaft dient nur zur internen Verwendung.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomainLite#DomainInstanceName">
+      <summary>Diese Eigenschaft dient nur zur internen Verwendung.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Instanznamen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomainLite#DomainName">
+      <summary>Diese Eigenschaft dient nur zur internen Verwendung.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Domänennamen angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcDomainLite#GetLogicalVersion">
+      <summary>Diese Eigenschaft dient nur zur internen Verwendung.</summary>
+      <returns>Gibt einen <see cref="T:System.Int32" />-Wert zurück.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcHasConnection#ConnectionContext">
+      <summary>Diese Eigenschaft dient nur zur internen Verwendung.</summary>
+      <returns>Ein SfcConnectionContext-Objekt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcHasConnection#GetConnection">
+      <summary>Ruft die Serververbindung mit dem Hintergrundspeicher ab.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <returns>Gibt <see cref="T:Microsoft.SqlServer.Management.Common.ISfcConnection" /> zurück.Ein ISfcConnection-Objekt, das die Serververbindungsdetails enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcHasConnection#GetConnection(Microsoft.SqlServer.Management.Sdk.Sfc.SfcObjectQueryMode)">
+      <summary>Ruft die Serververbindung mit dem Hintergrundspeicher ab, der den angegebenen Abfrageverarbeitungsmodus unterstützt.</summary>
+      <returns>Gibt <see cref="T:Microsoft.SqlServer.Management.Common.ISfcConnection" /> zurück.Ein ISfcConnection-Objekt, das die Serververbindungsdetails enthält.</returns>
+      <param name="activeQueriesMode">Ein SfcObjectQueryMode-Wert, der den Abfrageverarbeitungsmodus angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Microsoft#SqlServer#Management#Sdk#Sfc#ISfcHasConnection#SetConnection(Microsoft.SqlServer.Management.Common.ISfcConnection)">
+      <summary>Legt die aktive Verbindung für den Domänenstamm fest.Verweisen Sie nicht direkt im Code auf dieses Element.Unterstützt die SQL Server-Infrastruktur.</summary>
+      <param name="connection">Ein ISfcConnection-Objekt, das die zu verwendende Verbindung darstellt.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key" />-Klasse erbt von DomainRootKey und wird für Identifikationsschlüsselvorgänge verwendet.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.#ctor">
+      <summary>Instanziiert eine Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.Equals(Microsoft.SqlServer.Management.Sdk.Sfc.SfcKey)">
+      <summary>Instanziiert eine Instanz der <see cref="T:" /><see cref="Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.Equals" />-Klasse, die für boolesche Operationen verwendet wird.</summary>
+      <returns>Ein <see cref="T:Key" />-Objekt, das den Schlüssel darstellt.</returns>
+      <param name="key">Ein <see cref="T:Key" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.Equals(System.Object)">
+      <summary>Führt eine boolesche Operation aus, um zu bestimmen, ob das als Parameter übergebene Objekt ein Schlüssel ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn das Objekt ein Schlüssel ist.</returns>
+      <param name="obj">Ein <see cref="T:System.Object" />-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.Equals(System.Object,System.Object)">
+      <summary>Führt einen booleschen Vergleich zwischen zwei Objekten aus, die als Parameter übergeben werden.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn beide Objekte ungleich NULL und (AND) gleich sind.</returns>
+      <param name="obj1">
+        <see cref="T:System.Object" />
+      </param>
+      <param name="obj2">
+        <see cref="T:System.Object" />
+      </param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.GetHashCode">
+      <summary>Ruft den Hashcode für einen Schlüssel ab.</summary>
+      <returns>Ein <see cref="T:System.Int" />-Wert, der den Hash darstellt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.GetUrnFragment">
+      <summary>Ruft ein urn-Fragment ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das URN-Fragment darstellt.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.name">
+      <summary>Konfiguriert die Namenseigenschaft für den Schlüssel.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.Name">
+      <summary>Ruft den Schlüsselnamen ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der dem Schlüsselnamen entspricht.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.op_Equality(Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key,Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen der linken und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind und (AND) lsh ein Schlüssel ist und (AND) rhs ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.op_Equality(Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key,System.Object)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der linken Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten NULL sind.beide Seiten ungleich NULL sind und (AND) lsh ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.op_Equality(System.Object,Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key)">
+      <summary>Führt eine boolesche Gleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten NULL sind.beide Seiten ungleich NULL sind und (AND) rhs ein Schlüssel ist und (AND) die Schlüssel gleich sind.</returns>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.op_Inequality(Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key,Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen der linken und rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:eine Seite NULL ist oder (OR) lhs kein Schlüssel ist oder (OR) rhs kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.op_Inequality(Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key,System.Object)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der linken Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind.beide Seiten NULL sind und (AND) lsh kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="lhs">Ein <see cref="T:Key" />-Objekt, das die linke Seite des Schlüssels enthält.</param>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key.op_Inequality(System.Object,Microsoft.SqlServer.Management.Collector.CollectorConfigStore.Key)">
+      <summary>Führt eine boolesche Ungleichheitsüberprüfung zwischen dem als Parameter gesendeten Objekt und der rechten Seite des Schlüssels aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der TRUE zurückgibt, wenn:beide Seiten ungleich NULL sind.beide Seiten NULL sind und (AND) lsh kein Schlüssel ist und (AND) die Schlüssel ungleich sind.</returns>
+      <param name="obj">Ein <see cref="T:Key" />-Objekt für den Vergleich.</param>
+      <param name="rhs">Ein <see cref="T:Key" />-Objekt, das die rechte Seite des Schlüssels enthält.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Collector.CollectorException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorException" />-Klasse ist die Basisklasse für alle Ausnahmen des Datensammlers.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorException.#ctor">
+      <summary>Erstellt eine Instanz der Ausnahme.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Instanziiert eine Instanz der <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorException" />-Klasse, wobei <paramref name="info" /> und <paramref name="context" /> als Parameter übergeben werden.</summary>
+      <param name="info">
+        <see cref="T:System.Runtime.Serialization.SerializationInfo" />
+      </param>
+      <param name="context">
+        <see cref="T:System.Runtime.Serialization.StreamingContext" />
+      </param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorException.#ctor(System.String)">
+      <summary>Die Fehlermeldung.</summary>
+      <param name="message">
+        <see cref="T:System.String" />-Wert, der der Fehlermeldung entspricht.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorException.#ctor(System.String,System.Exception)">
+      <summary>Erstellt ein Sammlungsobjekt und übergibt die Fehlermeldung und die Ausnahme, die den Fehler verursacht.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der der Fehlermeldung entspricht.</param>
+      <param name="innerException">Eine <see cref="T:System.Exception" />, die eine auslösende Ausnahme ist.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorException.HelpLink">
+      <summary>Ruft den Link zur Microsoft SQL Server-Hilfewebsite auf Grundlage der Ausnahme ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die URL für die Microsoft SQL Server-Hilfewebsite enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Collector.CollectorException.ProdVer">
+      <summary>Ruft die Produktversion ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der Informationen zur Produktversion enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Collector.CollectorException.SetHelpContext(System.String)">
+      <summary>Legt den Hilfekontext auf Grundlage der übergebenen Ressourcenzeichenfolge fest.</summary>
+      <returns>Ein Objekt des Typs <see cref="T:Microsoft.SqlServer.Management.Collector.CollectorException" />, das Datensammlerausnahmen enthält.</returns>
+      <param name="resource">Ein <see cref="T:System:String" />-Wert, der dem Namen der Ressource entspricht, die die Ausnahme ausgelöst hat.</param>
+    </member>
+  </members>
+</doc>

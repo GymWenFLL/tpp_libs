@@ -1,0 +1,1555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SqlServer.SmoExtended</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SqlServer.Management.Smo.AsyncStatus">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.AsyncStatus" />-Objekt stellt den Status eines asynchronen Prozesses dar.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.AsyncStatus.ExecutionStatus">
+      <summary>Ruft den Ausführungsstatus des asynchronen Prozesses ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.ExecutionStatus" />-Objektwert, der den Ausführungsstatus des asynchronen Prozesses angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.AsyncStatus.LastException">
+      <summary>Ruft die letzte vom asynchronen Prozess generierte Ausnahme ab.</summary>
+      <returns>Ein <see cref="T:System.Exception" />-Systemobjekt, das die letzte vom asynchronen Prozess generierte Ausnahme angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Backup">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.Backup" />-Objekt ermöglicht den programmgesteuerten Zugriff auf Microsoft SQL Server-Sicherungsvorgänge. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Backup.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.Backup" />-Klasse.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.Action">
+      <summary>Ruft den auszuführenden Sicherungstyp ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupActionType" />-Objekt, das den Sicherungstyp darstellt, der ausgeführt werden soll.In der Standardeinstellung ist dieser Wert auf <see cref="F:Microsoft.SqlServer.Management.Smo.BackupActionType.Database" /> festgelegt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.BackupSetDescription">
+      <summary>Ruft eine Textbeschreibung für einen bestimmten Sicherungssatz ab oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der eine Textbeschreibung des Sicherungssatzes enthält.Der Standardwert ist eine leere Zeichenfolge.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.BackupSetName">
+      <summary>Ruft den Namen ab, der zur Identifikation eines bestimmten Sicherungssatzes verwendet wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen des Sicherungssatzes angibt.Der Standardwert ist eine leere Zeichenfolge.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.CompressionOption">
+      <summary>Ruft die Sicherungskomprimierungsoption ab oder legt sie fest.</summary>
+      <returns>Die Sicherungskomprimierungsoption.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.CopyOnly">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, dass es sich bei der Sicherung um eine Kopiesicherung handelt, oder legt ihn fest.Dies wirkt sich nicht auf die Reihenfolge der Sicherungen im üblichen Sicherungszeitplan aus.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Sicherung eine Kopiesicherung ist.True gibt an, dass die Sicherung eine Kopiesicherung ist.False (Standard) gibt an, dass die Sicherung keine Kopiesicherung und ein Teil der üblichen Sicherungssequenz ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.EncryptionOption"></member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.ExpirationDate">
+      <summary>Ruft das Datum und die Uhrzeit ab, zu denen der Sicherungssatz abläuft und die Sicherungsdaten nicht mehr als relevant betrachtet werden, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.DateTime" />-Objektwert, der das Ablaufdatum angibt.Standardmäßig wird kein Wert angegeben.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.FormatMedia">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob als erster Schritt des Sicherungsvorgangs ein Band formatiert wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob das Band formatiert wird.True gibt an, dass der Microsoft SQL Server-Sicherungsvorgang zuerst versucht, das Band zu formatieren.Der Standardwert False gibt an, dass der SQL Server-Sicherungsvorgang nicht versucht, das Band zu formatieren.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.Incremental">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob eine differenzielle Sicherung ausgeführt wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob eine differenzielle Sicherung ausgeführt wird.True gibt an, dass nur Änderungen seit der letzten vollständigen oder differenziellen Sicherung im Sicherungsvorgang berücksichtigt werden.False (Standard) gibt an, dass eine vollständige Sicherung ausgeführt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.Initialize">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob die einem Sicherungsvorgang zugeordneten Medien als Teil des Sicherungsvorgangs initialisiert werden, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Sicherungsmedien initialisiert werden.True gibt an, dass die angegebene Sicherung der erste Sicherungssatz auf den Medien ist und alle vorhandenen Sicherungssätze auf den Medien überschreibt.Die Sicherungsmedien werden nicht überschrieben, wenn eine der folgenden Bedingungen erfüllt ist:Alle Sicherungssätze auf den Medien sind noch nicht abgelaufen. Der optional angegebene Sicherungssatzname stimmt nicht mit dem Namen auf den Sicherungsmedien überein.Geben Sie den Sicherungssatznamen mit der <see cref="P:Microsoft.SqlServer.Management.Smo.Backup.BackupSetName" />-Eigenschaft an.False (Standard) gibt an, dass die angegebene Sicherung einen neuen Sicherungssatz erstellt, der als letzter Sicherungssatz auf den Medien angefügt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.LogTruncation">
+      <summary>Ruft die Methode ab, mit der das Datenbankprotokoll als Teil des Sicherungsvorgangs abgeschnitten wird, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType" />-Objektwert, der die ausgewählte Protokollkürzungsoption angibt.In der Standardeinstellung ist dieser Wert auf <see cref="F:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType.Truncate" /> festgelegt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.MediaDescription">
+      <summary>Ruft eine Textbeschreibung des Mediums ab, das einen Sicherungssatz enthält, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der eine Textbeschreibung des Mediums enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.Mirrors">
+      <summary>Ruft die Liste der von der gespiegelten Sicherung verwendeten Sicherungsmedien ab oder legt sie fest. </summary>
+      <returns>Ein Array von BackupDeviceList-Objekten, das die von der gespiegelten Sicherung verwendeten Sicherungsmedien angibt. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.RetainDays">
+      <summary>Ruft die Anzahl von Tagen ab, die verstreichen müssen, bevor ein Sicherungssatz überschrieben werden kann, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Aufbewahrungsdauer in Tagen angibt.In der Standardeinstellung ist dieser Wert auf Null festgelegt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Backup.Script(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Gibt einen <see cref="T:System.String" />-Wert mit der Transact-SQL-Anweisung zurück, mit der die Sicherung ausgeführt werden kann, auf die verwiesen wird. </summary>
+      <returns>Ein <see cref="T:System.String" /> mit der Transact-SQL-Anweisung, mit der die Sicherung ausgeführt werden kann, auf die verwiesen wird. </returns>
+      <param name="targetServer">Das <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die Microsoft SQL Server-Quellinstanz des Sicherungsvorgangs darstellt. </param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.SkipTapeHeader">
+      <summary>Ruft eine <see cref="T:System.Boolean" />-Eigenschaft fest, die bestimmt, ob der Bandheader gelesen wird, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Bandheader gelesen wird.True gibt an, dass ein auf dem Medium aufgezeichneter Medienname nicht ausgewählt wird.Der Sicherungssatz wird an das Medium angefügt.False (Standard) gibt an, dass ein aufgezeichneter Medienname ausgewählt wird. </returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Backup.SqlBackup(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Führt den Datenbank-Sicherungsvorgang aus, wie durch die Eigenschaften des verwendeten <see cref="T:Microsoft.SqlServer.Management.Smo.Backup" />-Objekts angegeben. </summary>
+      <param name="srv">Das <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die Microsoft SQL Server-Quellinstanz des Sicherungsvorgangs darstellt. </param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Backup.SqlBackupAsync(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Führt den Datenbank-Sicherungsvorgang asynchron aus, wie durch die Eigenschaften des verwendeten <see cref="T:Microsoft.SqlServer.Management.Smo.Backup" />-Objekts angegeben. </summary>
+      <param name="srv">Das <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die Microsoft SQL Server-Quellinstanz des Sicherungsvorgangs darstellt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Backup.UndoFileName">
+      <summary>Ruft den Namen der Rückgängigdatei ab, die zum Speichern von Transaktionen ohne Commit verwendet wird, für die während der Wiederherstellung ein Rollback ausgeführt wurde, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen der Rückgängigdatei angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupActionType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.BackupActionType" />-Enumeration enthält Werte, mit denen der Sicherungstyp angegeben wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupActionType.Database">
+      <summary>Sichert sämtliche Datendateien in der Datenbank.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupActionType.Files">
+      <summary>Sichert die angegebenen Datendateien.Diese Option wird nur empfohlen, wenn die seit der letzten Sicherung aufgetretenen Transaktionen in der gesicherten Datei oder Dateigruppe isoliert sind.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupActionType.Log">
+      <summary>Sichert das Transaktionsprotokoll. </summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupCompressionOptions">
+      <summary>Die BackupCompressionOptions-Enumeration enthält Werte, mit denen die Sicherungskomprimierungsoption angegeben wird.  </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupCompressionOptions.Default">
+      <summary>Wert = 0.Verwendet die Serverkonfiguration für die Standard-Sicherungskomprimierung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupCompressionOptions.Off">
+      <summary>Wert = 2.Deaktiviert die Sicherungskomprimierung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupCompressionOptions.On">
+      <summary>Wert = 1.Aktiviert die Sicherungskomprimierung.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt ermöglicht programmgesteuerten Zugriff auf benannte SQL Server-Sicherungsmedien. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.#ctor(System.String,Microsoft.SqlServer.Management.Smo.DeviceType)">
+      <summary>Initialisiert eine neue Instanz der <see cref="BackupDeviceItem" />-Klasse unter Verwendung des angegebenen Mediennamens und -typs.</summary>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des Sicherungsmediums angibt.</param>
+      <param name="deviceType">Ein <see cref="BackupDeviceType" />-Objektwert, der den Typ des Sicherungsmediums angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.#ctor(System.String,Microsoft.SqlServer.Management.Smo.DeviceType,System.String)"></member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.CompareTo(System.Object)">
+      <summary>Überprüft, ob das angegebene Objekt den gleichen Namen aufweist wie das <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, auf das verwiesen wird. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die lexikalische Beziehung zwischen den zwei Zeichenfolgen angibt.WertBeschreibung<paramref name="Less than zero" />Der Objektname, auf den verwiesen wird, ist kleiner als der Objektname, der vom Parameter angegeben wird.<paramref name="Zero" />Der Objektname, auf den verwiesen wird, ist gleich dem Objektnamen, der vom Parameter angegeben wird.<paramref name="Greater than zero" />Der Objektname, auf den verwiesen wird, ist größer als der Objektname, der vom Parameter angegeben wird.</returns>
+      <param name="obj">Ein <see cref="T:System.Object" />-Objektwert, der das Objekt angibt, das mit dem <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt verglichen wird, auf das verwiesen wird.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.CredentialName"></member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.DeviceType">
+      <summary>Ruft den Medientyp für das <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt ab. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceType" />-Objektwert, der den Typ des Sicherungsmediums angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.Equals(System.Object)">
+      <summary>Bestimmt, ob das aktuelle Objekt gleich dem angegebenen Objekt ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der true ist, wenn die Objekte gleich sind.Andernfalls ist der Wert false.</returns>
+      <param name="obj">Ein <see cref="T:System.Object" />, das das mit dem aktuellen Sicherungsmedium zu vergleichende Objekt angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.GetHashCode">
+      <summary>Ruft den Hashcode für das Objekt ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Hashcode angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.Name">
+      <summary>Ruft den Namen des Mediums für das <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt ab. </summary>
+      <returns>Ein <see cref="T:System.String" />-Objektwert, der den Namen des Sicherungsmediums angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.op_Equality(Microsoft.SqlServer.Management.Smo.BackupDeviceItem,Microsoft.SqlServer.Management.Smo.BackupDeviceItem)">
+      <summary>Bestimmt, ob zwei Objekte gleich sind, indem eine Gleichheitsoperation für zwei <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekte ausgeführt wird. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der das Ergebnis der Gleichheitsoperation angibt.Wenn der Wert True ist, sind die beiden Objekte gleich.Andernfalls False.</returns>
+      <param name="r1">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der Gleichheitsoperation verwendet wird.</param>
+      <param name="r2">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der Gleichheitsoperation verwendet wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.op_GreaterThan(Microsoft.SqlServer.Management.Smo.BackupDeviceItem,Microsoft.SqlServer.Management.Smo.BackupDeviceItem)">
+      <summary>Bestimmt, ob ein Objekt größer als ein anderes ist, indem ein Vorgang für zwei <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekte ausgeführt wird. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der das Ergebnis der Operation angibt, in der bestimmt wurde, ob ein Objekt größer als das andere ist.Wenn der Wert True ist, ist das erste Objekt größer als das zweite.Andernfalls False.</returns>
+      <param name="r1">Das erste <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der Operation verwendet wird.</param>
+      <param name="r2">Das zweite <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der "größer als"-Operation verwendet wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.op_Inequality(Microsoft.SqlServer.Management.Smo.BackupDeviceItem,Microsoft.SqlServer.Management.Smo.BackupDeviceItem)">
+      <summary>Bestimmt, ob zwei Objekte ungleich sind, indem eine Ungleichheitsoperation für zwei <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekte ausgeführt wird. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der das Ergebnis der Ungleichheitsoperation angibt.Wenn der Wert True ist, sind die beiden Objekte ungleich.Andernfalls False.</returns>
+      <param name="r1">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der Ungleichheitsoperation verwendet wird.</param>
+      <param name="r2">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der Ungleichheitsoperation verwendet wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceItem.op_LessThan(Microsoft.SqlServer.Management.Smo.BackupDeviceItem,Microsoft.SqlServer.Management.Smo.BackupDeviceItem)">
+      <summary>Bestimmt, ob ein Objekt kleiner als ein anderes ist, indem eine Operation für zwei <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekte ausgeführt wird. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der das Ergebnis der Operation angibt, in der bestimmt wurde, ob ein Objekt kleiner als das andere ist.Wenn der Wert True ist, ist das erste Objekt kleiner als das zweite.Andernfalls False.</returns>
+      <param name="r1">Das erste <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der Operation verwendet wird.</param>
+      <param name="r2">Das zweite <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekt, das in der "größer als"-Operation verwendet wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Objekt ermöglicht programmgesteuerten Zugriff auf eine Liste von Sicherungsmedien. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceList.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceList.#ctor(System.Collections.Generic.IEnumerable{Microsoft.SqlServer.Management.Smo.BackupDeviceItem})">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Klasse auf Grundlage des angegebenen <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objekts. </summary>
+      <param name="collection">
+        <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objektwert, der die Sicherungsmedien angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceList.#ctor(System.Int32)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Klasse unter Verwendung der angegebenen Kapazität. </summary>
+      <param name="capacity">Ein <see cref="T:System.Int32" />-Wert, der die Kapazität des <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Objekts angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupDeviceList.AddDevice(System.String,Microsoft.SqlServer.Management.Smo.DeviceType)">
+      <summary>Fügt der Liste einen Medientyp mit dem angegebenen Namen hinzu.</summary>
+      <param name="name">
+        <see cref="T:System.String" />-Wert, der verwendet wird, um den Namen des Geräts anzugeben, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Objekt hinzugefügt wird.</param>
+      <param name="deviceType">
+        <see cref="T:Microsoft.SqlServer.Management.Smo.DeviceType" />-Objektwert, der den Typ des Geräts angibt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Objekt hinzugefügt werden soll.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupEncryptionAlgorithm"></member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupEncryptionAlgorithm.Aes128">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupEncryptionAlgorithm.Aes192">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupEncryptionAlgorithm.Aes256">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupEncryptionAlgorithm.TripleDes">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupEncryptionOptions"></member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupEncryptionOptions.#ctor"></member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupEncryptionOptions.#ctor(Microsoft.SqlServer.Management.Smo.BackupEncryptionAlgorithm,Microsoft.SqlServer.Management.Smo.BackupEncryptorType,System.String)"></member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupEncryptionOptions.Algorithm"></member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupEncryptionOptions.EncryptorName"></member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupEncryptionOptions.EncryptorType"></member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupEncryptorType"></member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupEncryptorType.ServerAsymmetricKey">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupEncryptorType.ServerCertificate">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupRestoreBase">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.BackupRestoreBase" />-Klasse ist eine Basisklasse, die die von Sicherungs- und Wiederherstellungsvorgängen gemeinsam verwendete Funktionalität darstellt. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.BackupRestoreBase" />-Klasse. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Abort">
+      <summary>Beendet einen laufenden Sicherungs- oder Wiederherstellungsvorgang. </summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.AsyncStatus">
+      <summary>Ruft den asynchronen Status eines Sicherungs- oder Wiederherstellungsvorgangs ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.AsyncStatus" />-Objektwert, der den asynchronen Status des Vorgangs angibt. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.BlockSize">
+      <summary>Ruft die physische Blockgröße der Sicherung oder Wiederherstellung in Bytes ab oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Blockgröße in Bytes angibt. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.BufferCount">
+      <summary>Ruft die Gesamtanzahl von E/A-Puffern ab, die für den Sicherungs- oder Wiederherstellungsvorgang verwendet werden sollen, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Gesamtanzahl von E/A-Puffern angibt, die im Sicherungsvorgang verwendet werden. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Checksum">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob im Verlauf von Sicherungs- oder Wiederherstellungsvorgängen ein Prüfsummenwert berechnet wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Prüfsummenwert berechnet wird.True gibt an, dass der Prüfsummenwert berechnet wird.Der Standardwert ist allerdings False.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Complete">
+      <summary>Tritt auf, sobald der Sicherungs- oder Wiederherstellungsvorgang abgeschlossen ist. </summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.ContinueAfterError">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob die Sicherung oder Wiederherstellung nach einem Prüfsummenfehler fortgesetzt wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Vorgang nach einem Prüfsummenfehler fortgesetzt wird.True gibt an, dass der Vorgang fortgesetzt wird, wenn ein Prüfsummenfehler auftritt.Der Standardwert ist allerdings False.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.CredentialName">
+      <summary>Ruft den Wert der Credential-Eigenschaft ab, der zur Authentifizierung beim Windows Azure-Speicherkonto verwendet wird, oder legt ihn fest.</summary>
+      <returns>Der Anmeldeinformationsname.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.currentAsyncOperation">
+      <summary>Gibt den aktuellen asynchronen Vorgang an, z. B. Sicherung, Wiederherstellung oder kein Vorgang.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Database">
+      <summary>Ruft die Datenbank ab, auf der der Sicherungs- oder Wiederherstellungsvorgang ausgeführt wird, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Datenbanknamen enthält.Der Standardwert ist eine leere Zeichenfolge.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.DatabaseFileGroups">
+      <summary>Ruft die SQL Server-Dateigruppen ab, die Ziel des Sicherungs- oder Wiederherstellungsvorgangs sind. </summary>
+      <returns>Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die Namen der Zieldateigruppen auflistet.Standardmäßig wird kein Wert angegeben.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.DatabaseFiles">
+      <summary>Ruft die Betriebssystemdateien ab, die Ziel des Sicherungs- oder Wiederherstellungsvorgangs sind. </summary>
+      <returns>Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die Namen der Zieldateien auflistet.Standardmäßig wird kein Wert angegeben.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Devices">
+      <summary>Ruft die für den Sicherungs- oder Wiederherstellungsvorgang angegebenen Sicherungsmedien ab. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceList" />-Objektarraywert, der die Namen der erforderlichen Sicherungsmedien auflistet.Standardmäßig wird kein Wert angegeben.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.ExecuteSql(Microsoft.SqlServer.Management.Smo.Server,System.Collections.Specialized.StringCollection)">
+      <summary>Führt einen Batch von Transact-SQL-Anweisungen aus, der für die angegebene SQL Server-Instanz keine Rückgabe eines Resultsets erwartet.</summary>
+      <param name="server">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz angibt, für die der Batch von Transact-SQL-Anweisungen ausgeführt wird.</param>
+      <param name="queries">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjekt, das den Batch von auszuführenden Transact-SQL-Anweisungen enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.ExecuteSqlAsync(Microsoft.SqlServer.Management.Smo.Server,System.Collections.Specialized.StringCollection)">
+      <summary>Führt einen Batch von Transact-SQL-Anweisungen, der für die angegebene SQL Server-Instanz keine Rückgabe eines Resultsets erwartet, asynchron aus.</summary>
+      <param name="server">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz angibt, für die der Batch von Transact-SQL-Anweisungen ausgeführt wird.</param>
+      <param name="queries">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjekt, das den Batch von auszuführenden Transact-SQL-Anweisungen enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.ExecuteSqlWithResults(Microsoft.SqlServer.Management.Smo.Server,System.String)">
+      <summary>Führt einen Batch von Transact-SQL-Anweisungen aus, für den mindestens ein zurückgegebenes Resultset für die angegebene SQL Server-Instanz erwartet wird.</summary>
+      <returns>Ein <see cref="T:System.Data.DataSet" />-Systemobjekt, das die Resultsets enthält, die vom ausgeführten Transact-SQL-Befehlsbatch zurückgegeben werden.</returns>
+      <param name="server">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz angibt, für die der Batch von Transact-SQL-Anweisungen ausgeführt wird.</param>
+      <param name="cmd">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjekt, das den Batch von auszuführenden Transact-SQL-Anweisungen enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.GetDevicesScript(System.Text.StringBuilder,Microsoft.SqlServer.Management.Smo.BackupDeviceList,Microsoft.SqlServer.Management.Common.ServerVersion)">
+      <summary>Ruft das Skript ab, das zum Erstellen von Medien verwendet wird.</summary>
+      <param name="query">Ein <see cref="T:System.Text.StringBuilder" />-Wert, der die Transact-SQL-Abfrage angibt.</param>
+      <param name="devices">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.BackupDeviceItem" />-Objektwert, der die Geräte angibt, die dem Sicherungs- oder Wiederherstellungsvorgang zugeordnet sind.</param>
+      <param name="targetVersion">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Objekt, das die Version der SQL Server-Instanz angibt, auf der die Geräte neu erstellt werden.</param>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Information">
+      <summary>Tritt auf, wenn eine beliebige Informationsmeldung von Microsoft SQL Server ausgegeben wird, die von den Ereignissen <see cref="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.NextMedia" />, <see cref="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.PercentComplete" /> oder <see cref="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Complete" /> nicht behandelt werden kann. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.IsStringValid(System.String)">
+      <summary>Überprüft, ob die angegebene Zeichenfolge gültig ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />, der angibt, ob die Zeichenfolge gültig ist.</returns>
+      <param name="s">Ein <see cref="T:System.String" />-Wert, der die zu überprüfende Zeichenfolge angibt.</param>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.m_BackupAction">
+      <summary>Gibt den Typ der Sicherungsaktion an, z. B. Datenbank- oder Protokollsicherung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.m_LogTruncation">
+      <summary>Gibt an, ob das Protokoll abgeschnitten wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.m_RestoreAction">
+      <summary>Gibt den Typ der Wiederherstellungsaktion an, z. B. Datenbank- oder Protokollwiederherstellung.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.MaxTransferSize">
+      <summary>Ruft die maximale Anzahl von Bytes ab, die zwischen den Sicherungsmedien und der SQL Server-Instanz übertragen werden sollen, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die maximale Anzahl von Bytes angibt, die während des Sicherungs- und Wiederherstellungsvorgangs übertragen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.MediaName">
+      <summary>Ruft den Namen ab, der zur Identifikation eines bestimmten Mediensatzes verwendet wurde, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Systemwert, der den Mediennamen angibt.Der Standardwert ist eine leere Zeichenfolge.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.NextMedia">
+      <summary>Tritt auf, wenn die Kapazität des Mediums in einem Zielgerät vom Sicherungs- oder Wiederherstellungsvorgang aufgebraucht ist. </summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.NoRecovery">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob das Protokollfragment gesichert und die Datenbank in den Wiederherstellungsstatus wiederhergestellt wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob das Band am Ende des Vorgangs zurückgespult wird.True gibt an, dass das Ende des Protokollfragments nicht gesichert wird.Wenn sie wiederhergestellt wird, befindet sich die Datenbank im Wiederherstellungsstatus.Der Standardwert False gibt an, das das Ende des Protokollfragments gesichert wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.NoRewind">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob Microsoft SQL Server das Band nach dem Sicherungs- oder Wiederherstellungsvorgang offen hält, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob das Band am Ende des Vorgangs zurückgespult wird.True gibt an, das das Bandlaufwerk geöffnet und positioniert ist.Der Standardwert False gibt an, dass das Band zurückgespult wird. </returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.PercentComplete">
+      <summary>Tritt auf, wenn bei einem Sicherungs- oder Wiederherstellungsvorgang eine Abschlusseinheit erreicht wird. </summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.PercentCompleteNotification">
+      <summary>Ruft das Prozentintervall für Aufrufe des <see cref="T:Microsoft.SqlServer.Management.Smo.PercentCompleteEventHandler" />-Ereignishandlers ab oder legt es fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der das Prozentintervall für Aufrufe des Ereignishandlers angibt.Der Standardwert lautet 10.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Restart">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob der Sicherungs- oder Wiederherstellungsvorgang bei einer Unterbrechung neu gestartet wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Vorgang nach einer Unterbrechung neu startet. True gibt an, dass SQL Server versucht, die Verarbeitung als teilweisen Sicherungs- oder Wiederherstellungsvorgang fortzusetzen.Der Standardwert False gibt an, dass SQL Server einen unterbrochenen Sicherungs- oder Wiederherstellungsvorgang am Anfang des Sicherungssatzes neu startet.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.SetMediaPassword(System.Security.SecureString)">
+      <summary>Legt das Kennwort für einen Mediensatz fest. </summary>
+      <param name="value">Ein <see cref="T:System.Security.SecureString" />-Wert, der das Kennwort für den Mediensatz angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.SetMediaPassword(System.String)">
+      <summary>Legt das Kennwort für einen Mediensatz fest. </summary>
+      <param name="value">Ein <see cref="T:System.String" />-Wert, der das Kennwort für den Mediensatz angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.SetPassword(System.Security.SecureString)">
+      <summary>Legt das Kennwort für einen Sicherungssatz fest. </summary>
+      <param name="value">Ein <see cref="T:System.Security.SecureString" />-Wert, der das Kennwort für den Sicherungssatz angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.SetPassword(System.String)">
+      <summary>Legt das Kennwort für einen Sicherungssatz fest. </summary>
+      <param name="value">Ein <see cref="T:System.String" />-Wert, der das Kennwort für den Sicherungssatz angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.UnloadTapeAfter">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der bestimmt, ob Bandmedien zurückgespult und nach Ende des Sicherungs- oder Wiederherstellungsvorgangs entladen werden, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob Bandmedien zurückgespult und nach Ende des Sicherungs- oder Wiederherstellungsvorgangs entladen werden. True gibt an, dass das Bandmedium bei Abschluss des Vorgangs zurückgespult und entladen wird.Der Standardwert False gibt an, dass nicht versucht wird, das Bandmedium zurückzuspulen und zu entladen.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.Wait">
+      <summary>Wartet das Ende des aktuellen Sicherungs- oder Wiederherstellungsvorgangs ab, bevor der nächste Prozess gestartet wird.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.AsyncOperation">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.AsyncOperation" />-Enumeration enthält Werte, mit denen angegeben wird, welche Sicherungskomponenten asynchron ausgeführt werden. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.AsyncOperation.Backup">
+      <summary>Der Sicherungsprozess ist der asynchrone Vorgang.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.AsyncOperation.None">
+      <summary>Es gibt keinen asynchronen Vorgang.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupRestoreBase.AsyncOperation.Restore">
+      <summary>Der Wiederherstellungsprozess ist der asynchrone Vorgang.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType" />-Enumeration enthält Werte, mit denen die für das Protokoll ausgeführte Abschneideaktion angegeben wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType.NoTruncate">
+      <summary>Das Protokoll wird nicht abgeschnitten.Alle Transaktionen verbleiben im Protokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType.Truncate">
+      <summary>Das Protokoll wird abgeschnitten.Alle abgeschlossenen Transaktionen werden aus dem Protokoll entfernt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.BackupTruncateLogType.TruncateOnly">
+      <summary>Schneidet das Protokoll ab, ohne eine Sicherung auszuführen.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.DatabaseRecoveryState">
+      <summary>Gibt den Status des Vorgang zur Datenbankwiederherstellung an.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.DatabaseRecoveryState.WithNoRecovery">
+      <summary>Weist den Wiederherstellungsvorgang an, keinen Rollback für eine andere, später wiederherzustellende Transaktionsprotokollsicherung bei Transaktionen auszuführen, für die kein Commit ausgeführt wurde.Die Datenbank verbleibt nach dem Wiederherstellungsvorgang im Wiederherstellungsstatus.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.DatabaseRecoveryState.WithRecovery">
+      <summary>Belässt die Datenbank betriebsbereit, indem für Transaktionen ohne Commit ein Rollback ausgeführt wird.Zusätzliche Transaktionsprotokolle können nicht wiederhergestellt werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.DatabaseRecoveryState.WithStandBy">
+      <summary>Führt für Transaktionen ohne Commit ein Rollback aus, die Rückgängigaktionen werden jedoch in einer Standbydatei gespeichert, sodass die Auswirkungen der Wiederherstellung umgekehrt werden können.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner">
+      <summary>Stellt den Planer zur Datenbankwiederherstellung dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.#ctor(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner" />-Klasse mit dem angegebenen Server.</summary>
+      <param name="server">Der Server.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.#ctor(Microsoft.SqlServer.Management.Smo.Server,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner" />-Klasse mit dem angegebenen Server- und Datenbanknamen.</summary>
+      <param name="server">Der Server.</param>
+      <param name="databaseName">Der Name der Datenbank.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.#ctor(Microsoft.SqlServer.Management.Smo.Server,System.String,System.DateTime,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner" />-Klasse mit dem angegebenen Server, Datenbanknamen, Zeitpunkt und Wiederherstellungsdatei.</summary>
+      <param name="server">Der Server.</param>
+      <param name="databaseName">Der Name der Datenbank.</param>
+      <param name="pointInTime">Der Zeitpunkt für die Wiederherstellung.</param>
+      <param name="tailLogBackupFile">Das Medium für die Sicherung des Protokollfragments.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.BackupMediaList">
+      <summary>Ruft die Sicherungsmedienliste ab.</summary>
+      <returns>Die Auflistung der Sicherungsmedienliste.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.BackupTailLog">
+      <summary>Ruft einen Wert ab, der angibt, ob die Sicherung des Protokollfragments ausgeführt wird, oder legt ihn fest.</summary>
+      <returns>True, wenn die Sicherung des Protokollfragments ausgeführt wird, andernfalls false.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.CreateRestorePlan">
+      <summary>Erstellt den Wiederherstellungsplan.</summary>
+      <returns>Der erstellte Wiederherstellungsplan.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.CreateRestorePlan(Microsoft.SqlServer.Management.Smo.RestoreOptions)">
+      <summary>Erstellt den Wiederherstellungsplan mit Wiederherstellungsoptionen.</summary>
+      <returns>Der Wiederherstellungsplan.</returns>
+      <param name="ro">Die Wiederherstellungsoptionen.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.DatabaseName">
+      <summary>Ruft den Datenbanknamen ab oder legt ihn fest.</summary>
+      <returns>Der Name der Datenbank.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.ReadHeaderFromMedia">
+      <summary>Ruft einen Wert ab, der angibt, ob der Header von Geräten gelesen wird, oder legt diesen fest.</summary>
+      <returns>True, wenn der Header von Medien gelesen wird; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.RestoreToLastBackup">
+      <summary>Ruft einen Wert ab, der angibt, ob die Wiederherstellung bis zur letzten Sicherung erfolgt, oder legt ihn fest.</summary>
+      <returns>True, wenn die Wiederherstellung bis zur letzten Sicherung erfolgt; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.RestoreToPointInTime">
+      <summary>Ruft die Wiederherstellung zu einem bestimmten Zeitpunkt ab oder legt sie fest.</summary>
+      <returns>Die Wiederherstellung zu einem bestimmten Zeitpunkt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.Server">
+      <summary>Ruft den Server ab oder legt ihn fest.</summary>
+      <returns>Der Server.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.TailLogBackupFile">
+      <summary>Ruft die Sicherungsdatei des Protokollfragments ab oder legt diese fest.</summary>
+      <returns>Die neue Sicherungsdatei des Protokollfragments.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.DatabaseRestorePlanner.TailLogWithNoRecovery">
+      <summary>Ruft ab oder legt fest, ob der Planer zur Datenbankwiederherstellung das Protokoll ohne Wiederherstellung abschneidet.</summary>
+      <returns>True, wenn der Planer zur Datenbankwiederherstellung das Protokoll ohne Wiederherstellung abschneidet, andernfalls false.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.DataTransferBase">
+      <summary>Stellt die Datenübertragungsbasis dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DataTransferBase.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.DataTransferBase" />-Klasse unter Verwendung der Standardwerte.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.DataTransferBase.#ctor(Microsoft.SqlServer.Management.Smo.Database)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.DataTransferBase" />-Klasse mit der angegebenen Datenbank.</summary>
+      <param name="database">Die Datenbank.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.InvalidRestorePlanException">
+      <summary>Die Ausnahme, die beim Versuch ausgelöst wird, einen ungültigen Wiederherstellungsplan auszuführen oder zu überprüfen.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs">
+      <summary>Stellt die nächsten Wiederherstellungsereignisargumente dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs.#ctor(System.String,System.String,System.String,System.Int32)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs" />-Klasse.</summary>
+      <param name="backupSetName">Name des Sicherungssatzes.</param>
+      <param name="backupSetDescription">Die Beschreibung des Sicherungssatzes.</param>
+      <param name="deviceName">Der Name des Geräts.</param>
+      <param name="count">Die Anzahl.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs.BackupSetDescription">
+      <summary>Ruft die Beschreibung des Sicherungssatzes ab oder legt sie fest.</summary>
+      <returns>Die Beschreibung des Sicherungssatzes.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs.BackupSetName">
+      <summary>Ruft den Namen des Sicherungssatzes ab oder legt ihn fest.</summary>
+      <returns>Der Name des Sicherungssatzes.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs.Continue">
+      <summary>Ruft einen Wert ab, der angibt, ob der nächste Wiederherstellungsvorgang fortgesetzt werden soll, oder legt ihn fest.</summary>
+      <returns>True, wenn er fortgesetzt wird; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs.Count">
+      <summary>Ruft die Anzahl des nächsten Wiederherstellungsereignisses ab oder legt sie fest.</summary>
+      <returns>Die Anzahl des nächsten Wiederherstellungsereignisses.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.NextRestoreEventArgs.DevicesName">
+      <summary>Ruft den Namen des Sicherungsmediums ab oder legt ihn fest.</summary>
+      <returns>Der Name des Sicherungsmediums.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.NextRestoreEventHandler">
+      <summary>Behandelt die NextRestoreEvent-Klasse.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.PageRestorePlanner">
+      <summary>Stellt den Planer zur Seitenwiederherstellung dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.PageRestorePlanner.#ctor(Microsoft.SqlServer.Management.Smo.Database)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.PageRestorePlanner" />-Klasse mit der angegebenen Datenbank.</summary>
+      <param name="database">Die Datenbank.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.PageRestorePlanner.#ctor(Microsoft.SqlServer.Management.Smo.Database,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.PageRestorePlanner" />-Klasse mit der angegebenen Datenbank und Sicherungsdatei des Protokollfragments.</summary>
+      <param name="database">Die Datenbank.</param>
+      <param name="tailLogBackupFileName">Der Name der Sicherungsdatei des Protokollfragments.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.PageRestorePlanner.CreateRestorePlan">
+      <summary>Erstellt den Wiederherstellungsplan.</summary>
+      <returns>Der erstellte Wiederherstellungsplan.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.PageRestorePlanner.Database">
+      <summary>Ruft die Datenbank ab oder legt sie fest.</summary>
+      <returns>Die Datenbank.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.PageRestorePlanner.SuspectPages">
+      <summary>Ruft die fehlerverdächtigen Seiten ab oder legt sie fest.</summary>
+      <returns>Die fehlerverdächtige Seite.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.PageRestorePlanner.TailLogBackupFile">
+      <summary>Ruft die Sicherungsdatei des Protokollfragments ab oder legt sie fest..</summary>
+      <returns>Die Sicherungsdatei des Protokollfragments.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.PercentCompleteEventArgs">
+      <summary>Stellt die Argumente dar, die durch das Ereignis übergeben werden, das bei Erreichen des Fertigstellungsprozentsatzes ausgelöst wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.PercentCompleteEventArgs.Message">
+      <summary>Ruft die Meldung für <see cref="T:Microsoft.SqlServer.Management.Smo.PercentCompleteEventArgs" /> ab.</summary>
+      <returns>Die Meldung für <see cref="T:Microsoft.SqlServer.Management.Smo.PercentCompleteEventArgs" />.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.PercentCompleteEventArgs.Percent">
+      <summary>Ruft bei Verwendung ganzzahliger Produkte den Prozentwert ab und kennzeichnet den Punkt, an dem der Status gemeldet werden soll.</summary>
+      <returns>Der Prozentwert. </returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.PercentCompleteEventHandler">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.PercentCompleteEventHandler" />-Klasse stellt den Ereignishandler dar, der zur Behandlung von Ereignissen für den Fertigstellungsprozentsatz verwendet wird.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="e">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.PercentComplete" />http://msdn.microsoft.com/library/de-de/cpref/html/frlrfsystemeventargsclasstopic.asp-EventArgs-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RelocateFile">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.RelocateFile" />-Objekt ist ein programmgesteuertes Tool zum Verschieben von Dateien.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RelocateFile.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.RelocateFile" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RelocateFile.#ctor(System.String,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.RelocateFile" />-Klasse. </summary>
+      <param name="logicalFileName">Ein <see cref="T:System.String" />-Wert, der den logischen Dateinamen angibt.</param>
+      <param name="physicalFileName">Ein <see cref="T:System.String" />-Wert, der den physischen Dateinamen angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RelocateFile.LogicalFileName">
+      <summary>Ruft den logischen Dateinamen für die angegebene Datei ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den logischen Dateinamen für die angegebene Datei angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RelocateFile.PhysicalFileName">
+      <summary>Ruft den physischen Dateinamen für die angegebene Datei ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den physischen Dateinamen für die angegebene Datei angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Restore">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.Restore" />-Objekt ermöglicht programmgesteuerten Zugriff auf Wiederherstellungsvorgänge.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.Restore" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.#ctor(System.String,Microsoft.SqlServer.Management.Smo.BackupSet)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.Restore" />-Klasse mit dem angegebenen Zieldatenbanknamen und Sicherungssatz.</summary>
+      <param name="DestinationDatabaseName">Der Name der wiederherzustellenden Datenbank.</param>
+      <param name="backupSet">Der Sicherungssatz.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.Action">
+      <summary>Ruft den auszuführenden Wiederherstellungstyp ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RestoreActionType" />-Objekt, das den auszuführenden Wiederherstellungstyp darstellt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.ClearSuspectPageTable(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Löscht Einträge in der suspect_page-Tabelle.</summary>
+      <param name="srv">Die SQL Server-Instanz, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.ClearSuspectPageTableAfterRestore">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der bestimmt, ob Einträge in der suspect_page-Tabelle nach dem Wiederherstellungsvorgang gelöscht werden, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die suspect_page-Tabelle gelöscht wird.True gibt an, dass die suspect_page-Tabelle nach dem Wiederherstellungsvorgang gelöscht wird.Andernfalls der Standardwert False.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.DatabasePages">
+      <summary>Ruft die Liste der Wiederherstellungsseiten ab.</summary>
+      <returns>Die Liste der Wiederherstellungsseiten.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.FileNumber">
+      <summary>Ruft die Indexnummer ab, mit der der Zielsicherungssatz auf dem Sicherungsmedium identifiziert wird, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Indexnummer für den Sicherungssatz angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.KeepReplication">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob während eines Wiederherstellungsvorgangs eine Replikationskonfiguration beibehalten werden soll, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Replikationskonfiguration beibehalten wird.True gibt an, dass die Replikationskonfiguration beibehalten wird.Der Standardwert False gibt an, dass die Replikationskonfiguration vom Wiederherstellungsvorgang ignoriert wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.Offset">
+      <summary>Ruft das Array der wiederherzustellenden Seitenadressen ab oder legt es fest.</summary>
+      <returns>Ein <see cref="T:System.Int64" />-Arraywert, der die Seitenadressen der wiederherzustellenden Seiten angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.Partial">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob eine teilweise oder vollständige Wiederherstellung ausgeführt wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob dies eine vollständige oder teilweise Wiederherstellung ist.True gibt an, dass der Wiederherstellungsvorgang eine teilweise Wiederherstellung ist.Andernfalls der Standardwert False.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.ReadBackupHeader(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Liest den Sicherungsheader und gibt Informationen zum Medieninhalt zurück.</summary>
+      <returns>Ein <see cref="T:System.Data.DataTable" />-Objekt, das Informationen zu den Medieninhalten angibt.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die Zugriff auf die Zielmedien bietet.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.ReadFileList(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Gibt die Liste der Datenbankdateien auf den Zielmedien zurück.</summary>
+      <returns>Ein <see cref="T:System.Data.DataTable" />-Objekt, das die Liste der Datenbankdateien angibt.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die Zugriff auf die Zielmedien bietet.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.ReadMediaHeader(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Liest den Medienheader und gibt die Medienheaderwerte zurück. </summary>
+      <returns>Ein <see cref="T:System.Data.DataTable" />-Objekt, das die Medienheaderdaten angibt.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die Zugriff auf die Zielmedien bietet.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.ReadSuspectPageTable(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Gibt die suspect_page-Tabelle für die SQL Server-Zielinstanz zurück. </summary>
+      <returns>Ein <see cref="T:System.Data.DataTable" />-Objekt, das die Daten aus der suspect_page-Tabelle angibt.</returns>
+      <param name="server">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist. </param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.RelocateFiles">
+      <summary>Ruft das Array logischer Datenbank-Dateinamen und physischer Betriebssystem-Dateinamen ab, das beim Wiederherstellen einer Datenbank an einem neuen physischen Ort zur Umleitung des Datenbankspeichers verwendet wird.</summary>
+      <returns>Ein <see cref="T:System.ArrayList" />-Objekt, das die Dateinamen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.ReplaceDatabase">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob vom Wiederherstellungsvorgang ein neues Image der wiederhergestellten Datenbank erstellt wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob ein neues Image der wiederhergestellten Datenbank erstellt wird.True gibt an, dass ein neues Image der Datenbank erstellt wird.Das Image wird unabhängig vom Bestehen einer vorhandenen Datenbank mit dem gleichen Namen erstellt.Der Standardwert False gibt an, dass kein neues Image der Datenbank vom Wiederherstellungsvorgang erstellt wird.Die Zieldatenbank des Wiederherstellungsvorgangs muss auf einer SQL Server-Instanz vorhanden sein.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.RestrictedUser">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob der Zugriff auf die wiederhergestellte Datenbank auf Mitglieder der festen Datenbankrolle db_owner und der festen Serverrollen dbcreator und sysadmin eingeschränkt wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zugriff auf die wiederhergestellte Datenbank eingeschränkt wird.True gibt an, dass der Zugriff auf die wiederhergestellte Datenbank auf die feste Datenbankrolle db_owner und die festen Serverrollen dbcreator und sysadmin beschränkt ist.Andernfalls der Standardwert False.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.Script(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Generiert ein Transact-SQL-Skript, das zum Neuerstellen des Wiederherstellungsvorgangs verwendet werden kann. </summary>
+      <returns>Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der eine Liste von Transact-SQL-Anweisungen im Skript enthält. </returns>
+      <param name="server">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlRestore(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Führt einen Wiederherstellungsvorgang auf dem angegebenen Server aus.</summary>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlRestoreAsync(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Führt einen Wiederherstellungsvorgang asynchron aus.</summary>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerify(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Überprüft die Medien für die SQL Server-Instanz, die durch das angegebene <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt dargestellt wird.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerify(Microsoft.SqlServer.Management.Smo.Server,System.Boolean)">
+      <summary>Überprüft die Medien in der SQL Server-Instanz, die durch das angegebene <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt dargestellt wird, und lädt Sicherungsverlaufsinformationen in die Verlaufstabellen.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="loadHistory">Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verlaufstabellen mit entsprechenden Sicherungsinformationen aufgefüllt werden.True gibt an, dass die Verlaufstabellen aufgefüllt werden.Andernfalls ist der Wert False.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerify(Microsoft.SqlServer.Management.Smo.Server,System.Boolean,System.String@)">
+      <summary>Überprüft die Medien für die SQL Server-Instanz, die durch das angegebene <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt dargestellt wird, lädt Sicherungsverlaufsinformationen in die Verlaufstabellen und gibt eine Fehlermeldung zurück.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="loadHistory">Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verlaufstabellen mit entsprechenden Sicherungsinformationen aufgefüllt werden. True gibt an, dass die Verlaufstabellen aufgefüllt werden.Andernfalls ist der Wert False.</param>
+      <param name="errorMessage">Ein <see cref="T:System.String" />-Wert, der die Fehlermeldung enthält, nachdem die Methode ausgeführt wurde.Dies ist ein Ausgabeparameter.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerify(Microsoft.SqlServer.Management.Smo.Server,System.String@)">
+      <summary>Überprüft die Medien für die SQL Server-Instanz, die durch das angegebene <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt dargestellt wird, und gibt eine Fehlermeldung zurück.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="errorMessage">Ein <see cref="T:System.String" />-Wert, der die Fehlermeldung enthält, nachdem die Methode ausgeführt wurde.Dies ist ein Ausgabeparameter.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerifyAsync(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Überprüft die Medien für die SQL Server-Instanz, die asynchron durch das angegebene <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt dargestellt wird. </summary>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerifyAsync(Microsoft.SqlServer.Management.Smo.Server,System.Boolean)">
+      <summary>Überprüft die Medien für die SQL Server-Instanz, die asynchron durch das angegebene <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt dargestellt wird, und lädt Sicherungsverlaufsinformationen in die Verlaufstabellen.</summary>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="loadHistory">Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verlaufstabellen mit entsprechenden Sicherungsinformationen aufgefüllt werden.true gibt an, dass die Verlaufstabellen aufgefüllt werden.Andernfalls false.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerifyLatest(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Überprüft die letzte Sicherung, stellt sie jedoch nicht wieder her, und überprüft die Vollständigkeit des Sicherungssatzes sowie die Lesbarkeit der gesamten Sicherung.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerifyLatest(Microsoft.SqlServer.Management.Smo.Server,Microsoft.SqlServer.Management.Smo.SqlVerifyAction)">
+      <summary>Überprüft die letzte Sicherung mit der angegebenen Aktion sowie die Vollständigkeit des Sicherungssatzes und die Lesbarkeit der gesamten Sicherung.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="sqlVerifyAction">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.SqlVerifyAction" />-Wert, der den zu überprüfenden Sicherungstyp angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerifyLatest(Microsoft.SqlServer.Management.Smo.Server,Microsoft.SqlServer.Management.Smo.SqlVerifyAction,System.String@)">
+      <summary>Überprüft die letzte Sicherung mit der angegebenen Aktion sowie die Vollständigkeit des Sicherungssatzes und die Lesbarkeit der gesamten Sicherung und gibt eine Fehlermeldung zurück.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="sqlVerifyAction">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.SqlVerifyAction" />-Wert, der den zu überprüfenden Sicherungstyp angibt.</param>
+      <param name="errorMessage">Ein <see cref="T:System.String" />-Wert, der die Fehlermeldung enthält, nachdem die Methode ausgeführt wurde.Dies ist ein Ausgabeparameter.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Restore.SqlVerifyLatest(Microsoft.SqlServer.Management.Smo.Server,System.String@)">
+      <summary>Überprüft die letzte Sicherung, stellt sie jedoch nicht wieder her, und überprüft die Vollständigkeit des Sicherungssatzes sowie die Lesbarkeit der gesamten Sicherung und gibt eine Fehlermeldung zurück.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zielsicherungssatz lesbar und vollständig ist.True gibt an, dass der Sicherungssatz erfolgreich überprüft wurde.Andernfalls ist der Wert False.</returns>
+      <param name="srv">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Server" />-Objekt, das die SQL Server-Instanz darstellt, die das Ziel des Wiederherstellungsvorgangs ist.</param>
+      <param name="errorMessage">Ein <see cref="T:System.String" />-Wert, der die Fehlermeldung enthält, nachdem die Methode ausgeführt wurde.Dies ist ein Ausgabeparameter.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.StandbyFile">
+      <summary>Ruft den Namen einer Rückgängigdatei ab, die als Teil der Imagingstrategie für eine SQL Server-Instanz verwendet wird, oder legt ihn fest.</summary>
+      <returns>Eine <see cref="T:System.String" />, die den Namen der Rückgängigdatei angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.StopAtMarkAfterDate">
+      <summary>Ruft das Datum ab, das in Verbindung mit dem von <see cref="P:Microsoft.SqlServer.Management.Smo.Restore.StopAtMarkName" /> angegebenen Markierungsnamen verwendet wird, um den Endpunkt des Wiederherstellungsvorgangs zu bestimmen, oder legt es fest.</summary>
+      <returns>Eine <see cref="T:System.String" />, die das Datum angibt, an dem der Vorgang beendet werden soll.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.StopAtMarkName">
+      <summary>Ruft den Markierungsnamen ab, der in Verbindung mit dem von <see cref="P:Microsoft.SqlServer.Management.Smo.Restore.StopAtMarkAfterDate" /> angegebenen Datum verwendet wird, um den Endpunkt des Wiederherstellungsvorgangs zu bestimmen, oder legt ihn fest.</summary>
+      <returns>Eine <see cref="T:System.String" />, die den Markierungsnamen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.StopBeforeMarkAfterDate">
+      <summary>Ruft das Datum ab, das in Verbindung mit dem von <see cref="P:Microsoft.SqlServer.Management.Smo.Restore.StopBeforeMarkName" /> angegebenen Markierungsnamen verwendet wird, um den Endpunkt des Wiederherstellungsvorgangs zu bestimmen, oder legt es fest.</summary>
+      <returns>Eine <see cref="T:System.String" />, die das Datum angibt, vor dem der Vorgang beendet werden soll.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.StopBeforeMarkName">
+      <summary>Ruft den Markierungsnamen ab, der in Verbindung mit dem von <see cref="P:Microsoft.SqlServer.Management.Smo.Restore.StopBeforeMarkAfterDate" /> angegebenen Datum verwendet wird, um den Endpunkt des Wiederherstellungsvorgangs zu bestimmen, oder legt ihn fest.</summary>
+      <returns>Eine Zeichenfolge, die den Markierungsnamen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Restore.ToPointInTime">
+      <summary>Ruft den Endpunkt für die Wiederherstellung des Datenbankprotokolls ab oder legt ihn fest.</summary>
+      <returns>Eine Zeichenfolge, die die Datums- und Uhrzeitwerte angibt, die den Endpunkt identifizieren.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.Restore.VerifyComplete">
+      <summary>Gibt <see cref="T:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventHandler" /> an.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RestoreActionType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.RestoreActionType" />-Enumeration enthält Werte, mit denen angegeben wird, welche Aktion während eines Datenwiederherstellungsvorgangs erforderlich ist.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RestoreActionType.Database">
+      <summary>Wiederherstellen der Datenbank.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RestoreActionType.Files">
+      <summary>Wiederherstellen einer oder mehrerer Datendateien.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RestoreActionType.Log">
+      <summary>Wiederherstellen des Transaktionsprotokolls.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RestoreActionType.OnlineFiles">
+      <summary>Wiederherstellen einer oder mehrerer Datendateien, während die Datenbank anderen Benutzern weiterhin zur Verfügung steht.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RestoreActionType.OnlinePage">
+      <summary>Wiederherstellen einer Datenseite im Onlinemodus, während die Datenbank anderen Benutzern weiterhin zur Verfügung steht.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RestoreOptions">
+      <summary>Stellt die Wiederherstellungsoptionen dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestoreOptions.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.RestoreOptions" />-Klasse.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.Blocksize">
+      <summary>Gibt die physische Blockgröße in Bytes an.</summary>
+      <returns>Die physische Blockgröße in Bytes.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.BufferCount">
+      <summary>Gibt die Gesamtanzahl von E/A-Puffern an, die für den Wiederherstellungsvorgang verwendet werden sollen.</summary>
+      <returns>Die Gesamtanzahl von E/A-Puffern, die für den Wiederherstellungsvorgang verwendet werden sollen.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.ClearSuspectPageTableAfterRestore">
+      <summary>Ruft ab oder legt fest, ob Einträge in der suspect_page-Tabelle nach der Wiederherstellung gelöscht werden.</summary>
+      <returns>True, wenn Einträge in der suspect_page-Tabelle nach der Wiederherstellung gelöscht werden; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.ContinueAfterError">
+      <summary>Ruft ab oder legt fest, ob der Wiederherstellungsvorgang nach einem Fehler fortgesetzt werden soll.</summary>
+      <returns>True, wenn der Wiederherstellungsvorgang nach einem Fehler fortgesetzt wird; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.KeepReplication">
+      <summary>Ruft ab oder legt fest, ob das Entfernen von Replikationseinstellungen verhindert werden soll, wenn eine Datenbank- oder Protokollsicherung auf einem betriebsbereiten Standbyserver wiederhergestellt und anschließend die Datenbank wiederhergestellt wird.</summary>
+      <returns>True,wenn das Entfernen von Replikationseinstellungen verhindert wird; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.MaxTransferSize">
+      <summary>Ruft die größte zu verwendende Übertragungseinheit zwischen dem Sicherungsmedium und SQL Server in Bytes ab oder legt sie fest.</summary>
+      <returns>Die maximale Übertragungsgröße.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.PercentCompleteNotification">
+      <summary>Ruft das Prozentintervall für Aufrufe des PercentCompleteEventHandler-Ereignishandlers für einzelne Wiederherstellungsvorgänge ab oder legt es fest.</summary>
+      <returns>Die Benachrichtigung über den Fertigstellungsprozentsatz.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.RecoveryState">
+      <summary>Ruft den Wiederherstellungsstatus ab oder legt ihn fest.</summary>
+      <returns>Die Datenbankwiederherstellungsoption.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.ReplaceDatabase">
+      <summary>Ruft ab, ob SQL Server die angegebene Datenbank und die zugehörigen Dateien erstellen soll, auch wenn bereits eine andere Datenbank mit demselben Namen vorhanden ist, oder legt dies fest.</summary>
+      <returns>True, wenn SQL Server die angegebene Datenbank erstellen soll; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.SetRestrictedUser">
+      <summary>Ruft ab, ob der Zugriff für die neu wiederhergestellte Datenbank auf Mitglieder der Rollen db_owner, dbcreator oder sysadmin eingeschränkt werden soll, oder legt dies fest.</summary>
+      <returns>True, wenn der Zugriff für die neu wiederhergestellte Datenbank auf Mitglieder der Rollen db_owner, dbcreator oder sysadmin eingeschränkt wird; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestoreOptions.StandByFile">
+      <summary>Macht Transaktionen rückgängig, für die kein Commit ausgeführt wurde, speichert jedoch Rückgängig-Aktionen in einer Standbydatei, sodass die Auswirkungen der Wiederherstellung rückgängig gemacht werden können.</summary>
+      <returns>Die Wiederherstellung mit Standbydatei.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RestorePlan">
+      <summary>Stellt eine Sequenz von Datenbankwiederherstellungsvorgängen dar, die eine Datenbank zu einem Zeitpunkt in einen bestimmten Status wiederherstellen.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.#ctor(Microsoft.SqlServer.Management.Smo.Database)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.RestorePlan" />-Klasse mit der angegebenen Datenbank.</summary>
+      <param name="database">Die Datenbank.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.#ctor(Microsoft.SqlServer.Management.Smo.Server)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.RestorePlan" />-Klasse mit dem angegebenen Server.</summary>
+      <param name="server">Der Server.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.#ctor(Microsoft.SqlServer.Management.Smo.Server,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.RestorePlan" />-Klasse mit dem angegebenen Server und Datenbanknamen.</summary>
+      <param name="server">Der Server.</param>
+      <param name="databaseName">Der Name der Datenbank.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.AddRestoreOperation(Microsoft.SqlServer.Management.Smo.BackupSet)">
+      <summary>Fügt den Wiederherstellungsvorgang mit dem angegebenen Sicherungssatz hinzu, der wiederhergestellt werden soll.</summary>
+      <param name="backupSet">Der Sicherungssatz, der wiederhergestellt werden soll.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.AddRestoreOperation(System.Collections.Generic.List{Microsoft.SqlServer.Management.Smo.BackupSet})">
+      <summary>Fügt die Wiederherstellungsvorgänge mit angegebenen Sicherungssätzen hinzu.</summary>
+      <param name="backupSets">Die Sicherungssätze.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.AsyncStatus">
+      <summary>Ruft den Status des letzten asynchronen Vorgangs einschließlich möglicher Fehler ab.</summary>
+      <returns>Der asynchrone Status.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.CloseExistingConnections">
+      <summary>Ruft einen Wert ab, der angibt, ob bestehende Verbindungen geschlossen werden sollen, oder legt ihn fest.</summary>
+      <returns>True, wenn bestehende Verbindungen geschlossen werden; andernfalls false.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.RestorePlan.Complete">
+      <summary>Tritt auf, wenn der Wiederherstellungsplan abgeschlossen ist.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.DatabaseName">
+      <summary>Ruft den Namen der Datenbank ab oder legt ihn fest.</summary>
+      <returns>Der Name der Datenbank.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.Execute">
+      <summary>Überprüft den Wiederherstellungsplan und führt ihn aus.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.ExecuteAsync">
+      <summary>Überprüft den Wiederherstellungsplan und führt ihn asynchron aus.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.RestorePlan.Information">
+      <summary>Tritt auf, wenn der Server Informationen sendet.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.RestorePlan.NextMedia">
+      <summary>Tritt auf, wenn die nächsten Medien geladen werden müssen.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.RestorePlan.NextRestore">
+      <summary>Tritt auf, wenn die nächste Wiederherstellung auftritt.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.RestorePlan.PercentComplete">
+      <summary>Tritt auf, wenn der Server Informationen zum Prozentsatz der Fertigstellung sendet.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.RestoreAction">
+      <summary>Ruft den Typ der Wiederherstellungsaktion ab und legt ihn fest: Datenbank, Datei, Protokoll, Seite.</summary>
+      <returns>Die Wiederherstellungsaktion.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.RestoreOperations">
+      <summary>Ruft die Wiederherstellungsvorgänge ab oder legt sie fest.</summary>
+      <returns>Die Wiederherstellungsvorgänge.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.Script">
+      <summary>Überprüft den Wiederherstellungsplan und erstellt ein Skript für den Vorgang.</summary>
+      <returns>Die Zeichenfolgenauflistung des T-SQL-Skripts für den Vorgang.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.Server">
+      <summary>Ruft den Server ab, auf dem der Wiederherstellungsplan ausgeführt wird, oder legt ihn fest.</summary>
+      <returns>Der Server.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.SetRestoreOptions(Microsoft.SqlServer.Management.Smo.RestoreOptions)">
+      <summary>Legt die Wiederherstellungsoptionen fest.</summary>
+      <param name="restoreOptions">Die Wiederherstellungsoptionen.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RestorePlan.TailLogBackupOperation">
+      <summary>Ruft den Sicherungsvorgang für das Protokollfragment ab oder legt ihn fest..</summary>
+      <returns>Der Sicherungsvorgang für das Protokollfragment.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RestorePlan.Verify(System.Boolean)">
+      <summary>Überprüft den Wiederherstellungsplan.</summary>
+      <param name="checkBackupMediaIntegrity">"True", wenn die Integrität der Sicherungsmedien überprüft wird; andernfalls "false".</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.SqlServerRegistrations">
+      <summary>Stellt registrierte Instanzen von SQL Server dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SqlServerRegistrations.#ctor">
+      <summary>Stellt registrierte Instanzen von SQL Server dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SqlServerRegistrations.EnumRegisteredServers">
+      <summary>Gibt ein Array von Servern zurück.</summary>
+      <returns>Ein Array von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekten.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SqlServerRegistrations.Refresh">
+      <summary>Aktualisiert die Auflistung registrierter Server.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.SqlServerRegistrations.RegisteredServers">
+      <summary>Ruft eine Auflistung registrierter Server ab.</summary>
+      <returns>Die Auflistung registrierter Server.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.SqlServerRegistrations.ServerGroups">
+      <summary>Ruft eine Gruppe registrierter Server ab.</summary>
+      <returns>Eine Gruppe registrierter Server.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.SqlVerifyAction">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.SqlVerifyAction" />-Enumeration enthält Werte, mit denen der Typ der Sicherungsüberprüfung angegeben wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.SqlVerifyAction.VerifyDatabase">
+      <summary>Wert = 0.Überprüft die letzte Datenbanksicherung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.SqlVerifyAction.VerifyFile">
+      <summary>Wert = 2.Überprüft die letzte Datei- oder Dateigruppensicherung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.SqlVerifyAction.VerifyIncremental">
+      <summary>Wert = 3.Überprüft die letzte inkrementelle Sicherung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.SqlVerifyAction.VerifyLog">
+      <summary>Wert = 1.Überprüft die letzte Protokollsicherung.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.SuspectPage">
+      <summary>Stellt die zur Seitenwiederherstellung verwendete Datenbankseite dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SuspectPage.#ctor(System.Int32,System.Int64)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.SuspectPage" />-Klasse mit dem angegebenen Dateibezeichner und Seitenbezeichner.</summary>
+      <param name="fileID">Der Dateibezeichner.</param>
+      <param name="pageID">Der Seitenbezeichner.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SuspectPage.CompareTo(Microsoft.SqlServer.Management.Smo.SuspectPage)">
+      <summary>Vergleicht mit einer anderen fehlerverdächtigen Seite.</summary>
+      <returns>Der Wert des durch die CompareTo-Methode angegebenen Objekts.</returns>
+      <param name="other">Der andere fehlerverdächtige Seite.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SuspectPage.Equals(System.Object)">
+      <summary>Bestimmt, ob das angegebene Objekt der Instanz entspricht.</summary>
+      <returns>true, wenn das angegebene Objekt und die Instanz gleich sind; andernfalls false.</returns>
+      <param name="obj">Das Objekt, das mit der Instanz verglichen werden soll.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.SuspectPage.FileID">
+      <summary>Ruft den Dateibezeichner ab oder legt ihn fest.</summary>
+      <returns>Der Dateibezeichner.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SuspectPage.GetHashCode">
+      <summary>Gibt einen Hash für die Instanz zurück.</summary>
+      <returns>Ein Hash für die Instanz, der in Hashalgorithmen und Datenstrukturen (z. B. Hashtabellen) verwendet werden kann.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.SuspectPage.PageID">
+      <summary>Ruft den Seitenbezeichner ab oder legt ihn fest.</summary>
+      <returns>Der Seitenbezeichner.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.SuspectPage.ToString">
+      <summary>Gibt eine Zeichenfolge zurück, die die Instanz darstellt.</summary>
+      <returns>Eine Zeichenfolge, die die Instanz darstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.Transfer">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.Transfer" />-Objekt ist ein Toolobjekt, das das Kopieren von Schemas und Daten in andere SQL Server-Instanzen programmgesteuert überwacht. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.Transfer" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.#ctor(Microsoft.SqlServer.Management.Smo.Database)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.Transfer" />-Klasse, die die angegebene Datenbank als Quelle des Übertragungsvorgangs verwendet.</summary>
+      <param name="database">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Database" />-Objekt, das die Quelldatenbank des Übertragungsvorgangs angibt. </param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Transfer.BatchSize">
+      <summary>Ruft die Batchgrößeneigenschaft ab oder legt diese fest.</summary>
+      <returns>Die Batchgrößeneigenschaft.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Transfer.BulkCopyTimeout">
+      <summary>Ruft den Vorgang ab, der abgeschlossen werden soll, bevor ein Timeout eintritt, oder legt diesen fest.</summary>
+      <returns>Der Vorgang, der abgeschlossen werden soll, bevor ein Timeout eintritt.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.Transfer.DataTransferEvent">
+      <summary>Meldet, dass die Übertragung von Daten abgeschlossen wurde.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.GetTransferProvider">
+      <summary>Nur zur internen Verwendung.Löst beim Aufrufen durch einen Aufrufer eine System.NotSupportedException aus.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.IDataTransferProvider" />-Objekt, das die Anbieterschnittstelle für die Datenübertragung angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.Microsoft#SqlServer#Management#Common#ITransferMetadataProvider#GetOptions">
+      <summary>Die ITransferMetadataProvider-Klasse stellt eine Schnittstelle dar, durch die der Prozess zur Übertragung von Metadaten für die Verbindung, auf die verwiesen wird, implementiert wird.</summary>
+      <returns>
+        <see cref="T:System.Collections.SortedList" /> stellt eine Auflistung von Schlüssel-/Wert-Paaren dar, die von den Schlüsseln sortiert werden und auf die über die Schlüssel und den Index zugegriffen werden kann.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.Microsoft#SqlServer#Management#Common#ITransferMetadataProvider#SaveMetadata">
+      <summary>Speichert Metadaten, wenn Datenbanken zwischen Instanzen übertragen werden.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.ProcessDependencyChain(Microsoft.SqlServer.Management.Smo.Server,Microsoft.SqlServer.Management.Sdk.Sfc.DependencyChainCollection,System.Boolean,System.Boolean)">
+      <summary>Gibt ein URN-Array mit Optionen zurück.</summary>
+      <returns>Ein URN-Array.</returns>
+      <param name="server">Der Server. </param>
+      <param name="dependencyChain">Die Abhängigkeitskette.</param>
+      <param name="isDataOnly">True, wenn nur Daten, andernfalls false.</param>
+      <param name="isCreateOrder">True, wenn Erstellungsreihenfolge, andernfalls false.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.Transfer.TemporaryPackageDirectory">
+      <summary>Nur zur internen Verwendung.Der Wert dieser Eigenschaft wird ignoriert, wenn er von einem Aufrufer festgelegt wurde.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Dateispeicherort temporärer Pakete angibt, die während des Übertragungsvorgangs erstellt werden.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.Transfer.TransferData">
+      <summary>Überträgt Daten, so wie im <see cref="T:Microsoft.SqlServer.Management.Smo.Transfer" />-Objekt angegeben.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.TransferBase">
+      <summary>Stellt die Basisklasse für die Übertragung dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.TransferBase.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.TransferBase" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.TransferBase.#ctor(Microsoft.SqlServer.Management.Smo.Database)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Smo.TransferBase" />-Klasse, die die angegebene Datenbank als Quelle des Übertragungsvorgangs verwendet.</summary>
+      <param name="database">Die Datenbank, die die Quelle des Übertragungsvorgangs ist.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllDatabaseTriggers">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Datenbanktrigger beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Datenbanktrigger aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllDefaults">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Standardwerte beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Standardwerte aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllFullTextCatalogs">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Volltextkataloge beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Volltextkataloge aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllFullTextStopLists">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Volltextstopplisten beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Partitionsfunktionen aus den Volltextstopplisten in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllLogins">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Anmeldungen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Anmeldungen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllObjects">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Objekte beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Objekte aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllPartitionFunctions">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Partitionsfunktionen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Partitionsfunktionen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllPartitionSchemes">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Partitionsschemas beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Partitionsschemas aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllPlanGuides">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Planhinweislisten beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Planhinweislisten aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllRoles">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Rollen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Rollen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllRules">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Regeln beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Regeln aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllSchemas">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Schemas beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Schemas aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllSearchPropertyLists">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Sucheigenschaftenlisten beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Sucheigenschaftenlisten aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllSequences">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Sequenzen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Sequenzen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllSqlAssemblies">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Assemblys beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Assemblys aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllStoredProcedures">
+      <summary>Ruft einen Wert ab, der angibt, ob alle gespeicherten SQL Server-Prozeduren beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle gespeicherten SQL Server-Prozeduren aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllSynonyms">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Synonyme beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Synonyme aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllTables">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Tabellen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Tabellen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllUserDefinedAggregates">
+      <summary>Ruft einen Wert ab, der angibt, ob alle benutzerdefinierten SQL Server-Aggregate beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle benutzerdefinierten SQL Server-Aggregate aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllUserDefinedDataTypes">
+      <summary>Ruft einen Wert ab, der angibt, ob alle benutzerdefinierten SQL Server-Datentypen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle benutzerdefinierten SQL Server-Datentypen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllUserDefinedFunctions">
+      <summary>Ruft einen Wert ab, der angibt, ob alle benutzerdefinierten SQL Server-Funktionen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle benutzerdefinierten SQL Server-Funktionen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllUserDefinedTableTypes">
+      <summary>Ruft einen Wert ab, der angibt, ob alle benutzerdefinierten SQL Server-Tabellentypen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle benutzerdefinierten SQL Server-Tabellentypen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllUserDefinedTypes">
+      <summary>Ruft einen Wert ab, der angibt, ob alle benutzerdefinierten SQL Server-Typen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle benutzerdefinierten SQL Server-Typen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllUsers">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Datenbankbenutzer beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Datenbankbenutzer aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllViews">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-Sichten beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-Sichten aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyAllXmlSchemaCollections">
+      <summary>Ruft einen Wert ab, der angibt, ob alle SQL Server-XML-Schemaauflistungen beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle SQL Server-XML-Schemaauflistungen aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopyData">
+      <summary>Ruft einen Wert ab, der angibt, ob alle Daten beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden, oder legt ihn fest.</summary>
+      <returns>true, wenn alle Daten beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CopySchema">
+      <summary>Ruft einen Wert ab, der angibt, ob das Schema beim Übertragungsvorgang aus der Quelldatenbank in die Zieldatenbank kopiert wird, oder legt ihn fest.</summary>
+      <returns>true, wenn das Schema aus der Quelldatenbank in die Zieldatenbank kopiert wird; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.CreateTargetDatabase">
+      <summary>Ruft einen Wert ab, der angibt, ob die Zieldatenbank beim Übertragungsvorgang erstellt wird, oder legt ihn fest.</summary>
+      <returns>true, wenn die Zieldatenbank beim Übertragungsvorgang erstellt wird; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.Database">
+      <summary>Ruft die Datenbank ab, aus der das Schema oder Daten auf den Zielspeicherort übertragen werden sollen, oder legt sie fest.</summary>
+      <returns>Die Datenbank, aus der das Schema oder Daten auf den Zielspeicherort übertragen werden sollen.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DatabaseFileMappings">
+      <summary>Ruft die Eigenschaften ab, die einem Flatfileziel auf der Grundlage eines Wörterbuchs zugeordnet werden, oder legt sie fest.</summary>
+      <returns>Die Eigenschaften, die einem Flatfileziel auf der Grundlage eines Wörterbuchs zugeordnet werden.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DestinationDatabase">
+      <summary>Ruft die Datenbank ab, die das Ziel des Übertragungsvorgangs ist, oder legt sie fest.</summary>
+      <returns>Die Datenbank, die das Ziel des Übertragungsvorgangs ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DestinationLogin">
+      <summary>Ruft den Anmeldenamen für die SQL Server-Instanz ab, der die Zieldatenbank angehört, oder legt ihn fest.</summary>
+      <returns>Der Anmeldename für die SQL Server-Instanz ab, der die Zieldatenbank angehört.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DestinationLoginSecure">
+      <summary>Ruft einen Wert ab, der angibt, ob die SQL Server-Instanz mit der Zieldatenbank für die Windows-Authentifizierung aktiviert ist, oder legt ihn fest.</summary>
+      <returns>true, wenn für die SQL Server-Zielinstanz die Windows-Authentifizierung erforderlich ist; false, wenn für die SQL Server-Zielinstanz die SQL Server-Authentifizierung erforderlich ist.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DestinationPassword">
+      <summary>Ruft das Anmeldekennwort für die SQL Server-Instanz ab, der die Zieldatenbank angehört, oder legt es fest.</summary>
+      <returns>Das Anmeldekennwort für die SQL Server-Instanz ab, der die Zieldatenbank angehört.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DestinationServer">
+      <summary>Ruft die SQL Server-Instanz ab, die Besitzer der Datenbank ist, die beim Übertragungsvorgang als Ziel verwendet wird, oder legt sie fest.</summary>
+      <returns>Die SQL Server-Instanz, die Besitzer der Datenbank ist, die beim Übertragungsvorgang als Ziel verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DestinationTranslateChar">
+      <summary>Ruft einen Wert ab, der angibt, ob die Codepage für Zeichen beim Übertragungsvorgang in der Zieldatenbank übersetzt wird, oder legt ihn fest.</summary>
+      <returns>true, wenn die Codepage für Zeichen beim Übertragungsvorgang in der Zieldatenbank übersetzt wird; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.TransferBase.DiscoveryProgress">
+      <summary>Markiert den Status des Ermittlungsprozesses.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.DropDestinationObjectsFirst">
+      <summary>Ruft einen Wert ab, der angibt, ob die Objekte in der Zieldatenbank vor dem Übertragungsvorgang gelöscht werden sollen, oder legt ihn fest.</summary>
+      <returns>true, wenn die Objekte in der Zieldatenbank vor dem Übertragungsvorgang gelöscht werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.TransferBase.EnumObjects">
+      <summary>Gibt eine Aufzählungsliste der URN-Werte (Uniform Resource Name) zurück, die die im Übertragungsvorgang enthaltenen Objekte darstellen.</summary>
+      <returns>Die URN-Werte, die die im Übertragungsvorgang enthaltenen Objekte darstellen.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.TransferBase.EnumScriptTransfer">
+      <summary>Erstellt ein Skript für einen Transact-SQL-Befehlsbatch zum Übertragen von Datenbankobjekten bzw. Datenbankobjekten und Daten auf eine andere Datenbankinstanz.</summary>
+      <returns>Eine Schnittstelle der IEnumerable-Zeichenfolgeliste, die das Skript enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.ObjectList">
+      <summary>Ruft die Objekte ab, die beim Übertragungsvorgang aus der Quelle in das Ziel kopiert werden sollen, oder legt sie fest.</summary>
+      <returns>Die Objekte, die beim Übertragungsvorgang kopiert werden sollen.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.Options">
+      <summary>Ruft die Optionen für den Übertragungsvorgang ab oder legt sie fest.</summary>
+      <returns>Die Optionen für den Übertragungsvorgang.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.PrefetchObjects">
+      <summary>Ruft einen Wert ab, der angibt, ob die Objekte vor dem Übertragungsvorgang vorab abgerufen werden sollen, oder legt ihn fest.</summary>
+      <returns>Ist true, wenn die Objekte vorab abgerufen werden; andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.PreserveDbo">
+      <summary>Ruft einen Wert ab, der angibt, ob die Datenbankbesitzer während des Übertragungsprozesses beibehalten werden, oder legt ihn fest.</summary>
+      <returns>true, wenn SQL Server-Datenbankbesitzer aus der Quelldatenbank in die Zieldatenbank kopiert werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.PreserveLogins">
+      <summary>Ruft einen Wert ab, der angibt, ob Anmeldungen beim Übertragungsvorgang beibehalten werden sollen, oder legt ihn fest.</summary>
+      <returns>true, wenn die Anmeldungen beibehalten werden; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.Scripter">
+      <summary>Ruft den Skripter für den Übertragungsvorgang ab.</summary>
+      <returns>Der Skripter für den Übertragungsvorgang.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.TransferBase.ScriptingError">
+      <summary>Meldet, dass während des Skriptprozesses ein Fehler aufgetreten ist.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Smo.TransferBase.ScriptingProgress">
+      <summary>Markiert den Status des Skriptprozesses.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.TransferBase.ScriptTransfer">
+      <summary>Erstellt ein Skript für einen Transact-SQL-Befehlsbatch zum Erstellen von Datenbankobjekten, die durch den Übertragungsvorgang übermittelt werden.</summary>
+      <returns>Das Transact-SQL-Skript für den Übertragungsvorgang.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.TransferBase.SetTargetServerInfo">
+      <summary>Legt die Version des Zielservers auf Grundlage der SQL Server-Version fest.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.SourceTranslateChar">
+      <summary>Ruft einen Wert ab, der angibt, ob die Codepage für Zeichen beim Übertragungsvorgang in der Quelldatenbank übersetzt wird, oder legt ihn fest.</summary>
+      <returns>true, wenn die Codepage für Zeichen beim Übertragungsvorgang in der Quelldatenbank übersetzt wird; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.TargetDatabaseFilePath">
+      <summary>Ruft den Pfad ab, in den die Datenbankdateien kopiert werden, oder legt ihn fest.</summary>
+      <returns>Der Pfad, in den die Datenbankdateien kopiert werden.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.TargetLogFilePath">
+      <summary>Ruft den Pfad ab, in den die Protokolldateien kopiert werden, oder legt ihn fest.</summary>
+      <returns>Der Pfad, in den die Protokolldateien kopiert werden.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.TransferBase.UseDestinationTransaction">
+      <summary>Ruft einen Wert ab, der angibt, ob die Zieltransaktion verwendet werden soll, oder legt ihn fest.</summary>
+      <returns>true, wenn die Zieltransaktion verwendet wird; andernfalls false.Der Standardwert ist false.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventArgs">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventArgs" />-Objekt ermöglicht den programmgesteuerten Zugriff auf die Argumente, mit denen Details zu dem Ereignis angegeben werden, das nach Abschluss einer Sicherungsüberprüfung auftritt. </summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventArgs.VerifySuccess">
+      <summary>Ruft die <see cref="T:System.Boolean" />-Eigenschaft ab, die angibt, ob der Überprüfungsvorgang erfolgreich war.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Überprüfungsvorgang erfolgreich war.Wenn der Wert True ist, war der Überprüfungsvorgang erfolgreich.Der Standardwert False gibt an, dass der Überprüfungsvorgang fehlgeschlagen ist.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventHandler">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventHandler" />-Klasse stellt den Ereignishandler dar, der Beendigungsereignisse behandelt.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.VerifyCompleteEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt stellt einen registrierten Server von SQL Server dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.#ctor">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.#ctor(Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection,System.String)">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts.</summary>
+      <param name="regServers">Das T: <see cref="Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Element, dem der neue registrierte Server hinzugefügt werden soll.</param>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des registrierten Servers angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.#ctor(Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup,System.String)">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts.</summary>
+      <param name="serverGroup">Das T: <see cref="Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Element, dem der neue registrierte Server hinzugefügt werden soll.</param>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des registrierten Servers angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts.</summary>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des registrierten Servers angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Alter">
+      <summary>Aktualisiert alle Änderungen an den Eigenschaften des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts für die SQL Server-Instanz. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Create">
+      <summary>Erstellt einen registrierten Server für die SQL Server-Instanz, so wie im <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt definiert.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Description">
+      <summary>Ruft eine Textbeschreibung des registrierten Servers ab, auf den verwiesen wird, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Textbeschreibung des registrierten Servers angibt, auf den verwiesen wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Drop">
+      <summary>Entfernt den <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" /> aus der Servergruppe und der Auflistung der registrierten Server.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.GetSmoObject(Microsoft.SqlServer.Management.Sdk.Sfc.Urn)">
+      <summary>Ruft ein durch einen URN angegebenes <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" /> ab.</summary>
+      <returns>Das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" />, das durch einen URN angegeben wird.</returns>
+      <param name="urn">Ein Microsoft.SqlServer.Management.Sdk.Sfc.Urn, der das abzurufende Objekt identifiziert.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Login">
+      <summary>Ruft den zum Herstellen einer Verbindung mit dem registrierten Server verwendeten Anmeldenamen ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Anmeldenamen angibt, der zum Herstellen einer Verbindung mit dem registrierten Server verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.LoginSecure">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung durch die Windows-Authentifizierung authentifiziert wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung mithilfe der Windows-Authentifizierung authentifiziert wird.True (Standard) gibt an, dass die Verbindung mithilfe der Windows-Authentifizierung authentifiziert wird.False gibt an, dass die Verbindung mithilfe der SQL Server-Standardauthentifizierung authentifiziert wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Parent">
+      <summary>Ruft den <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objektwert ab, der das übergeordnete Objekt des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts angibt. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt übergeordnet ist. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.SecurePassword">
+      <summary>Ruft das zum Herstellen einer Verbindung mit dem registrierten Server mithilfe der SQL Server-Standardauthentifizierung verwendete Kennwort ab oder legt es fest. </summary>
+      <returns>Ein <see cref="T:System.Security.SecureString" />-Wert, der das sichere Zeichenfolgenkennwort angibt, das zum Herstellen einer Verbindung mithilfe der SQL Server-Standardauthentifizierung verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.ServerInstance">
+      <summary>Ruft die SQL Server-Instanz ab, die dem registrierten Server entspricht, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die SQL Server-Instanz angibt, die dem registrierten Server entspricht.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer.Urn">
+      <summary>Ruft den <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objektwert ab, der den registrierten Server darstellt, auf den verwiesen wird. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objektwert, der den registrierten Server darstellt, auf den verwiesen wird.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Klasse stellt eine Auflistung von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekten dar, die alle registrierten Server in der Gruppe registrierter Server darstellen. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Add(Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer)">
+      <summary>Fügt der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Auflistung ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt hinzu.</summary>
+      <param name="registeredServer">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Objekt hinzugefügt wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Contains(System.String)">
+      <summary>Bestimmt, ob der angegebene Zeichenfolgenwert in der Auflistung vorhanden ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zeichenfolgenwert in der Auflistung enthalten ist.True gibt an, dass der Zeichenfolgenwert in der Auflistung vorhanden ist, andernfalls False.</returns>
+      <param name="key">Ein <see cref="T:System.String" />-Wert, der einen Wert angibt, für den bestimmt wird, ob er in der Auflistung enthalten ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.CopyTo(System.Array,System.Int32)">
+      <summary>Kopiert die Auflistungsobjekte ab dem angegebenen Indexwert in ein eindimensionales Array.</summary>
+      <param name="array">Ein Array von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekten.</param>
+      <param name="index">Ein <see cref="T:System.Int32" />-Wert, der den Indexwert in der Auflistung angibt, ab dem kopiert werden soll. </param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Count">
+      <summary>Ruft die Anzahl der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekte in der Auflistung ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Anzahl von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekten in der Auflistung angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.GetEnumerator">
+      <summary>Gibt eine <see cref="T:System.Collections.IEnumerator" />-Schnittstelle zurück, mit der die Objekte in der Auflistung durchlaufen werden können. </summary>
+      <returns>Eine <see cref="T:System.Collections.IEnumerator" />-Systemschnittstelle für das Auflistungsobjekt, auf das verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Item(System.Int32)">
+      <summary>Ruft ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt in der Auflistung nach Indexnummer ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objektwert, der den registrierten Server darstellt.</returns>
+      <param name="index">Ein <see cref="T:System.Int32" />-Wert, der die Position des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts in der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Auflistung angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Item(System.String)">
+      <summary>Ruft ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt in der Auflistung nach Namen ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objektwert, der den registrierten Server darstellt.</returns>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekts in der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Auflistung angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Parent">
+      <summary>Ruft das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt ab, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Objekt übergeordnet ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Objekt übergeordnet ist.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection.Remove(System.String)">
+      <summary>Entfernt ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt aus dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Objekt.</summary>
+      <param name="key">Ein <see cref="T:System.String" />-Wert, der den Namen des registrierten Servers angibt, der aus der Auflistung entfernt wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase" />-Klasse ist eine Basisklasse, die zur Erstellung des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Objekts verwendet wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase.initialized">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob die Auflistung initialisiert wird.Wenn der Wert True ist, wird die Auflistung initialisiert. Ist der Wert False, wird die Auflistung nicht initialisiert.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase.innerColl">
+      <summary>Die sortierte Liste, die die zugrunde liegende Auflistung registrierter Server enthält.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase.IsSynchronized">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob der Zugriff auf die Auflistung synchronisiert und daher threadsicher ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zugriff auf die Auflistung synchronisiert ist.True gibt an, dass der Zugriff auf die Auflistung synchronisiert wird. False (Standard) gibt an, dass der Zugriff auf die Auflistung nicht synchronisiert wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase.SyncRoot">
+      <summary>Ruft ein Objekt ab, mit dem der Zugriff auf die Auflistung synchronisiert werden kann.</summary>
+      <returns>Ein <see cref="T:System.Object" />-Wert, mit dem der Zugriff auf die Auflistung synchronisiert werden kann.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" />-Klasse wird zur Erstellung von Objekten für registrierte Server von Microsoft SQL Server verwendet.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.#ctor">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" />-Objekts.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.#ctor(Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase,System.String)">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" />-Objekts auf Grundlage der angegebenen übergeordneten Spalte und des angegebenen Namens.</summary>
+      <param name="parentColl">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrCollectionBase" />-Objekt, das das übergeordnete Objekt angibt.</param>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des Objekts angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.CheckObjectState">
+      <summary>Überprüft den Status des Objekts.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.ImplInitialize(System.String[],Microsoft.SqlServer.Management.Sdk.Sfc.OrderBy[])">
+      <summary>Initialisiert das Objekt.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob das Objekt erfolgreich initialisiert wurde.Wenn True, wurde das Objekt erfolgreich initialisiert.Ist der Wert False, wurde das Objekt nicht initialisiert.</returns>
+      <param name="fields">Ein <see cref="T:System.String" />-Array.</param>
+      <param name="orderby">Ein OrderBy-Objekt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.Initialize">
+      <summary>Initialisiert das Objekt.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob das Objekt erfolgreich initialisiert wurde.Wenn True, wurde das Objekt erfolgreich initialisiert.Ist der Wert False, wurde das Objekt nicht initialisiert.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.IsObjectInitialized">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob das Objekt initialisiert wurde.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der true ist, wenn das Objekt initialisiert wurde.Andernfalls False.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.Name">
+      <summary>Ruft den Namen des Objekts ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen für das Objekt angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.Properties">
+      <summary>Ruft die dem Objekt zugeordneten Eigenschaften ab. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.PropertyCollection" />-Objektwert, der die Eigenschaften des Objekts angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.Refresh">
+      <summary>Aktualisiert die Eigenschaften des Objekts.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.SetParentImpl(Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject)">
+      <summary>Legt ein übergeordnetes Element fest.</summary>
+      <param name="newParent">Ein RegSvrSmoObject.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.Trace(System.String)">
+      <summary>Legt einen Ablaufverfolgungstext fest.</summary>
+      <param name="traceText">Ein <see cref="T:System.String" />-Wert, der den Ablaufverfolgungstext angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.UpdateObjectState">
+      <summary>Ruft den aktualisierten Objektstatus ab.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.Urn">
+      <summary>Ruft das <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objekt ab, das das Objekt darstellt. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objektwert, der das Objekt darstellt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject.UrnSkeleton">
+      <summary>Ruft das <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objekt ab, das das Objekt darstellt. </summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objektwert, der das Objekt darstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt stellt eine Gruppe registrierter Server von Microsoft SQL Server dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.#ctor">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekts.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.#ctor(Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup,System.String)">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekts auf Grundlage der angegebenen Servergruppe unter Verwendung des angegebenen Namens.</summary>
+      <param name="serverGroup">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objektwert, der die Servergruppe angibt, auf der die neue Servergruppe basieren soll.</param>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen der Servergruppe angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekts, das über den angegebenen Namen verfügt.</summary>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen der Servergruppe angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.Description">
+      <summary>Ruft die Textbeschreibung der Gruppe registrierter Server ab, auf die verwiesen wird, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Textbeschreibung der Servergruppe enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.Parent">
+      <summary>Ruft das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt ab, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, auf das verwiesen wird, übergeordnet ist, oder legt es fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, auf das verwiesen wird, übergeordnet ist. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.Path">
+      <summary>Ruft den Pfad der Servergruppe ab, auf die verwiesen wird.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Pfad der Servergruppe angibt, auf die verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.ServerType">
+      <summary>Ruft den <see cref="T:System.Guid" />-Objektwert ab, der den Typ des der Servergruppe zugeordneten Servers angibt.</summary>
+      <returns>Ein <see cref="T:System.Guid" />-Systemobjektwert, der den Typ des der Servergruppe zugeordneten Servers angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup.Urn">
+      <summary>Ruft den <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objektwert ab, der die Servergruppe darstellt.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.Urn" />-Objektwert, der die Servergruppe darstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase" />-Klasse ist eine Basisklasse, die zur Erstellung der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Klasse verwendet wird, die eine Gruppe registrierter Server von Microsoft SQL Server darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.Alter">
+      <summary>Aktualisiert alle Änderungen an den Eigenschaften des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase" />-Objekts für die Microsoft SQL Server-Instanz.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.ClearCollections">
+      <summary>Löscht die Servergruppenauflistungen.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.Create">
+      <summary>Erstellt eine Servergruppe für die Microsoft SQL Server-Instanz, so wie im <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase" />-Objekt definiert.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.Drop">
+      <summary>Entfernt <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase" /> aus der übergeordneten Servergruppe.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.GetSmoObject(Microsoft.SqlServer.Management.Sdk.Sfc.Urn)">
+      <summary>Ruft ein durch einen URN angegebenes <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" /> ab.</summary>
+      <returns>Das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegSvrSmoObject" />, das durch einen URN angegeben wird.</returns>
+      <param name="urn">Ein Microsoft.SqlServer.Management.Sdk.Sfc.Urn, der das abzurufende Objekt identifiziert.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.RegisteredServers">
+      <summary>Stellt eine Auflistung von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekten dar.Jedes <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekt stellt einen registrierten Server dar, der in der übergeordneten Servergruppe enthalten ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServerCollection" />-Objekt, das alle registrierten Server darstellt, die in der übergeordneten Servergruppe enthalten sind. </returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupBase.ServerGroups">
+      <summary>Stellt eine Auflistung von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekten dar.Jedes <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt stellt eine Servergruppe dar, die in der übergeordneten Servergruppe enthalten ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Objekt, das alle Servergruppen darstellt, die in der übergeordneten Servergruppe enthalten sind. </returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Klasse stellt eine Auflistung von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekten dar, die alle Servergruppen in der Servergruppe darstellen. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Add(Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup)">
+      <summary>Fügt der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Auflistung ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt hinzu.</summary>
+      <param name="registeredServer">Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Objekt hinzugefügt werden soll.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Contains(System.String)">
+      <summary>Bestimmt, ob der angegebene Zeichenfolgenwert in der Auflistung vorhanden ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Zeichenfolgenwert in der Auflistung enthalten ist.True gibt an, dass der Zeichenfolgenwert in der Auflistung enthalten ist.False gibt an, dass der Zeichenfolgenwert nicht in der Auflistung enthalten ist.</returns>
+      <param name="key">Ein <see cref="T:System.String" />-Wert, der einen Wert angibt, für den bestimmt wird, ob er in der Auflistung enthalten ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.CopyTo(System.Array,System.Int32)">
+      <summary>Kopiert die Auflistungsobjekte ab dem angegebenen Indexwert in ein eindimensionales Array.</summary>
+      <param name="array">Ein Array von <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.RegisteredServer" />-Objekten.</param>
+      <param name="index">Ein <see cref="T:System." />-Wert
+                    Int32
+                   Ein Wert, der die Indexposition festlegt, ab der der Kopiervorgang gestartet wird.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Count">
+      <summary>Ruft die Anzahl der Objekte in der Auflistung ab, auf die verwiesen wird.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der Objekte in der Auflistung angibt, auf die verwiesen wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.GetEnumerator">
+      <summary>Gibt eine <see cref="T:System.Collections.IEnumerator" />-Schnittstelle zurück, mit der die Objekte in der Auflistung durchlaufen werden können. </summary>
+      <returns>Eine <see cref="T:System.Collections.IEnumerator" />-Systemschnittstelle für das Auflistungsobjekt, auf das verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Item(System.Int32)">
+      <summary>Ruft ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt in der Auflistung nach Indexnummer ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objektwert, der die Servergruppe darstellt.</returns>
+      <param name="index">Ein <see cref="T:System.Int32" />-Wert, der die Position des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekts in der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Auflistung angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Item(System.String)">
+      <summary>Ruft ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt in der Auflistung nach Namen ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objektwert, der die Servergruppe darstellt.</returns>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen des <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekts in der <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Auflistung angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Parent">
+      <summary>Ruft das <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt ab, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Objekt übergeordnet ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt, das dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Objekt übergeordnet ist.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection.Remove(System.String)">
+      <summary>Entfernt ein <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroup" />-Objekt aus dem <see cref="T:Microsoft.SqlServer.Management.Smo.RegisteredServers.ServerGroupCollection" />-Objekt.</summary>
+      <param name="key">Ein <see cref="T:System.String" />-Wert, der den Namen der Servergruppe angibt, die aus der Auflistung entfernt werden soll.</param>
+    </member>
+  </members>
+</doc>

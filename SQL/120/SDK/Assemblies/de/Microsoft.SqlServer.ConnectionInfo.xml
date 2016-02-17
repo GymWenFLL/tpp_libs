@@ -1,0 +1,1431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SqlServer.ConnectionInfo</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SqlServer.Management.Common.AutoDisconnectMode">
+      <summary>Enthält Werte, mit denen Optionen zum automatischen Trennen einer Verbindung mit einer SQL Server-Instanz angegeben werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.AutoDisconnectMode.DisconnectIfPooled">
+      <summary>Die Verbindung wird von der SQL Server-Instanz getrennt, wenn die Verbindung gepoolt ist.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.AutoDisconnectMode.NoAutoDisconnect">
+      <summary>Die Verbindung wird nicht automatisch getrennt.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.CapturedSql">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.CapturedSql" />-Klasse stellt die Transact-SQL-Befehle dar, die über die Verbindung, auf die verwiesen wird, an die SQL Server-Instanz gesendet werden.Anschließend werden sie jedoch an einen Puffer umgeleitet und nicht direkt in der SQL Server-Instanz ausgeführt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.CapturedSql.Add(System.String)">
+      <summary>Fügt den erfassten Transact-SQL-Befehlen im Puffer eine Transact-SQL-Anweisung hinzu.</summary>
+      <param name="sqlStatement">Ein <see cref="T:System.String" />-Wert, der die Transact-SQL-Anweisung angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.CapturedSql.Clear">
+      <summary>Löscht den Puffer, der die erfassten Transact-SQL-Befehle enthält.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.CapturedSql.Text">
+      <summary>Ruft die im Puffer erfassten Transact-SQL-Befehle ab.</summary>
+      <returns>Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die erfassten Transact-SQL-Befehle enthält.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" />-Klasse ist eine Ausnahme, die bei einem nicht erfolgreichen Versuch ausgelöst wird, das Kennwort des Anmeldenamens zu ändern, mit dem unter Verwendung der SQL Server-Authentifizierung eine Verbindung mit der SQL Server-Instanz hergestellt wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" />-Klasse, die über den angegebenen Meldungstext verfügt.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ChangePasswordFailureException" />-Klasse, die über den angegebenen Meldungstext und die angegebene innere Ausnahme verfügt.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" />-Klasse ist eine Ausnahme, die bei einem nicht erfolgreichen Versuch ausgelöst wird, die Verbindung mit der Microsoft SQL Server-Instanz zu ändern.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionCannotBeChangedException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" />-Klasse ist eine Ausnahme, die ausgelöst wird, wenn bei der Verbindung mit der SQL Server-Instanz ein Fehler auftritt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" />-Klasse mit den angegebenen Serialisierungsinformationen und dem angegebenen Streamingkontext.</summary>
+      <param name="info">Ein <see cref="T:System.Runtime.Serialization.SerializationInfo" />-Systemobjekt, das die Serialisierungsinformationen für die Ausnahme angibt.</param>
+      <param name="context">Ein <see cref="T:System.Runtime.Serialization.StreamingContext" />-Systemobjekt, das den Streamingkontext für die Ausnahme angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" />-Klasse ist eine Ausnahme, die bei einem nicht erfolgreichen Versuch ausgelöst wird, eine Verbindung mit der SQL Server-Instanz herzustellen.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionFailureException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionFailureException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionFailureException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionFailureException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" />-Objekt ist eine Basisklasse, die zur Erstellung der <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse verwendet wird. Es stellt Informationen dar, die zum Herstellen einer Verbindung mit einer SQL Server-Instanz verwendet werden.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.ConnectionInfoBase)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" />-Klasse auf Grundlage des angegebenen Objekts.</summary>
+      <param name="conn">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" />-Objektwert, der Verbindungsinformationen angibt, auf denen das neue Objekt basieren soll.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.ConnectionType)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" />-Klasse mit dem angegebenen Verbindungstyp.</summary>
+      <param name="serverType">Ein <see cref="T:Microsoft.AnalysisServices.ConnectionType" />-Objektwert, der den Verbindungstyp angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ConnectionParmsChanged">
+      <summary>Ermöglicht es beim Überschreiben in einer abgeleiteten Klasse, benutzerdefinierte Aktionen anzugeben, wenn ein Verbindungsparameter geändert wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ServerCaseSensitivity">
+      <summary>Ruft ab oder legt fest, ob die Groß-/Kleinschreibung vom Server für die Verbindung berücksichtigt wird.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity" />-Systemobjektwert, der angibt, ob der Server die Groß-/Kleinschreibung für die Verbindung berücksichtigt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ServerType">
+      <summary>Ruft den Serververbindungstyp ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.AnalysisServices.ConnectionType" />-Systemobjektwert, der den Verbindungstyp angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ServerVersion">
+      <summary>Ruft die Versionsinformationen zur SQL Server-Instanz ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Systemobjektwert, der die Versionsinformationen zur Instanz von SQL Server angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionInfoBase.ToString">
+      <summary>Gibt das Objekt als Zeichenfolgenwert zurück.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionInfoBase" />-Objekt angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionManager">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionManager" />-Klasse verwaltet die Verbindung mit einer SQL Server-Instanz.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.AutoDisconnectMode">
+      <summary>Ruft den Modus zum automatischen Trennen der Verbindung, auf die verwiesen wird, von der SQL Server-Instanz ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.AutoDisconnectMode" />-Objektwert, der den Modus zum automatischen Trennen der Verbindung angibt, auf die verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.CapturedSql">
+      <summary>Ruft die Transact-SQL-Anweisungen ab, die aufgezeichnet werden, wenn die Verbindung im Aufzeichnungsmodus ausgeführt wird.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.CapturedSql" />-Objektwert, der die erfassten Transact-SQL-Anweisungen enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.CheckServerVersion(Microsoft.SqlServer.Management.Common.ServerVersion)">
+      <summary>Überprüft die Version der SQL Server-Zielinstanz.</summary>
+      <param name="version">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Objekt, das die Version des Zielservers für die Verbindung angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.Connect">
+      <summary>Stellt eine Verbindung mit der SQL Server-Instanz her.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.DatabaseEngineType">
+      <summary>Ruft den Typ des Datenbankmoduls ab.</summary>
+      <returns>Entweder eine eigenständige SQL Server-Instanz oder eine SQL Azure-Datenbank.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.Disconnect">
+      <summary>Trennt die Verbindung mit der SQL Server-Instanz.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSql(Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction,System.Object,System.Data.DataSet,System.Boolean)">
+      <summary>Führt einen Transact-SQL-Befehl aus.</summary>
+      <returns>Ein <see cref="T:System.Object" />, dass die Ergebnisse des Transact-SQL-Befehls enthält.</returns>
+      <param name="action">Das <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction" />-Objekt.</param>
+      <param name="execObject">Das ausführbare <see cref="T:System.Object" />.</param>
+      <param name="fillDataSet">Das <see cref="T:System.Data.DataSet" />-Objekt.</param>
+      <param name="catchException">Ein boolescher Wert, der angibt, ob Ausnahmen abgefangen werden sollen.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionManager.ForceDisconnected">
+      <summary>Erzwingt, dass die SQL Server-Instanz getrennt wird.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.InfoMessage">
+      <summary>Das Ereignis, das auftritt, wenn die SQL Server-Instanz eine Informationsmeldung generiert. </summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.InUse">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung verwendet wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Objektwert, der angibt, ob die Verbindung verwendet wird.True gibt an, dass die Verbindung verwendet wird.False (Standard) gibt an, dass die Verbindung nicht verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.IsForceDisconnected">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob die Trennung der Verbindung erzwungen wurde.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Trennung der Verbindung erzwungen wurde.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.IsOpen">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung derzeit geöffnet ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung geöffnet ist.True gibt an, dass die Verbindung geöffnet ist.False (Standard) gibt an, dass die Verbindung nicht geöffnet ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.LockTimeout">
+      <summary>Ruft die Zeit bis zum Verbindungstimeout in Sekunden ab, wenn die aktuelle Transaktion gesperrt ist, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Zeit bis zum Verbindungstimeout in Sekunden angibt, wenn die aktuelle Transaktion gesperrt ist.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.RemoteLoginFailed">
+      <summary>Dieses Ereignis tritt auf, wenn bei einer Remoteanmeldung keine Verbindung mit der SQL Server-Instanz hergestellt werden kann.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.ServerMessage">
+      <summary>Das Ereignis, das auftritt, wenn SQL Server eine Warnung oder Informationsmeldung über die aktuelle Verbindung zurückgibt.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.ServerVersion">
+      <summary>Ruft die Version der verbundenen SQL Server-Instanz ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Objektwert, der die Version der verbundenen SQL Server-Instanz angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionManager.SqlConnectionObject">
+      <summary>Ruft das Verbindungsobjekt ab.</summary>
+      <returns>Ein <see cref="T:System.Data.SqlClient.SqlConnection" />-Objektwert, der die Verbindung angibt.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.StateChange">
+      <summary>Das Ereignis, das auftritt, wenn sich der Status der SQL Server-Instanz ändert. </summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Common.ConnectionManager.StatementExecuted">
+      <summary>Das Ereignis, das auftritt, wenn die SQL Server-Instanz eine Anweisung über die aktuelle Verbindung ausführt. </summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction">
+      <summary>Führt eine Transact-SQL-Aktion aus.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.ExecuteNonQuery">
+      <summary>Führt einen Befehl aus, der keine Abfrage darstellt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.ExecuteReader">
+      <summary>Führt einen Leserbefehl aus.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.ExecuteScalar">
+      <summary>Führt einen Skalarbefehl aus.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.FillDataSet">
+      <summary>Befehl zum Auffüllen eines Datasets.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionManager.ExecuteTSqlAction.Unknown">
+      <summary>Unbekannter Befehlstyp.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionSettings">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionSettings" />-Klasse stellt die von einer Verbindung mit einer Serverinstanz, z. B. SQL Server, verwendeten Einstellungen dar.Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse erbt von der <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionSettings" />-Klasse.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ApplicationName">
+      <summary>Ruft den Namen der Anwendung ab, die die Verbindung mit dem Server hergestellt hat, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen der Anwendung angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectAsUser">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung mit Identitätswechsel hergestellt wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung mit Identitätswechsel hergestellt wird.True gibt an, dass die Verbindung mit Identitätswechsel hergestellt wird.False (Standard) gibt an, dass die Verbindung mit den durch die <see cref="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Login" />-Eigenschaft und die <see cref="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Password" />-Eigenschaft angegebenen Anmeldeinformationen hergestellt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectAsUserName">
+      <summary>Ruft beim Herstellen einer Verbindung mit Identitätswechsel den Namen des Benutzers ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Benutzernamen angibt, der verwendet wird, wenn die Verbindung mithilfe des Identitätswechsels eines Benutzers hergestellt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectAsUserPassword">
+      <summary>Ruft beim Herstellen einer Verbindung mit Identitätswechsel das Kennwort für den Benutzer ab oder legt es fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das Benutzerkennwort angibt, das verwendet wird, wenn die Verbindung mithilfe des Identitätswechsels eines Benutzers hergestellt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectionString">
+      <summary>Ruft die zum Herstellen einer Verbindung mit einer angegebenen Datenquelle verwendete Verbindungszeichenfolge ab oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Verbindungszeichenfolge angibt, die zum Herstellen einer Verbindung verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ConnectTimeout">
+      <summary>Ruft den Timeoutzeitraum für die Verbindung in Sekunden ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Timeoutzeitraum für die Verbindung in Sekunden angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.DatabaseName">
+      <summary>Ruft die für die Verbindung erforderliche Datenbank ab oder legt diese fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen der Datenbank angibt, die von der Verbindung angegeben wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.EncryptConnection">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung verschlüsselt wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung verschlüsselt wird.True gibt an, dass die Verbindung verschlüsselt wird.False (Standard) gibt an, dass die Verbindung nicht verschlüsselt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Login">
+      <summary>Ruft den Anmeldenamen ab, der zum Herstellen einer Verbindung mit der Serverinstanz erforderlich ist, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Anmeldenamen angibt, der zum Herstellen einer Verbindung mit der Serverinstanz benötigt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.LoginSecure">
+      <summary>Ruft die <see cref="T:System.Boolean" />-Eigenschaft ab, die angibt, ob die Verbindung mit dem Server unter Verwendung der Windows-Authentifizierung oder der SQL Server-Authentifizierung hergestellt wird, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung mit dem Server unter Verwendung der Windows-Authentifizierung oder der SQL Server-Authentifizierung hergestellt wird.True (Standard) gibt an, dass die Windows-Authentifizierung verwendet wird, um eine Verbindung mit dem Server herzustellen.False gibt an, dass die SQL Server-Authentifizierung verwendet wird, um eine Verbindung mit dem Server herzustellen.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.MaxPoolSize">
+      <summary>Ruft die maximale Anzahl von Verbindungen in einem Verbindungspool ab, die die angegebene Verbindung beim Herstellen einer Verbindung mit einem Server akzeptiert, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die maximale Anzahl von Verbindungen in einem Verbindungspool angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.MinPoolSize">
+      <summary>Ruft die Mindestanzahl von Verbindungen in einem Verbindungspool ab, die die angegebene Verbindung beim Herstellen einer Verbindung mit einem Server akzeptiert, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Mindestanzahl von Verbindungen in einem Verbindungspool angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.MultipleActiveResultSets">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob mehr als ein aktives Resultset zulässig ist, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob mehr als ein aktives Resultset zulässig ist.True gibt an, dass mehrere aktive Resultsets zulässig sind.Der Standardwert False gibt an, dass mehrere aktive Resultsets unzulässig sind.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.NetworkProtocol">
+      <summary>Ruft das Netzwerkprotokoll ab, das zum Herstellen der Verbindung mit dem Server verwendet wird, oder legt es fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.NetworkProtocol" />-Objektwert, der das Netzwerkprotokoll angibt, das verwendet wird, um die Verbindung mit dem Server herzustellen.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionSettings.NoConnectionTimeout">
+      <summary>Ruft den <see cref="T:System.Int32" />-Wert ab, der den Zeitraum bis zum Timeout der Verbindung in Sekunden angibt, oder legt ihn fest.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.NonPooledConnection">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung in einem Pool enthalten sein darf oder nicht, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung in einem Pool enthalten sein darf oder nicht. True gibt an, dass die Verbindung nicht Teil eines Verbindungspools sein darf.False (Standard) gibt an, dass die Verbindung Teil eines Verbindungspools sein kann.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.PacketSize">
+      <summary>Ruft die zwischen Client und Server über das Netzwerk gesendeten Datenpakete in Bytes ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Netzwerkpaketgröße in Bytes angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.Password">
+      <summary>Ruft das bei Verwendung der SQL Server-Authentifizierung zum Herstellen einer Serververbindung mit dem Anmeldenamen verwendete Kennwort ab oder legt es fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das Kennwort angibt, das bei Verwendung der SQL Server-Authentifizierung erforderlich ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.PooledConnectionLifetime">
+      <summary>Ruft die Lebensdauer der in einem Pool enthaltenen Verbindung ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Lebensdauer der in einem Pool enthaltenen Verbindung in Sekunden angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ResetConnectionString">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob ein Knoten in der Verbindungszeichenfolge geändert wurde, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob ein Knoten in der Verbindungszeichenfolge geändert wurde.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.SecureConnectionString">
+      <summary>Ruft eine verschlüsselte Version der Verbindungszeichenfolge ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Security.SecureString" />-Wert, der eine verschlüsselte Verbindungszeichenfolge angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.SecurePassword">
+      <summary>Ruft das bei Verwendung der SQL Server-Authentifizierung zum Herstellen einer Serververbindung mit dem Anmeldenamen verwendete sichere Kennwort ab oder legt es fest. </summary>
+      <returns>Ein <see cref="T:System.Security.SecureString" />-Wert, der das sichere Kennwort angibt, das für die Verwendung der SQL Server-Authentifizierung erforderlich ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.ServerInstance">
+      <summary>Ruft den Namen des Servers ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen des Servers angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionSettings.ThrowIfPropertyNotSet(System.String,System.String)">
+      <summary>Löst eine Ausnahme aus, wenn die angegebene Verbindungseigenschaft NULL oder leer ist.</summary>
+      <returns>Wenn die Zeichenfolge NULL oder leer ist, löst diese Methode <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" /> aus.Andernfalls gibt diese Methode den Parameterwert <paramref name="str" /> zurück.</returns>
+      <param name="propertyName">Eine Zeichenfolge, die den Namen der Verbindungseigenschaft angibt, z. B. "Login".</param>
+      <param name="str">Ein <see cref="T:System.String" />-Objekt, das den Eigenschaftswert enthält.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionSettings.ThrowIfPropertyNotSet(System.String,System.String,System.Boolean)">
+      <summary>Löst eine Ausnahme aus, wenn die angegebene Verbindungseigenschaft NULL oder (optional) leer ist.</summary>
+      <returns>Wenn diese Eigenschaft nicht festgelegt ist, löst diese Methode eine Ausnahme vom Typ <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" /> aus.Andernfalls gibt diese Methode den Parameterwert <paramref name="str" /> zurück.</returns>
+      <param name="propertyName">Eine Zeichenfolge, die den Namen der Verbindungseigenschaft angibt, z. B. "Login".</param>
+      <param name="str">Ein <see cref="T:System.String" />-Objekt, das den Eigenschaftswert enthält.</param>
+      <param name="checkEmpty">True, wenn Sie den Eigenschaftswert auf eine leere Zeichenfolge oder einen NULL-Wert überprüfen möchten; False, wenn Sie nur auf einen NULL-Wert überprüfen möchten.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ConnectionSettings.ToString">
+      <summary>Gibt den Objektnamen, auf den verwiesen wird, als Zeichenfolge zurück.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen des Objekts angibt, auf das verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ConnectionSettings.WorkstationId">
+      <summary>Ruft den ID-Wert ab, durch den die Arbeitsstation eindeutig identifiziert wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den ID-Wert zur eindeutigen Kennzeichnung der Arbeitsstation angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ConnectionType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" />-Enumeration enthält Werte, mit denen der Typ des Servers angegeben wird, mit dem die Verbindung hergestellt wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.AzureStorage">
+      <summary>Ein SQL Azure-Dienst.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.IntegrationServer">
+      <summary>Ein Integration Services-Dienst.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.Olap">
+      <summary>Ein Analysis Services-OLAP (Online Analytical Processing)-Server.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.ReportServer">
+      <summary>Ein Reporting Services-Server.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.Sql">
+      <summary>Eine SQL Server-Instanz.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.SqlCE">
+      <summary>Eine SQL Server CE-Instanz.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.SqlConnection">
+      <summary>Eine SQL Server-Instanz.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ConnectionType.WmiManagementScope">
+      <summary>Ein WMI-Namespace.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DatabaseEngineType">
+      <summary>Der Datenbankmodultyp einer eigenständigen SQL Server- oder Windows Azure SQL-Datenbank-Instanz.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.Matrix">
+      <summary>Der Server verfügt über eine Matrixkonfiguration.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.SqlAzureDatabase">
+      <summary>Windows Azure SQL-Datenbank.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.Standalone">
+      <summary>Eigenständiges SQL Server-Datenbankmodul.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DatabaseEngineType.Unknown">
+      <summary>Unbekannter Datenbankmodultyp.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" />-Klasse stellt die beim Auslösen eines Datenübertragungsereignisses verwendeten Argumente dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.DataTransferEventArgs.#ctor(Microsoft.SqlServer.Management.Common.DataTransferEventType,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" />-Klasse für das angegebene Ereignis unter Verwendung der angegebenen Meldung.</summary>
+      <param name="eventType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" />-Objekt, das den Ereignistyp angibt, der dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" />-Objekt zugeordnet ist.</param>
+      <param name="message">Ein Zeichenfolgenwert, der den Meldungstext angibt, der dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" />-Objekt zugeordnet ist.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.DataTransferEventArgs.DataTransferEventType">
+      <summary>Ruft den Typ des Datenübertragungsereignisses ab, das dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" />-Objekt zugeordnet ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" />-Objekt, das den Typ des Datenübertragungsereignisses angibt, der dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" />-Objekt zugeordnet ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.DataTransferEventArgs.Message">
+      <summary>Ruft den dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" />-Objekt zugeordneten Meldungstext ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, der dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" />-Objekt zugeordnet ist.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DataTransferEventHandler">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventHandler" />-Klasse stellt die Methode dar, durch die das vom Datenübertragungsprozess ausgelöste Ereignis behandelt wird.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Systemobjektwert, der das Objekt angibt, das das Ereignis ausgelöst hat.</param>
+      <param name="e">Ein <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventArgs" />-Objektwert, der die Argumente angibt, die an den Ereignishandler übergeben wurden.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DataTransferEventType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferEventType" />-Enumeration enthält Werte, mit denen der Typ des Datenübertragungsereignisses angegeben wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferEventType.Information">
+      <summary>Ein Informationsereignis.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferEventType.Progress">
+      <summary>Ein Statusereignis.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferEventType.Warning">
+      <summary>Ein Warnungsereignis.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />-Klasse stellt die beim Auslösen eines Statusereignisses für Datenübertragungen verwendeten Argumente dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.#ctor(Microsoft.SqlServer.Management.Common.DataTransferProgressEventType,System.String,System.Int64,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />-Klasse für das angegebene Ereignis unter Verwendung der angegebenen Übertragungs-ID und zugeordneten Ausnahme sowie des angegebenen Statuswerts.</summary>
+      <param name="eventType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" />-Objekt, das den Ereignistyp angibt, der dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />-Objekt zugeordnet ist.</param>
+      <param name="transferId">Ein <see cref="T:System.String" />-Wert, der den dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" />-Objekt zugeordneten Übertragungs-ID-Wert angibt.</param>
+      <param name="progressCount">Ein <see cref="T:System.Int64" />-Wert, der den Status der Übertragung durch die Anzahl von übertragenen Elementen angibt.</param>
+      <param name="ex">Ein <see cref="T:System.Exception" />-Wert, der die Ausnahme angibt, die den <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" /> zugeordnet ist.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.DataTransferProgressEventType">
+      <summary>Ruft den Typ des Statusereignisses für Datenübertragungen ab, das dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />-Objekt zugeordnet ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" />-Objekt, das den Typ des Statusereignisses für Datenübertragungen angibt, der dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />-Objekt zugeordnet ist.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.Exception">
+      <summary>Ruft die dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" />-Objekt zugeordnete Ausnahme ab.</summary>
+      <returns>Ein Ausnahme-Objektwert, der die dem <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" />-Objekt zugeordnete Ausnahme darstellt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.ProgressCount">
+      <summary>Ruft die aktuelle Anzahl übertragener Elemente ab. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die aktuelle Anzahl von übertragenen Elementen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs.TransferId">
+      <summary>Ruft den ID-Wert ab, durch den das Statusereignis für Datenübertragungen eindeutig identifiziert wird. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den ID-Wert angibt, der das Statusereignis für Datenübertragungen eindeutig identifiziert.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventHandler">
+      <summary>Stellt die Methode dar, die vom Prozess zum Melden des Datenübertragungsstatus ausgelöste Ereignisse behandelt.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert.</returns>
+      <param name="sender">Das <see cref="T:System.Object" />-Objekt, das das Ereignis ausgelöst hat.</param>
+      <param name="e">Ein <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventArgs" />-Wert, der die Argumente angibt, die an den Ereignishandler übergeben wurden.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType" />-Enumeration enthält Werte, mit denen der Typ des Statusereignisses für Datenübertragungen angegeben wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.AllowedToFailPrologueSql">
+      <summary>Ein Ereignis, das auftritt, wenn ein einleitender Transact-SQL-Befehl fehlschlagen darf.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.CancelQuery">
+      <summary>Ein Ereignis, das auftritt, wenn eine Transact-SQL-Abfrage abgebrochen wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.CommitTransaction">
+      <summary>Ein Ereignis, das beim Ausführen eines Commits für eine Transaktion auftritt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.Error">
+      <summary>Ein Ereignis, das bei einem Fehler auftritt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecuteCompensatingSql">
+      <summary>Ein Ereignis, das auftritt, wenn kompensierende Transact-SQL-Befehle ausgeführt werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecuteEpilogueSql">
+      <summary>Ein Ereignis, das auftritt, wenn ausleitende Transact-SQL-Befehle ausgeführt werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecuteNonTransactableSql">
+      <summary>Ein Ereignis, das auftritt, wenn nicht transaktionsfähige Transact-SQL-Befehle ausgeführt werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecutePrologueSql">
+      <summary>Ein Ereignis, das auftritt, wenn einleitende Transact-SQL-Befehle ausgeführt werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.ExecutingDataFlow">
+      <summary>Ein Ereignis, das beim Ausführen eines Datenflusses auftritt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.GenerateDataFlow">
+      <summary>Ein Ereignis, das beim Generieren eines Datenflusses auftritt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.RollbackTransaction">
+      <summary>Ein Ereignis, das beim Ausführen eines Rollbacks für eine Transaktion auftritt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.StartTransaction">
+      <summary>Ein Ereignis, das beim Starten einer Transaktion auftritt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DataTransferProgressEventType.TransferringRows">
+      <summary>Ein Ereignis, das beim Übertragen von Zeilen auftritt.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DeferredUseMode">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DeferredUseMode" />-Enumeration enthält Werte, die angeben, wie bei der verzögerten Verwendung festgelegt werden kann, dass Transact-SQL-Anweisungen über die Serververbindung behandelt werden. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DeferredUseMode.CollapseRedundant">
+      <summary>Reduziert redundante Anweisungen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DeferredUseMode.MergeSql">
+      <summary>Führt Transact-SQL-Anweisungen zusammen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.DeferredUseMode.None">
+      <summary>Anweisungen werden wie üblich behandelt.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" />-Klasse ist eine Ausnahme, die beim Schließen einer Verbindung ausgelöst wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.DisconnectedConnectionException" />-Klasse mit dem angegebenen Meldungstext und dem angegebenen Objekt für die innere Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" />-Klasse ist eine Ausnahme, die ausgelöst wird, wenn für die Verbindung mit dem Server ein Ausführungsfehler erkannt wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ExecutionFailureException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ExecutionFailureException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ExecutionFailureException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionFailureException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ExecutionTypes">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionTypes" />-Enumeration enthält Werte, die zum Angeben von Ausführungsoptionen für die Transact-SQL-Befehle verwendet werden, die über die Verbindung, auf die verwiesen wird, an den Server gesendet werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.ContinueOnError">
+      <summary>Setzt die Ausführung nach einem Fehler fort.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.Default">
+      <summary>Standardausführungspfad.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.NoCommands">
+      <summary>Keine ausführbaren Befehle.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.NoExec">
+      <summary>Keine Ausführung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.ParseOnly">
+      <summary>Analysiert lediglich die ausführbaren Befehle.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ExecutionTypes.QuotedIdentifierOn">
+      <summary>Bezeichner werden zum Begrenzen von Befehlen verwendet.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.FixedServerRoles">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.FixedServerRoles" />-Enumeration enthält Werte, mit denen feste Serverrollen angegeben werden, die Anmeldenamen zugewiesen werden können.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.BulkAdmin">
+      <summary>Verwaltet Massenvorgänge.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.DBCreator">
+      <summary>Kann Datenbanken erstellen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.DiskAdmin">
+      <summary>Kann Ressourcen ändern.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.None">
+      <summary>Keine Serverrolle.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.ProcessAdmin">
+      <summary>Kann Verbindungen ändern.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.SecurityAdmin">
+      <summary>Kann Anmeldenamen ändern.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.ServerAdmin">
+      <summary>Kann Microsoft SQL Server-Einstellungen ändern, den SQL Server-Dienst herunterfahren, Endpunkte erstellen und ändern, den SQL Server-Zustand ändern sowie Ressourcen ändern.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.SetupAdmin">
+      <summary>Kann Verbindungsserver ändern.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.FixedServerRoles.SysAdmin">
+      <summary>Kann die Microsoft SQL Server-Instanz beliebig steuern.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IAlterable">
+      <summary>Definiert eine Methode, um ein Objekt über die Verbindung zu ändern, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IAlterable.Alter">
+      <summary>Aktualisiert alle Eigenschaftenänderungen in einer Microsoft SQL Server-Instanz. </summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ICreatable">
+      <summary>Definiert eine Methode, um ein Objekt über die Verbindung zu erstellen, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ICreatable.Create">
+      <summary>Erstellt auf dem Server ein Objekt gemäß der Definition des SMO-Objekts, auf das verwiesen wird.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IDataTransferProvider">
+      <summary>Definiert Methoden und Ereignisse für Datenübertragungen über die Verbindung, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IDataTransferProvider.Configure(Microsoft.SqlServer.Management.Common.ITransferMetadataProvider)">
+      <summary>Konfiguriert die Datenübertragungs-Schnittstelle für den Datenübertragungsprozess.</summary>
+      <param name="metadataProvider">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider" />-Objekt, das die für den Datenübertragungsprozess erforderlichen Metadaten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IDataTransferProvider.ExecuteTransfer">
+      <summary>Führt den Übertragungsprozess aus.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Common.IDataTransferProvider.TransferEvent">
+      <summary>Stellt das durch den Übertragungsprozess ausgelöste Ereignis dar.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IDroppable">
+      <summary>Definiert eine Drop-Methode, um ein Objekt über die Verbindung zu löschen, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IDroppable.Drop">
+      <summary>Entfernt das Objekt, auf das verwiesen wird.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IMarkForDrop">
+      <summary>Definiert eine Methode, durch die ein Objekt für die Löschung gekennzeichnet wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IMarkForDrop.MarkForDrop(System.Boolean)">
+      <summary>Markiert das Objekt, auf das verwiesen wird, sodass es gelöscht wird, sobald dessen übergeordnetes Objekt das nächste Mal von der Alter-Methode geändert wird. </summary>
+      <param name="dropOnAlter">Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob ein Objekt gelöscht werden soll, wenn sein übergeordnetes Objekt mit der Alter-Methode geändert wird.Wenn der Wert True ist, wird das Objekt gelöscht, wenn die Alter-Methode für das übergeordnete Objekt ausgeführt wird.Ist der Wert False, wird das Objekt sofort gelöscht.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException">
+      <summary>Die Ausnahme, die ausgelöst wird, wenn ein ungültiger Parameter über die Serververbindung, auf die verwiesen wird, an die Methode übergeben wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.InvalidArgumentException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.InvalidArgumentException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.InvalidArgumentException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.InvalidArgumentException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException">
+      <summary>Die Ausnahme, die bei einem Eigenschaftswert ausgelöst wird, der für die Serververbindung, auf die verwiesen wird, nicht gültig ist.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.InvalidPropertyValueException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IRefreshable">
+      <summary>Definiert eine Methode, um ein Serverobjekt über die Verbindung zu aktualisieren, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IRefreshable.Refresh">
+      <summary>Aktualisiert Objekteigenschaften, indem sie vom Server gelesen werden.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IRenamable">
+      <summary>Definiert die Rename-Methode für die Verbindung, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.IRenamable.Rename(System.String)">
+      <summary>Benennt das Objekt um, auf das verwiesen wird.</summary>
+      <param name="newname">Ein <see cref="T:System.String" />-Wert, der den neuen Namen des Objekts angibt.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.IRestrictedAccess">
+      <summary>Stellt eine Schnittstelle dar, die den Einzelbenutzerzugriff auf den Server für die Verbindung implementiert, auf die verwiesen wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.IRestrictedAccess.SingleConnection">
+      <summary>Ruft die <see cref="T:System.Boolean" />-Eigenschaft ab, die angibt, ob der Serverzugriff auf einen einzelnen Benutzer beschränkt ist, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Serverzugriff auf einen einzelnen Benutzer beschränkt ist.Wenn der Wert True ist, ist der Serverzugriff auf einen einzelnen Benutzer beschränkt.Der Standardwert False gibt an, dass der Serverzugriff nicht beschränkt ist und mehrere Benutzer eine Verbindung herstellen können.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ISfcConnection">
+      <summary>Definiert Eigenschaften und Methoden auf hoher Ebene für Serververbindungen.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.Connect">
+      <summary>Stellt eine Verbindung mit dem Zielserver her.</summary>
+      <returns>True, wenn die Verbindung erfolgreich hergestellt wurde, andernfalls false.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.Copy">
+      <summary>Kopiert das Verbindungsobjekt.</summary>
+      <returns>True, wenn der Kopiervorgang erfolgreich war, andernfalls false.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.Disconnect">
+      <summary>Trennt die Verbindung zum Zielserver.</summary>
+      <returns>True, wenn die Verbindung erfolgreich getrennt wurde, andernfalls false.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.ForceDisconnected">
+      <summary>Erzwingt, dass die SQL Server-Instanz getrennt wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.IsForceDisconnected">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob die Trennung der Verbindung erzwungen wurde.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Trennung der Verbindung erzwungen wurde.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.IsOpen">
+      <summary>Ruft einen Wert ab, der angibt, ob die Verbindung geöffnet ist.</summary>
+      <returns>True, wenn die Verbindung geöffnet ist, andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.ServerInstance">
+      <summary>Ruft den Namen des Zielservers für die Verbindung ab oder legt ihn fest.</summary>
+      <returns>Eine Zeichenfolge, die den Servernamen enthält.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ISfcConnection.ServerVersion">
+      <summary>Ruft die SQL Server-Version des Zielservers ab.</summary>
+      <returns>Ein <see cref="T:System.Version" />-Wert, der die SQL Server-Version des Zielservers der Verbindung angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ISfcConnection.ToEnumeratorObject">
+      <summary>Gibt das angegebene Objekt aus der Enumeration an.Verweisen Sie nicht direkt im Code auf dieses Element. Unterstützt die SQL Server-Infrastruktur.   </summary>
+      <returns>
+        <see cref="T:System.Object" /> aus der Enumeration.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider">
+      <summary>Definiert Methoden, die zum Übertragen von Metadaten über die Verbindung erforderlich sind, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider.GetOptions">
+      <summary>Nur zur internen Verwendung.Löst beim Aufrufen durch einen Aufrufer eine System.NotSupportedException aus.</summary>
+      <returns>Ein <see cref="T:System.Collections.SortedList" />-Systemobjekt, das die Optionen für den Prozess zum Übertragen von Metadaten enthält.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ITransferMetadataProvider.SaveMetadata">
+      <summary>Nur zur internen Verwendung.Löst beim Aufrufen durch einen Aufrufer eine System.NotSupportedException aus.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.NetworkProtocol">
+      <summary>Enthält Werte, mit denen Netzwerkprotokolle für das Netzwerk angegeben werden, in dem die Verbindung, auf die verwiesen wird, hergestellt wird. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.AppleTalk">
+      <summary>AppleTalk-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.BanyanVines">
+      <summary>Banyan Vines-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.Multiprotocol">
+      <summary>Multiprotocol-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.NamedPipes">
+      <summary>Named Pipes-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.NotSpecified">
+      <summary>Kein Netzwerkprotokoll angegeben.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.NWLinkIpxSpx">
+      <summary>NWLink IPX/SPX-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.SharedMemory">
+      <summary>Shared Memory.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.TcpIp">
+      <summary>TCP/IP-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.NetworkProtocol.Via">
+      <summary>VIA-Netzwerkprotokoll.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.NotInTransactionException">
+      <summary>Die Ausnahme, die ausgelöst wird, wenn innerhalb einer Transaktion über die Verbindung mit dem Server, auf die verwiesen wird, ein Fehler auftritt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.NotInTransactionException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.NotInTransactionException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.NotInTransactionException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.NotInTransactionException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.NotInTransactionException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.NotInTransactionException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.OlapConnectionInfo">
+      <summary>Diese Klasse unterstützt die SMO-Infrastruktur und ist nicht zur direkten Verwendung im Code bestimmt. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.#ctor">
+      <summary>Dieser Konstruktor unterstützt die SMO-Infrastruktur und ist nicht zur direkten Verwendung im Code bestimmt. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.#ctor(Microsoft.SqlServer.Management.Common.OlapConnectionInfo)">
+      <summary>Dieser Konstruktor unterstützt die SMO-Infrastruktur und ist nicht zur direkten Verwendung im Code bestimmt. </summary>
+      <param name="conn">Ein <see cref="T:Microsoft.SqlServer.Management.Common.OlapConnectionInfo" />-Objekt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.ApplicationName">
+      <summary>Verweisen Sie nicht direkt im Code auf dieses Element. Unterstützt die SQL Server-Infrastruktur. Ruft einen <see cref="T:System.String" />-Wert ab, der den Anwendungsnamen angibt, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Anwendungsnamen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.ConnectionString">
+      <summary>Verweisen Sie nicht direkt im Code auf dieses Element. Unterstützt die SQL Server-Infrastruktur. Ruft einen <see cref="T:System.String" />-Wert ab, der die Verbindungszeichenfolge für das Datenbankmodul angibt.</summary>
+      <returns>Eine Zeichenfolge, die die Verbindungszeichenfolge darstellt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.Copy">
+      <summary>Verweisen Sie nicht direkt im Code auf dieses Element. Unterstützt die SQL Server-Infrastruktur. Erstellt auf Grundlage des aktuellen Verbindungsobjekts ein neues <see cref="T:Microsoft.SqlServer.Management.Common.OlapConnectionInfo" />-Objekt.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.OlapConnectionInfo" />-Objekt auf Grundlage des aktuellen Verbindungsobjekts.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.CreateConnectionObject">
+      <summary>Verweisen Sie nicht direkt im Code auf dieses Element. Unterstützt die SQL Server-Infrastruktur. Erstellt ein IDbConnection-Objekt für eine Verbindung mit einer SQL Server Database Engine (Datenbankmodul)-Instanz.</summary>
+      <returns>Ein IDbConnection-Objekt für eine Verbindung mit einer SQL Server Database Engine (Datenbankmodul)-Instanz.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.OlapConnectionInfo.EncryptConnection">
+      <summary>Verweisen Sie nicht direkt im Code auf dieses Element. Unterstützt die SQL Server-Infrastruktur. Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob die Verbindung mit dem Datenbankmodul verschlüsselt werden soll, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung mit dem Datenbankmodul verschlüsselt werden soll.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException">
+      <summary>Die Ausnahme, die ausgelöst wird, wenn bei der Verbindung mit dem Server eine nicht verfügbare Eigenschaft angefordert wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotAvailableException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException">
+      <summary>Die Ausnahme, die ausgelöst wird, wenn ein Prozess eine Eigenschaft anfordert, die nicht über die Serververbindung festgelegt wurde.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.PropertyNotSetException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.PropertyNotSetException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.PropertyNotSetException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.PropertyNotSetException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.QueryParameterizationMode">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Smo.QueryParameterizationMode" />-Enumeration enthält Werte, mit denen angegeben wird, wie Abfragen mit Parametern von der Serververbindung behandelt werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.QueryParameterizationMode.ForcedParameterization">
+      <summary>Die Parametrisierung wird erzwungen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.QueryParameterizationMode.None">
+      <summary>Keine Parametrisierung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.QueryParameterizationMode.ParameterizeLiterals">
+      <summary>Die Parametrisierung wird für Literalwerte unterstützt.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity">
+      <summary>Enthält Werte, mit denen angegeben wird, ob die Groß- und Kleinschreibung von Text vom Server berücksichtigt wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity.CaseInsensitive">
+      <summary>Vom Server wird die Groß- und Kleinschreibung nicht berücksichtigt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity.CaseSensitive">
+      <summary>Vom Server wird die Groß- und Kleinschreibung berücksichtigt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerCaseSensitivity.Unknown">
+      <summary>Es ist nicht bekannt, ob der Server die Groß- und Kleinschreibung berücksichtigt.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerComparer">
+      <summary>Stellt die Comparer-Klasse dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerComparer.#ctor(Microsoft.SqlServer.Management.Common.ServerConnection)">
+      <summary>Initialisiert eine Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerComparer" />-Klasse, wobei Informationen aus der Standarddatenbank über die angegebene Verbindung verwendet werden.</summary>
+      <param name="conn">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objekt, das eine Instanz des Datenbankmoduls angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerComparer.#ctor(Microsoft.SqlServer.Management.Common.ServerConnection,System.String)">
+      <summary>Initialisiert eine Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerComparer" />-Klasse, wobei Informationen aus der angegebenen Datenbank über die angegebene Verbindung verwendet werden.</summary>
+      <param name="conn">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objekt, das eine Instanz des Datenbankmoduls angibt.</param>
+      <param name="databaseName">Ein <see cref="T:System.String" />-Wert, der den Namen der Datenbank angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerComparer.System#Collections#Generic#IComparer{T}#Compare(System.String,System.String)">
+      <summary>Vergleicht zwei angegebene Objekte.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert.</returns>
+      <param name="x">Ein <see cref="T:System.String" />-Wert.</param>
+      <param name="y">Ein <see cref="T:System.String" />-Wert.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerConnection">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objekt stellt eine Verbindung mit einem Server dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(Microsoft.SqlServer.Management.Common.SqlConnectionInfo)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse mit den angegebenen Verbindungsinformationen.</summary>
+      <param name="sci">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Verbindungsinformationen angibt, die zum Herstellen einer Verbindung erforderlich sind.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.Data.SqlClient.SqlConnection)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse mit den angegebenen Verbindungsparametern.</summary>
+      <param name="sqlConnection">Ein <see cref="T:System.Data.SqlClient.SqlConnection" />-Systemobjekt, das Verbindungsparameter angibt, die der Verbindung zugeordnet sind, auf die verwiesen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse mit der angegebenen Serverinstanz.</summary>
+      <param name="serverInstance">Ein <see cref="T:System.String" />-Wert, der den Namen der Serverinstanz angibt, mit der die Verbindung hergestellt wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.String,System.String,System.Security.SecureString)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse mit der angegebenen Serverinstanz und den angegebenen Anmeldeinformationen.</summary>
+      <param name="serverInstance">Ein <see cref="T:System.String" />-Wert, der den Namen der Serverinstanz angibt, mit der die Verbindung hergestellt wird.</param>
+      <param name="userName">Ein <see cref="T:System.String" />-Wert, der das Anmeldekonto angibt, mit dem die Verbindung hergestellt wird, auf die verwiesen wird.</param>
+      <param name="password">Ein <see cref="T:System.Security.SecureString" />-Wert, der das mit dem Anmeldekonto verwendete Kennwort angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.#ctor(System.String,System.String,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Klasse mit der angegebenen Serverinstanz und den angegebenen Anmeldeinformationen.</summary>
+      <param name="serverInstance">Ein <see cref="T:System.String" />-Wert, der den Namen der Serverinstanz angibt, mit der die Verbindung hergestellt wird.</param>
+      <param name="userName">Ein <see cref="T:System.String" />-Wert, der das Anmeldekonto angibt, mit dem die Verbindung hergestellt wird, auf die verwiesen wird.</param>
+      <param name="password">Ein <see cref="T:System.String" />-Wert, der das mit dem Anmeldekonto verwendete Kennwort angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.BatchSeparator">
+      <summary>Ruft den Zeichenfolgenwert ab, mit dem Batches in der Verbindung, auf die verwiesen wird, getrennt werden, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das Batchtrennzeichen für die Verbindung angibt, auf die verwiesen wird.Der Standardwert ist "GO".</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.BeginTransaction">
+      <summary>Startet eine Transaktion über die Verbindung, auf die verwiesen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Cancel">
+      <summary>Bricht die Verbindung ab.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ChangePassword(System.Security.SecureString)">
+      <summary>Ändert das Anmeldekennwort, das mit Standardauthentifizierung verwendet wird.</summary>
+      <param name="newPassword">Ein <see cref="T:System.Security.SecureString" />-Wert, der das neue Kennwort angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ChangePassword(System.String)">
+      <summary>Ändert das Anmeldekennwort, das mit Standardauthentifizierung verwendet wird.</summary>
+      <param name="newPassword">Ein <see cref="T:System.String" />-Wert, der das neue Kennwort angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.CommitTransaction">
+      <summary>Führt einen Commit für die aktuelle Transaktion über die Verbindung aus, auf die verwiesen wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.ConnectionType">
+      <summary>Ruft den Typ der für den Server zu verwendenden Verbindung ab.</summary>
+      <returns>Der Typ der zu verwendenden Verbindung.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Copy">
+      <summary>Gibt eine Kopie des <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objekts zurück.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objekt, das eine Kopie des <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objekts darstellt, auf das verwiesen wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.Collections.Specialized.StringCollection)">
+      <summary>Führt einen Batch von Anweisungen aus, die kein Resultset zurückgeben.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Arraywert, der die Gesamtanzahl von Zeilen angibt, die von jedem Element des <see cref="T:System.Collections.Specialized.StringCollection" />-Objekts betroffen sind, das als <paramref name="sqlCommands" />-Parameter verwendet wird.Der Rückgabewert gibt die Gesamtanzahl der Zeilen an, die vom Transact-SQL-Befehl für UPDATE-, INSERT- und DELETE-Anweisungen betroffen sind.Für alle anderen Anweisungstypen beträgt der Rückgabewert -1.</returns>
+      <param name="sqlCommands">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die Batches auszuführender Transact-SQL-Anweisungen angibt. </param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.Collections.Specialized.StringCollection,Microsoft.SqlServer.Management.Common.ExecutionTypes)">
+      <summary>Führt einen Batch von Anweisungen, die kein Resultset zurückgeben, mit den angegebenen Ausführungsoptionen aus.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Arraywert, der die Gesamtanzahl von Zeilen angibt, die von jedem Element des <see cref="T:System.Collections.Specialized.StringCollection" />-Objekts betroffen sind, das als <paramref name="sqlCommands" />-Parameter verwendet wird.Der Rückgabewert gibt die Gesamtanzahl der Zeilen an, die vom Transact-SQL-Befehl für UPDATE-, INSERT- und DELETE-Anweisungen betroffen sind.Für alle anderen Anweisungstypen beträgt der Rückgabewert -1.</returns>
+      <param name="sqlCommands">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die Batches auszuführender Transact-SQL-Anweisungen angibt. </param>
+      <param name="executionType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionTypes" />-Objektwert, der die Ausführungsoptionen für die Transact-SQL-Anweisung angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.String)">
+      <summary>Führt eine Anweisung aus, die kein Resultset zurückgibt.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Gesamtanzahl der Zeilen angibt, die vom Transact-SQL-Befehl für UPDATE-, INSERT- und DELETE-Anweisungen betroffen sind.Für alle anderen Anweisungstypen beträgt der Rückgabewert -1.</returns>
+      <param name="sqlCommand">Ein <see cref="T:System.String" />-Wert, der den auszuführenden Transact-SQL-Befehl angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteNonQuery(System.String,Microsoft.SqlServer.Management.Common.ExecutionTypes)">
+      <summary>Führt eine Anweisung, die kein Resultset zurückgibt, mit den angegebenen Ausführungsoptionen aus.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Gesamtanzahl der Zeilen angibt, die vom Transact-SQL-Befehl für UPDATE-, INSERT- und DELETE-Anweisungen betroffen sind.Für alle anderen Anweisungstypen beträgt der Rückgabewert -1.</returns>
+      <param name="sqlCommand">Ein <see cref="T:System.String" />-Wert, der den auszuführenden Transact-SQL-Befehl angibt.</param>
+      <param name="executionType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ExecutionTypes" />-Objektwert, der die Ausführungsoptionen für die Transact-SQL-Anweisung angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteReader(System.String)">
+      <summary>Führt Transact-SQL-Anweisungen aus, die mindestens ein Resultset zurückgeben.</summary>
+      <returns>Ein <see cref="T:System.Data.SqlClient.SqlDataReader" />-Objektwert, der mindestens ein Resultset enthält.</returns>
+      <param name="sqlCommand">Ein <see cref="T:System.String" />-Wert, der den auszuführenden Transact-SQL-Befehl angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteReader(System.String,System.Data.SqlClient.SqlCommand@)">
+      <summary>Führt einen Leser mithilfe eines <see cref="T:System.Data.SqlClient.SqlDataReader" />-Objektwerts aus, der mindestens ein Resultset enthält.</summary>
+      <returns>Ein <see cref="T:System.Data.SqlClient.SqlDataReader" />-Objektwert, der mindestens ein Resultset enthält.</returns>
+      <param name="sqlCommand">Ein <see cref="T:System.String" />-Wert, der die auszuführenden Transact-SQL-Befehle angibt.</param>
+      <param name="command">Ein <see cref="T:System.Data.SqlCommand" />-Objekt, das verwendet werden kann, um die SqlDataReader-Pipe abzubrechen und einen Befehl mit langer Ausführungszeit zu beenden.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteScalar(System.Collections.Specialized.StringCollection)">
+      <summary>Führt einen Batch von Transact-SQL-Anweisungen aus und gibt die erste Spalte der ersten Zeile als Objektwert zurück.</summary>
+      <returns>Ein Objektarraywert, der die erste Spalte der ersten Zeile für jedes Resultset angibt.</returns>
+      <param name="sqlCommands">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die Batches auszuführender Transact-SQL-Anweisungen angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteScalar(System.String)">
+      <summary>Führt eine Transact-SQL-Anweisung aus und gibt die erste Spalte der ersten Zeile als Objektwert zurück.</summary>
+      <returns>Ein <see cref="T:System.Object" />-Systemobjektwert, der die erste Spalte der ersten Zeile des Resultsets angibt.</returns>
+      <param name="sqlCommand">Ein <see cref="T:System.String" />-Wert, der den auszuführenden Transact-SQL-Befehl angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteWithResults(System.Collections.Specialized.StringCollection)">
+      <summary>Führt einen Batch von Transact-SQL-Anweisungen aus, die mehrere Resultsets zurückgeben.</summary>
+      <returns>Ein <see cref="T:System.Data.DataSet" />-Systemobjekt-Arraywert, der mehrere Resultsets enthält.</returns>
+      <param name="sqlCommands">Ein <see cref="T:System.Collections.Specialized.StringCollection" />-Systemobjektwert, der die Batches auszuführender Transact-SQL-Anweisungen angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.ExecuteWithResults(System.String)">
+      <summary>Führt eine Transact-SQL-Anweisung aus, die ein Resultset zurückgibt.</summary>
+      <returns>Ein <see cref="T:System.Data.DataSet" />-Systemobjektwert, der das Resultset enthält.</returns>
+      <param name="sqlCommand">Ein <see cref="T:System.String" />-Wert, der den auszuführenden Transact-SQL-Befehl angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.FixedServerRoles">
+      <summary>Ruft die der Verbindung, auf die verwiesen wird, zugeordnete feste Serverrolle ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.FixedServerRoles" />-Objektwert, der die feste Serverrolle angibt, die der Verbindung zugeordnet ist, auf die verwiesen wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.IsInFixedServerRole(Microsoft.SqlServer.Management.Common.FixedServerRoles)">
+      <summary>Testet, ob der Anmeldename, der der Verbindung zugeordnet ist, auf die verwiesen wird, Mitglied der angegebenen festen Serverrolle ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Anmeldung Mitglied der angegebenen festen Serverrolle ist.True gibt an, dass die Anmeldung Mitglied der angegebenen festen Serverrolle ist.False gibt an, dass die Anmeldung kein Mitglied der angegebenen festen Serverrolle ist.</returns>
+      <param name="fixedServerRole">Ein <see cref="P:Microsoft.SqlServer.Management.Common.FixedServerRoles" />-Objektwert, der die feste Serverrolle angibt, die mit der Anmeldung verglichen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Microsoft#SqlServer#Management#Common#ISfcConnection#Connect">
+      <summary>Gibt einen Wert zurück, der angibt, dass der Server eine SFC-Verbindung herstellen soll.</summary>
+      <returns>true, wenn die Verbindung ausgeführt wird, andernfalls false.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Microsoft#SqlServer#Management#Common#ISfcConnection#Copy">
+      <summary>Verwendet die SFC-Verbindung, um die Serververbindung zu kopieren.</summary>
+      <returns>Eine <see cref="T:Microsoft.SqlServer.Management.Common.ISfcConnection" />, die eine Kopie dieser Verbindung darstellt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Microsoft#SqlServer#Management#Common#ISfcConnection#Disconnect">
+      <summary>Trennt die Verbindung.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />, das true ist, wenn die Verbindung getrennt wird, andernfalls false.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.Microsoft#SqlServer#Management#Common#ISfcConnection#ServerVersion">
+      <summary>Ruft die Version des Servers ab.</summary>
+      <returns>Die <see cref="T:System.Version" /> des Servers.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.Microsoft#SqlServer#Management#Common#ISfcConnection#ToEnumeratorObject">
+      <summary>Rendert ein Enumeratorobjekt für die Serververbindung.</summary>
+      <returns>Das angegebene Enumeratorobjekt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.NormalizeQuery(System.String)">
+      <summary>Verwendet eine Zeichenfolgeneingabe, die den Abfragetext darstellt.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Abfragetext darstellt.</returns>
+      <param name="QueryText">Der Name der Abfrage.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.NormalizeQuery(System.String,System.Boolean)">
+      <summary>Normalisiert die Abfrage, durch die die Serververbindung gesteuert wird.</summary>
+      <returns>Die Abfrage, durch die die Serververbindung gesteuert wird.</returns>
+      <param name="QueryText">Der Name der Abfrage.</param>
+      <param name="QuotedIdentifiers">true für Bezeichner in Anführungszeichen, andernfalls false.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.ParameterizationMode">
+      <summary>Ruft den Parametrisierungsmodus für die Serververbindung ab oder legt ihn fest.</summary>
+      <returns>Der Parametrisierungsmodus für die Serververbindung.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.ProcessID">
+      <summary>Ruft den ID-Wert ab, durch den der Prozess eindeutig identifiziert wird, der der Serververbindung zugeordnet ist, auf die verwiesen wird.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den ID-Wert angibt, durch den der Prozess eindeutig identifiziert wird, der der Serververbindung zugeordnet ist, auf die verwiesen wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerConnection.RollBackTransaction">
+      <summary>Führt ein Rollback für die aktuelle Transaktion aus.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.SqlExecutionModes">
+      <summary>Ruft den der Serververbindung, auf die verwiesen wird, zugeordneten Ausführungsmodus ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlExecutionModes" />-Objektwert, der den Ausführungsmodus angibt, der der Verbindung zugeordnet ist, auf die verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.StatementTimeout">
+      <summary>Ruft die Ausführungsdauer für eine Anweisung in Sekunden ab, bis die Anweisung mit einem Timeoutfehler fehlschlägt, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Ausführungsdauer für eine Anweisung in Sekunden angibt, bis diese mit einem Timeoutfehler fehlschlägt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.TransactionDepth">
+      <summary>Ruft die aktuelle Transaktionstiefe für die Verbindung ab, auf die verwiesen wird.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die aktuelle Transaktionstiefe für die Verbindung angibt, auf die verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.TrueLogin">
+      <summary>Ruft den aktuellen Namen des Anmeldedatensatzes ab, der von der Verbindung verwendet wird, auf die verwiesen wird.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den aktuellen Namen des Anmeldedatensatzes angibt, der von der Verbindung verwendet wird, auf die verwiesen wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.TrueName">
+      <summary>Ruft den Namen des Servers ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen des Servers angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.UseMode">
+      <summary>Ruft die Serververbindung mithilfe eines angegebenen Modus ab oder legt sie fest.</summary>
+      <returns>Der angegebene Modus für die Verbindung.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerConnection.UserProfile">
+      <summary>Ruft das der Verbindung, auf die verwiesen wird, zugeordnete Benutzerprofil ab.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerUserProfiles" />-Objektwert, der das Benutzerprofil angibt, das der Verbindung zugeordnet ist, auf die verwiesen wird.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" />-Klasse stellt die Argumente dar, die beim Auslösen eines Servermeldungsereignisses verwendet werden.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs.#ctor(System.Data.SqlClient.SqlError)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" />-Klasse für das angegebene Ereignis unter Verwendung des angegebenen Fehlers.</summary>
+      <param name="sqlError">Ein <see cref="T:System.Data.SqlClient.SqlError" />-Systemobjektwert, der den Fehler angibt, der dem Servermeldungsereignis zugeordnet ist.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs.Error">
+      <summary>Ruft den dem Servermeldungsereignis zugeordneten Fehler ab.</summary>
+      <returns>Ein <see cref="T:System.Data.SqlClient.SqlError" />-Systemobjektwert, der den Fehler angibt, der dem Servermeldungsereignis zugeordnet ist.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs.ToString">
+      <summary>Gibt eine <see cref="T:System.String" /> zurück, die das <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" />-Objekt darstellt.</summary>
+      <returns>Eine <see cref="T:System.String" />, die das <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" />-Objekt darstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerMessageEventHandler">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventHandler" />-Klasse stellt die Methode dar, die das von einer Servermeldung ausgelöste Ereignis behandelt.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Systemobjektwert, der das Objekt angibt, das das Ereignis ausgelöst hat.</param>
+      <param name="e">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerMessageEventArgs" />-Wert, der die an den Ereignishandler übergebenen Argumente angibt.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerType">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerType" />-Enumeration enthält Werte, die die unterschiedlichen SQL Server-Diensttypen angeben.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerType.AnalysisServices">
+      <summary>
+            Analysis Services
+          </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerType.DatabaseEngine">
+      <summary>
+            SQL Server Database Engine (Datenbankmodul)
+          </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerType.IntegrationServices">
+      <summary>
+            Integration Services
+          </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerType.ReportingServices">
+      <summary>
+            Reporting Services
+          </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerType.SqlServerCompactEdition">
+      <summary>SQL Server Compact Edition</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerType.SqlServerEverywhere">
+      <summary>SQL Server Everywhere</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerUserProfiles">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerUserProfiles" />-Enumeration enthält Werte, mit denen Benutzerprofile auf dem Server angegeben werden.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.All">
+      <summary>Alle Profiltypen.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.CreateDatabase">
+      <summary>Erstellt ein Profil zum Erstellen einer Datenbank.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.CreateXP">
+      <summary>Erstellt ein Profil zum Erstellen einer erweiterten gespeicherten Prozedur.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.None">
+      <summary>Es wird kein Profil erstellt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.ServerUserProfiles.SALogin">
+      <summary>Profil für die Systemadministratoranmeldung.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.ServerVersion">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Klasse stellt die Versionsinformationen für den Server dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.#ctor(System.Int32,System.Int32)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Klasse.</summary>
+      <param name="major">Ein <see cref="T:System.Int32" />-Wert, der den Hauptteil der Serverversionsnummer angibt.</param>
+      <param name="minor">Ein <see cref="T:System.Int32" />-Wert, der den Nebenteil der Serverversionsnummer angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.#ctor(System.Int32,System.Int32,System.Int32)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />-Klasse.</summary>
+      <param name="major">Ein <see cref="T:System.Int32" />-Wert, der den Hauptteil der Serverversionsnummer angibt.</param>
+      <param name="minor">Ein <see cref="T:System.Int32" />-Wert, der den Nebenteil der Serverversionsnummer angibt.</param>
+      <param name="buildNumber">Ein <see cref="T:System.Int32" />-Wert, der den Buildnummernteil der Serverversionsnummer angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerVersion.BuildNumber">
+      <summary>Ruft den Teil mit der Buildnummer aus den Serverversionsinformationen ab. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Buildnummernteil der Serverversionsinformationen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerVersion.Major">
+      <summary>Ruft den Teil mit der Buildnummer aus den Serverversionsinformationen ab. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Buildnummernteil der Serverversionsinformationen angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.ServerVersion.Minor">
+      <summary>Ruft den Teil mit der Buildnummer aus den Serverversionsinformationen ab. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Buildnummernteil der Serverversionsinformationen angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.op_Explicit(Microsoft.SqlServer.Management.Common.ServerVersion)~System.Version">
+      <summary>Erstellt ein Systemversionsobjekt, das die Serverversion angibt.</summary>
+      <returns>Ein <see cref="T:System.Version" />-Objekt, das die <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" /> angibt.</returns>
+      <param name="serverVersion">Die <see cref="T:Microsoft.SqlServer.Management.Common.ServerVersion" />, die zum Erstellen von <see cref="T:System.Version" /> verwendet wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.ServerVersion.ToString">
+      <summary>Gibt das Objekt im Zeichenfolgenformat zurück.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das Objekt im Zeichenfolgenformat angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekt stellt Informationen dar, die zum Herstellen einer Verbindung mit einer SQL Server-Instanz erforderlich sind. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(Microsoft.SqlServer.Management.Common.ServerConnection,Microsoft.SqlServer.Management.Common.ConnectionType)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Klasse.</summary>
+      <param name="serverConnection">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ServerConnection" />-Objektwert, der eine vorhandene Verbindung angibt, auf der das neue <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekt basieren soll.</param>
+      <param name="connectionType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" />-Objektwert, der den Verbindungstyp angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(Microsoft.SqlServer.Management.Common.SqlConnectionInfo)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Klasse.</summary>
+      <param name="conn">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der das Objekt angibt, das als Basis für das neue <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekt dienen soll.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Klasse.</summary>
+      <param name="serverName">Ein <see cref="T:System.String" />-Objektwert, der die SQL Server-Instanz angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.#ctor(System.String,System.String,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Klasse.</summary>
+      <param name="serverName">Ein <see cref="T:System.String" />-Objektwert, der die SQL Server-Instanz angibt.</param>
+      <param name="userName">Ein <see cref="T:System.String" />-Objektwert, der den Benutzer angibt, der mit der SQL Server-Instanz verbunden ist.</param>
+      <param name="password">Ein <see cref="T:System.String" />-Objektwert, der das Kennwort angibt, das vom Benutzer angegeben wurde, um eine Verbindung mit der SQL Server-Instanz herzustellen.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.AdditionalParameters">
+      <summary>Ruft die zusätzlichen Parameter für die Verbindung ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Objektwert, der die zusätzlichen Parameter für die Verbindung darstellt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ApplicationName">
+      <summary>Ruft den Namen der mit der SQL Server-Instanz verbundenen Anwendung ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen der Anwendung angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ConnectionProtocol">
+      <summary>Ruft das von der Verbindung mit der SQL Server-Instanz verwendete Netzwerkprotokoll ab oder legt es fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.NetworkProtocol" />-Objektwert, der das von der Verbindung verwendete Netzwerkprotokoll angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ConnectionString">
+      <summary>Ruft die zum Herstellen einer Verbindung mit der SQL Server-Instanz verwendete Verbindungszeichenfolge ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Verbindungszeichenfolge angibt, die zur Herstellung einer Verbindung mit der SQL Server-Instanz verwendet wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.Copy">
+      <summary>Gibt eine Kopie des <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekts zurück.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Kopie des originalen <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekts angibt, auf das verwiesen wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.CreateConnectionObject">
+      <summary>Erstellt ein Systemverbindungsobjekt.</summary>
+      <returns>Ein <see cref="T:System.Data.IDbConnection" />-Systemobjektwert, der das Verbindungsobjekt angibt.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.DefaultNetworkProtocol">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Common.NetworkProtocol" />-Objekt, das das Standard-Netzwerkprotokoll für die Verbindung angibt.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.EncryptConnection">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Verbindungsinformationen verschlüsselt werden, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindungsinformationen verschlüsselt sind.True gibt an, dass die Verbindungsinformationen verschlüsselt werden.False (Standard) gibt an, dass die Verbindungsinformationen nicht verschlüsselt werden.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.MaxPoolSize">
+      <summary>Ruft die maximale Anzahl der von der Verbindung in einem Threadpool akzeptierten Ausführungsthreads ab oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die maximale Anzahl von Threads in einem Threadpool angibt, die von einer Verbindung akzeptiert wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.MinPoolSize">
+      <summary>Ruft die minimale Anzahl der von der Verbindung in einem Threadpool akzeptierten Ausführungsthreads ab oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die minimale Anzahl von Threads in einem Threadpool angibt, die von einer Verbindung akzeptiert wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.PacketSize">
+      <summary>Ruft die von der Verbindung zum Senden und Empfangen von Daten verwendete Netzwerkpaketgröße in Bytes ab oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Größe des von der Verbindung verwendeten Netzwerkpakets in Bytes angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.PoolConnectionLifeTime">
+      <summary>Ruft den Zeitraum für Poolverbindungen in Sekunden ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Zeitraum für Poolverbindungen in Sekunden angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.Pooled">
+      <summary>Ruft den <see cref="T:System.Data.SqlTypes.SqlBoolean" />-Eigenschaftswert ab, der angibt, ob die Verbindung in einem Pool enthalten ist, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Data.SqlTypes.SqlBoolean" />-Wert, der angibt, ob die Verbindung in einem Pool zusammengelegt wird.True gibt an, dass die Verbindung in einem Pool zusammengelegt wird.False (Standard) gibt an, dass die Verbindung nicht in einem Pool zusammengelegt wird.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.ToString">
+      <summary>Gibt das <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekt im Zeichenfolgenformat zurück.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objekt angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlConnectionInfo.WorkstationId">
+      <summary>Ruft den Wert ab, durch den die Clientarbeitsstation eindeutig identifiziert wird, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Wert zur eindeutigen Identifikation der Clientarbeitsstation angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.SqlExecutionModes">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.SqlExecutionModes" />-Enumeration enthält Werte, mit denen angegeben wird, ob die über die Verbindung, auf die verwiesen wird, an den Server gesendeten Befehle sofort ausgeführt oder in einem Puffer gespeichert werden. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlExecutionModes.CaptureSql">
+      <summary>Über die Verbindung, auf die verwiesen wird, an den Server gesendete Transact-SQL-Anweisungen werden in einem Puffer gespeichert.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlExecutionModes.ExecuteAndCaptureSql">
+      <summary>Über die Verbindung, auf die verwiesen wird, an den Server gesendete Transact-SQL-Anweisungen werden sowohl in einem Puffer gespeichert als auch zur sofortigen Ausführung an den Server weitergeleitet. </summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlExecutionModes.ExecuteSql">
+      <summary>Über die Verbindung, auf die verwiesen wird, an den Server gesendete Transact-SQL-Anweisungen werden zur sofortigen Ausführung an den Server weitergeleitet. </summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse stellt Informationen dar, die zum Herstellen einer Verbindung mit der SQL Server-Instanz verwendet werden.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.ConnectionType)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse.</summary>
+      <param name="serverType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" />-Objektwert, der den Verbindungstyp angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse.</summary>
+      <param name="conn">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Objektwert, auf dem das neue Objekt basieren soll.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(System.String,Microsoft.SqlServer.Management.Common.ConnectionType)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse.</summary>
+      <param name="serverName">Ein <see cref="T:System.String" />-Wert, der die SQL Server-Instanz angibt.</param>
+      <param name="serverType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" />-Objektwert, der den Verbindungstyp angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.#ctor(System.String,System.String,System.String,Microsoft.SqlServer.Management.Common.ConnectionType)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Klasse.</summary>
+      <param name="serverName">Ein <see cref="T:System.String" />-Wert, der die SQL Server-Instanz angibt.</param>
+      <param name="userName">Ein <see cref="T:System.String" />-Wert, der den Benutzernamen angibt.</param>
+      <param name="password">Ein <see cref="T:System.String" />-Wert, der das Kennwort angibt.</param>
+      <param name="serverType">Ein <see cref="T:Microsoft.SqlServer.Management.Common.ConnectionType" />-Objektwert, der den Verbindungstyp angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionParmsChanged">
+      <summary>Ändert die Verbindungsparameter.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionString">
+      <summary>Ruft die Verbindungszeichenfolge ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Verbindungszeichenfolge angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionStringInternal">
+      <summary>Ruft die interne Verbindungszeichenfolge ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Text.StringBuilder" />-Wert, der die interne Verbindungszeichenfolge angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionTimeout">
+      <summary>Ruft den Zeitraum bis zum Timeout einer Verbindung in Sekunden ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Zeitraum für das Verbindungstimeout angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ConnectionTimeoutInternal">
+      <summary>Ruft den Zeitraum für das interne Verbindungstimeout in Sekunden ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Zeitraum für das interne Verbindungstimeout angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.CreateConnectionObject">
+      <summary>Erstellt das Verbindungsobjekt und gibt den <see cref="T:System.Data.IDbConnection" />-Objektwert zurück.</summary>
+      <returns>Ein <see cref="T:System.Data.IDbConnection" />-Wert, der das Verbindungsobjekt angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DatabaseName">
+      <summary>Ruft die Datenbank ab, mit der die Verbindung hergestellt wird, oder legt sie fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Datenbank angibt, mit der die Verbindung hergestellt wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DatabaseNameInternal">
+      <summary>Ruft den internen Datenbanknamen ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den internen Datenbanknamen angibt.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DefaultConnTimeout">
+      <summary>Ein <see cref="T:System.Int32" />-Typ, der den Standardzeitraum für das Verbindungstimeout in Sekunden angibt.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.DefaultQueryTimeout">
+      <summary>Ein <see cref="T:System.Int32" />-Typ, der den Standardzeitraum für das Abfragetimeout in Sekunden angibt.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.IntegratedSecurityInternal">
+      <summary>Ruft den booleschen Eigenschaftswert ab, der angibt, ob die Verbindung integrierte Sicherheit unterstützt, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung integrierte Sicherheit unterstützt.Wenn der Wert True ist, unterstützt die Verbindung integrierte Sicherheit.Wenn der Wert False ist (Standard), unterstützt die Verbindung keine integrierte Sicherheit.</returns>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.NoTimeOut">
+      <summary>Ein <see cref="T:System.Int32" />-Typ, der angibt, dass kein Timeout vorhanden ist.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.Password">
+      <summary>Ruft das zum Herstellen einer Verbindung verwendete Kennwort ab oder legt es fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das Kennwort angibt, das zum Herstellen einer Verbindung verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.QueryTimeout">
+      <summary>Ruft den Zeitraum bis zum Timeout einer Abfrage in Sekunden ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Zeitraum für das Abfragetimeout angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.QueryTimeoutInternal">
+      <summary>Ruft den Zeitraum für das interne Abfragetimeout in Sekunden ab oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Zeitraum für das interne Abfragetimeout angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.RebuildConnectionStringInternal">
+      <summary>Ruft ein <see cref="T:System.Boolean" /> ab, das angibt, ob die interne Verbindungszeichenfolge neu erstellt werden muss, oder legt es fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />, das angibt, ob die interne Verbindungszeichenfolge neu erstellt werden muss.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.SecurePassword">
+      <summary>Ruft das zum Herstellen einer Verbindung verwendete sichere Kennwort ab oder legt es fest. </summary>
+      <returns>Ein <see cref="T:System.Security.SecureString" />-Wert, der das Kennwort angibt, das zum Herstellen einer Verbindung verwendet wird.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ServerName">
+      <summary>Ruft den Namen der SQL Server-Instanz ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen der SQL Server-Instanz angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ServerNameInternal">
+      <summary>Ruft den internen Namen der SQL Server-Instanz ab oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den internen Namen der SQL Server-Instanz angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.ToString">
+      <summary>Gibt das Objekt als Zeichenfolgenwert zurück.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das <see cref="T:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase" />-Objekt angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.UseIntegratedSecurity">
+      <summary>Ruft den booleschen Eigenschaftswert ab, der angibt, ob die Verbindung integrierte Sicherheit verwendet, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Verbindung integrierte Sicherheit verwendet.Wenn der Wert True ist, verwendet die Verbindung keine integrierte Sicherheit.Wenn der Wert False ist (Standard), verwendet die Verbindung integrierte Sicherheit.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlOlapConnectionInfoBase.UserName">
+      <summary>Ruft den Benutzer ab, der eine Verbindung mit der SQL Server-Instanz herstellt, oder legt ihn fest. </summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Benutzer angibt, der eine Verbindung mit der SQL Server-Instanz herstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" />-Klasse ist eine Ausnahme, die ausgelöst wird, wenn für die Verbindung mit dem Server ein SQL Server-Verwaltungsfehler erkannt wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" />-Klasse mit den angegebenen Serialisierungsinformationen und dem angegebenen Streamingkontext.</summary>
+      <param name="info">Ein <see cref="T:System.Runtime.Serialization.SerializationInfo" />-Systemobjektwert, der die Serialisierungsinformationen angibt, die der Ausnahme zugeordnet sind.</param>
+      <param name="context">Ein <see cref="T:System.Runtime.Serialization.StreamingContext" />-Systemobjektwert, der den Streamingkontext angibt, der der Ausnahme zugeordnet ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.SqlServerManagementException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.SqlServerManagementException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.SqlServerManagementException.ProductName">
+      <summary>Ruft den Namen des Produkts ab, das die Ausnahme verursacht hat.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen des Produkts angibt, das die Ausnahme verursacht hat.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.StatementEventArgs">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" />-Klasse stellt die beim Auslösen eines Anweisungsereignisses verwendeten Argumente dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.StatementEventArgs.#ctor(System.String,System.DateTime)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" />-Klasse für die angegebene Transact-SQL-Anweisung zur angegebenen Uhrzeit und zum angegebenen Datum.</summary>
+      <param name="sqlStatement">Ein <see cref="T:System.String" />-Wert, der die Transact-SQL-Anweisung angibt, die das Anweisungsereignis ausgelöst hat.</param>
+      <param name="timeStamp">Ein <see cref="T:System.DateTime" />-Systemobjektwert, der die Zeit und das Datum des Anweisungsereignisses angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.StatementEventArgs.SqlStatement">
+      <summary>Ruft die Transact-SQL-Anweisung ab, die das Anweisungsereignis ausgelöst hat.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Transact-SQL-Anweisung angibt, die das Anweisungsereignis ausgelöst hat.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Common.StatementEventArgs.TimeStamp">
+      <summary>Ruft die Uhrzeit und das Datum ab, zu denen das Anweisungsereignis aufgetreten ist.</summary>
+      <returns>Ein <see cref="T:System.DateTime" />-Systemobjektwert, der die Uhrzeit und das Datum angibt, zu denen das Anweisungsereignis aufgetreten ist.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.StatementEventArgs.ToString">
+      <summary>Gibt einen <see cref="T:System.String" />-Wert zurück, der das <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" />-Objekt darstellt.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der das <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" />-Objekt darstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.StatementEventHandler">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventHandler" />-Klasse stellt die Methode dar, durch die das von einer Anweisung ausgelöste Ereignis behandelt wird.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Systemobjektwert, der das Objekt angibt, das das Ereignis ausgelöst hat.</param>
+      <param name="e">Ein <see cref="T:Microsoft.SqlServer.Management.Common.StatementEventArgs" />-Wert, der die Argumente angibt, die an den Ereignishandler übergeben wurden.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Common.TransferException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" />-Klasse ist eine Ausnahme, die ausgelöst wird, wenn für die Verbindung mit dem Server ein SQL Server-Übertragungsfehler erkannt wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" />-Klasse mit den angegebenen Serialisierungsinformationen und dem angegebenen Streamingkontext.</summary>
+      <param name="info">Ein <see cref="T:System.Runtime.Serialization.SerializationInfo" />-Systemobjektwert, der die Serialisierungsinformationen angibt, die der Ausnahme zugeordnet sind.</param>
+      <param name="context">Ein <see cref="T:System.Runtime.Serialization.StreamingContext" />-Systemobjektwert, der den Streamingkontext angibt, der der Ausnahme zugeordnet ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" />-Klasse mit dem angegebenen Meldungstext.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Common.TransferException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Common.TransferException" />-Klasse mit dem angegebenen Meldungstext und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der den Meldungstext angibt, in dem das Ereignis beschrieben wird, das die Ausnahme verursacht hat.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objekt, das die innere Ausnahme enthält.Dies wird in Situationen verwendet, wenn durch eine Ausnahme eine weitere Ausnahme ausgelöst wird.</param>
+    </member>
+  </members>
+</doc>

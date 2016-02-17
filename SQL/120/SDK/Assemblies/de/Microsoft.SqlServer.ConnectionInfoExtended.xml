@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SqlServer.ConnectionInfoExtended</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SqlServer.Management.Trace.IDataRecordChanger">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Trace.IDataRecordChanger" />-Objekt ist ein Ablaufverfolgungs- und Wiedergabeobjekt, das den aktuellen Datensatz darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.IDataRecordChanger.SetValue(System.Int32,System.Object)">
+      <summary>Legt einen Wert an der angegebenen Position fest.</summary>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Indexposition angibt, an der der Wert festgelegt wird.</param>
+      <param name="value">Ein <see cref="T:System.Object" />-Systemobjektwert, der den Wert angibt, auf den das Feld an der angegebenen Position festgelegt wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ITraceDataWriter">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Trace.ITraceDataWriter" />-Objekt ermöglicht programmgesteuerten Zugriff auf den Datenschreiber für die SQL-Ablaufverfolgung.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.ITraceDataWriter.Write">
+      <summary>Schreibt die SQL-Ablaufverfolgung.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Schreibvorgang erfolgreich war.Bei True war der Schreibvorgang erfolgreich, andernfalls ist der Wert False.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.ITraceDataWriter.WriteNotify">
+      <summary>Löst ein Schreibbenachrichtigungsereignis aus.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayEventArgs">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayEventArgs" />-Objekt ermöglicht programmgesteuerten Zugriff auf die Argumente, die zum Melden von Ereignissen verwendet werden, die bei der Wiedergabe einer Ablaufverfolgung für eine SQL Server-Instanz verwendet werden.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.ReplayEventArgs.RecordNumber">
+      <summary>Ruft die Datensatznummer aus den Daten ab, die vom Ereignis generiert werden. </summary>
+      <returns>Eine ganze Zahl, die die Datensatznummer darstellt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayEventHandler">
+      <summary>Stellt den <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayEventHandler" />-Ereignishandler dar.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayMode">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayMode" />-Enumeration enthält Werte, mit denen der Synchronisierungstyp angegeben wird, der während der Wiedergabe der Ablaufverfolgung verwendet wird.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Trace.ReplayMode.ConnectionLevelSync">
+      <summary>Die Wiedergabe wird auf einer Verbindungsebene synchronisiert.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Trace.ReplayMode.SequentialReplay">
+      <summary>Die Wiedergabe ist sequenziell.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayPauseHandler">
+      <summary>Stellt den <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayPauseHandler" />-Ereignishandler dar.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayResultEventHandler">
+      <summary>Stellt den <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayResultEventHandler" />-Ereignishandler dar.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayStartHandler">
+      <summary>Stellt den <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayStartHandler" />-Ereignishandler dar.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.ReplayStopHandler">
+      <summary>Stellt den <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayStopHandler" />-Ereignishandler dar.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.SqlTraceException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse stellt die allgemeine Ausnahme dar, die von den SMO-Ablaufverfolgungsobjekten ausgelöst wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse mit den angegebenen Serialisierungsinformationen und dem angegebenen Streamingkontext.</summary>
+      <param name="info">Ein <see cref="T:System.Runtime.Serialization.SerializationInfo" />-Objektwert, der die Serialisierungsinformationen für die Ausnahme der SQL-Ablaufverfolgung angibt.</param>
+      <param name="context">Ein <see cref="T:System.Runtime.Serialization.StreamingContext" />-Objektwert, der den Streamingkontext für die Ausnahme der SQL-Ablaufverfolgung angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse mit der angegebenen Meldung.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der die Meldung angibt, die der allgemeinen Ausnahme der SQL-Ablaufverfolgung zugeordnet ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse mit der angegebenen Meldung und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert, der die Meldung angibt, die der allgemeinen Ausnahme der SQL-Ablaufverfolgung zugeordnet ist.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objektwert, der die innere Ausnahme für die Ausnahme der SQL-Ablaufverfolgung angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceException.#ctor(System.Type,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse mit dem angegebenen Quelltyp und der angegebenen Meldung.</summary>
+      <param name="messageSource">Ein <see cref="T:System.Type" />-Systemobjektwert, der die Quelle der Ausnahme angibt.</param>
+      <param name="messageID">Ein <see cref="T:System.String" />-Wert, der die Meldung angibt, die der allgemeinen Ausnahme der SQL-Ablaufverfolgung zugeordnet ist.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceException.#ctor(System.Type,System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceException" />-Klasse mit dem angegebenen Quelltyp, der angegebenen Meldung und der angegebenen inneren Ausnahme.</summary>
+      <param name="messageSource">Ein <see cref="T:System.Type" />-Systemobjektwert, der die Quelle der Ausnahme angibt.</param>
+      <param name="messageID">Ein <see cref="T:System.String" />-Wert, der die Meldung angibt, die der allgemeinen Ausnahme der SQL-Ablaufverfolgung zugeordnet ist.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objektwert, der die innere Ausnahme angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.SqlTraceException.ProdVer">
+      <summary>Ruft einen <see cref="T:System.String" />-Wert ab, der die Produktversion angibt.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Produktversion angibt.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.SqlTraceFailToInstantiateTypeException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToInstantiateTypeException" />-Klasse stellt die Ausnahme dar, die ausgelöst wird, wenn ein Objekt nicht von einem Vorgang für SMO-Ablaufverfolgungsobjekte instanziiert werden kann.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToInstantiateTypeException.#ctor">
+      <summary>Initiiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToInstantiateTypeException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToInstantiateTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToInstantiateTypeException" />-Klasse mit den angegebenen Serialisierungsinformationen und dem angegebenen Streamingkontext.</summary>
+      <param name="info">Ein <see cref="T:System.Runtime.Serialization.SerializationInfo" />-Objektwert mit den Serialisierungsinformationen für die Ausnahme, die auftritt, wenn ein Typ in der SQL-Ablaufverfolgung nicht instanziiert wird.</param>
+      <param name="context">Ein <see cref="T:System.Runtime.Serialization.StreamingContext" />-Objektwert mit dem Streamingkontext für die Ausnahme, die auftritt, wenn ein Typ in der SQL-Ablaufverfolgung nicht instanziiert wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToInstantiateTypeException.#ctor(System.String)">
+      <summary>Initiiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToInstantiateTypeException" />-Klasse mit der angegebenen Meldung.</summary>
+      <param name="typeName">Ein <see cref="T:System.String" />-Wert mit der Meldung, die der Ausnahme zugeordnet ist, die auftritt, wenn ein Typ in der SQL-Ablaufverfolgung nicht instanziiert wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToInstantiateTypeException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToInstantiateTypeException" />-Klasse mit der angegebenen Meldung und der angegebenen inneren Ausnahme.</summary>
+      <param name="typeName">Ein <see cref="T:System.String" />-Wert mit der Meldung, die der allgemeinen Ausnahme zugeordnet ist, die auftritt, wenn ein Typ in der SQL-Ablaufverfolgung nicht instanziiert wird.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objektwert, der die innere Ausnahme für die Ausnahme angibt, die auftritt, wenn ein Typ in der SQL-Ablaufverfolgung nicht instanziiert wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.SqlTraceFailToLoadInstAPIAssemblyException">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToLoadInstAPIAssemblyException" />-Klasse stellt die Ausnahme dar, die von SMO-Ablaufverfolgungsobjekten ausgelöst wird, wenn eine Inst API-Assembly nicht geladen wird.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToLoadInstAPIAssemblyException.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToLoadInstAPIAssemblyException" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToLoadInstAPIAssemblyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToLoadInstAPIAssemblyException" />-Klasse mit den angegebenen Serialisierungsinformationen und dem angegebenen Streamingkontext.</summary>
+      <param name="info">Ein <see cref="T:System.Runtime.Serialization.SerializationInfo" />-Objektwert mit den Serialisierungsinformationen für die Ausnahme, die auftritt, wenn eine API-Assembly in der SQL-Ablaufverfolgung nicht geladen wird.</param>
+      <param name="context">Ein <see cref="T:System.Runtime.Serialization.StreamingContext" />-Objektwert mit dem Streamingkontext für die Ausnahme, die auftritt, wenn eine API-Assembly in der SQL-Ablaufverfolgung nicht geladen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToLoadInstAPIAssemblyException.#ctor(System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToLoadInstAPIAssemblyException" />-Klasse mit der angegebenen Meldung.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert mit der Meldung, die der allgemeinen Ausnahme zugeordnet ist, die auftritt, wenn eine API-Assembly in der SQL-Ablaufverfolgung nicht geladen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToLoadInstAPIAssemblyException.#ctor(System.String,System.Exception)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToLoadInstAPIAssemblyException" />-Klasse mit der angegebenen Meldung und der angegebenen inneren Ausnahme.</summary>
+      <param name="message">Ein <see cref="T:System.String" />-Wert mit der Meldung, die der allgemeinen Ausnahme zugeordnet ist, die auftritt, wenn eine API-Assembly in der SQL-Ablaufverfolgung nicht geladen wird.</param>
+      <param name="innerException">Ein <see cref="T:System.Exception" />-Objektwert mit der inneren Ausnahme für die Ausnahme, die auftritt, wenn eine API-Assembly in der SQL-Ablaufverfolgung nicht geladen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.SqlTraceFailToLoadInstAPIAssemblyException.#ctor(System.Type,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.SQLTraceFailToLoadInstAPIAssemblyException" />-Klasse mit der angegebenen Meldungsquelle und der angegebenen Meldung.</summary>
+      <param name="messageSource">Ein <see cref="T:System.Type" />-Systemobjektwert, der die Quelle der Meldung angibt.</param>
+      <param name="messageID">Ein <see cref="T:System.String" />-Wert mit der Meldung, die der allgemeinen Ausnahme zugeordnet ist, die auftritt, wenn eine API-Assembly in der SQL-Ablaufverfolgung nicht geladen wird.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs" />Objekt ermöglicht programmgesteuerten Zugriff auf die Argumente, die zum Melden von Ereignissen verwendet werden, die beim Erfassen von Ablaufverfolgungsdaten aus einer SQL Server-Instanz auftreten.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceEventArgs.CurrentRecord">
+      <summary>Ruft den aktuellen Datensatz in der Ablaufverfolgung ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den aktuellen Datensatz angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceEventArgs.SkipRecord">
+      <summary>Ruft den booleschen Wert ab, der angibt, ob für den aktuellen Datensatz eine Ablaufverfolgung ausgeführt oder ob er übersprungen wird.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob für den aktuellen Datensatz eine Ablaufverfolgung ausgeführt oder ob er übersprungen wird.True gibt an, dass der aktuelle Datensatz übersprungen wird.False (Standardwert) gibt an, dass der aktuelle Datensatz aufgezeichnet wird.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceFile">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Klasse ist ein Ablaufverfolgungsobjekt, das eine Ablaufverfolgungsprotokolldatei darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceFile.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceFile.InitializeAsReader(System.String)">
+      <summary>Initialisiert das angegebene <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Objekt zum Lesen von Daten aus der Ablaufverfolgungsprotokolldatei.</summary>
+      <param name="fileName">Ein <see cref="T:System.String" />-Wert, der die Ablaufverfolgungsprotokolldatei angibt, in der die Ablaufverfolgungsdaten gelesen werden sollen.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceFile.InitializeAsReplayOutputWriter(System.String)">
+      <summary>Initialisiert das angegebene <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Objekt zum ausschließlichen Schreiben von Daten in die Ablaufverfolgungsprotokolldatei.</summary>
+      <param name="destinationFileName">Ein <see cref="T:System.String" />-Wert, der die Zielablaufverfolgungsprotokolldatei angibt, in die die neuen Ablaufverfolgungsdaten geschrieben werden sollen.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceFile.InitializeAsWriter(Microsoft.SqlServer.Management.Trace.TraceReader,System.String)">
+      <summary>Initialisiert das angegebene <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Objekt zum Lesen von Ablaufverfolgungsdaten aus einem <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Objekt, wobei die Daten analysiert und in die Ablaufverfolgungsprotokolldatei geschrieben werden, auf die verwiesen wird.</summary>
+      <param name="source">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Objekt, das die Ablaufverfolgungsprotokolldatei angibt, die Ablaufverfolgungsdaten enthält.Dieses Objekt kann eine Ablaufverfolgungstabelle oder eine Ablaufverfolgungsdatei darstellen.</param>
+      <param name="destinationFileName">Ein <see cref="T:System.String" />-Wert, der die Zielablaufverfolgungsprotokolldatei angibt, in die die neuen Ablaufverfolgungsdaten geschrieben werden sollen.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceReader">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Klasse ist eine abstrakte Ablaufverfolgungsobjektklasse, die zur Erstellung der Klassen <see cref="T:Microsoft.SqlServer.Management.Trace.TraceServer" />, <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" /> und <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" /> verwendet wird. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.Close">
+      <summary>Schließt den Reader für die Ablaufverfolgung.</summary>
+    </member>
+    <member name="F:Microsoft.SqlServer.Management.Trace.TraceReader.currentRow">
+      <summary>Gibt die aktuelle Zeile an.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReader.Depth">
+      <summary>Ruft den Tiefenwert des Readers für die Ablaufverfolgung ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Tiefe des Readers für die Ablaufverfolgung angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.Dispose">
+      <summary>Löscht die Informationen des Readers für die Ablaufverfolgung.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReader.FieldCount">
+      <summary>Ruft die Anzahl der Spalten in den Daten ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Feldanzahl angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetBoolean(System.Int32)">
+      <summary>Gibt an der angegebenen Spaltenposition einen <see cref="T:System.Boolean" />-Wert aus dem Datensatz zurück.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der der Wert abgerufen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetByte(System.Int32)">
+      <summary>Gibt an der angegebenen Spaltenposition einen <see cref="T:System.Byte" />-Wert aus dem Datensatz zurück.</summary>
+      <returns>Ein <see cref="T:System.Uint8" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der der Wert abgerufen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+      <summary>Ruft einen Datenstrom von Bytes ab dem angegebenen Pufferoffset als Array aus dem angegebenen Spaltenoffset in den Puffer ab.</summary>
+      <returns>Ein <see cref="T:System.Int64" /> -Wert, der die Anzahl der im Array zurückgegebenen Bytes angibt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der der Bytearraywert abgerufen wird.</param>
+      <param name="fieldOffset">Ein <see cref="T:System.Int32" />-Wert, der den Index innerhalb des Felds angibt, an dem der Lesevorgang gestartet werden soll.</param>
+      <param name="buffer">Ein <see cref="T:System.Uint8" />-Array, in das der Bytedatenstrom gelesen werden soll.</param>
+      <param name="bufferoffset">Ein <see cref="T:System.Int32" />-Wert, der den Index angibt, an dem der Lesevorgang gestartet werden soll.</param>
+      <param name="length">Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der zu lesenden Bytes angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetChar(System.Int32)">
+      <summary>Ruft einen Zeichenwert der angegebenen Spalte ab.</summary>
+      <returns>Ein <see cref="T:System.Char" />-Wert der angegebenen Spalte.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der der Bytezeichenwert abgerufen wird.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetChars(System.Int32,System.Char[],System.Int32,System.Int32,System.Int32)">
+      <summary>Ruft einen Zeichenarraywert an der angegebenen Spaltenposition aus dem Datensatz ab.</summary>
+      <returns>Ein int32-Wert, der die Anzahl der Zeichen angibt, die im Array zurückgegeben werden.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der der Zeichenarraywert abgerufen wird.</param>
+      <param name="buffer">Ein <see cref="T:System.Uint8" />-Array, das den Puffer angibt, in den das Zeichenarray gelesen werden soll.</param>
+      <param name="length">Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der zu lesenden Zeichen angibt.</param>
+      <param name="bufferoffset">Ein <see cref="T:System.Int32" />-Wert, der den Index angibt, an dem der Lesevorgang gestartet werden soll.</param>
+      <param name="fieldoffset">Ein <see cref="T:System.Int32" />-Wert, der die Indexposition innerhalb des Datensatzes angibt, an dem der Lesevorgang gestartet werden soll.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+      <summary>Ruft einen Zeichenarraywert an der angegebenen Spaltenposition aus dem Datensatz ab.</summary>
+      <returns>Ein <see cref="T:System.Int64" /> -Wert, der die Anzahl der im Array zurückgegebenen Zeichen angibt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der der Zeichenarraywert abgerufen wird.</param>
+      <param name="fieldoffset">Ein <see cref="T:System.Int32" />-Wert, der die Indexposition innerhalb des Datensatzes angibt, an dem der Lesevorgang gestartet werden soll.</param>
+      <param name="buffer">Ein <see cref="T:System.Uint8" />-Array, das den Puffer angibt, in den das Zeichenarray gelesen werden soll.</param>
+      <param name="bufferoffset">Ein <see cref="T:System.Int32" />-Wert, der den Index angibt, an dem der Lesevorgang gestartet werden soll.</param>
+      <param name="length">Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der zu lesenden Zeichen angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetData(System.Int32)">
+      <summary>Gibt ein <see cref="T:System.Data.IDataReader" />-Objekt zurück, das verwendet wird, wenn das Feld auf eine Remotedatenstruktur verweist.</summary>
+      <returns>Ein <see cref="T:System.Data.IDataReader" />-Systemobjekt, das eine Remotedatenstruktur angibt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der den Index des Felds angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetDataTypeName(System.Int32)">
+      <summary>Ruft den Datentyp des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetDateTime(System.Int32)">
+      <summary>Ruft einen <see cref="T:System.DateTime" />-Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.DateTime" />-Systemobjektwert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetDecimal(System.Int32)">
+      <summary>Ruft einen <see cref="T:System.Decimal" />-Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Decimal" />-Systemobjektwert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetDouble(System.Int32)">
+      <summary>Ruft einen Gleitkommawert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Float64" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetFieldType(System.Int32)">
+      <summary>Gibt den Feldtyp des Datenwerts an der angegebenen Spaltenposition zurück.</summary>
+      <returns>Ein <see cref="T:System.Type" />-Systemobjektwert, der den Feldtyp des Datenwerts angibt.  </returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetFloat(System.Int32)">
+      <summary>Ruft einen Gleitkommawert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Float32" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetGuid(System.Int32)">
+      <summary>Ruft einen <see cref="T:System.Guid" />-Systemwert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Guid" />-Systemobjektwert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetInt16(System.Int32)">
+      <summary>Ruft einen kleinen ganzzahligen Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Int16" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetInt32(System.Int32)">
+      <summary>Ruft einen ganzzahligen Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetInt64(System.Int32)">
+      <summary>Ruft einen langen ganzzahligen Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Int64" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetName(System.Int32)">
+      <summary>Ruft den Namen des Felds an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der den Namen der angegebenen Spalte angibt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetOrdinal(System.String)">
+      <summary>Ruft den Ordnungswert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Ordnungswert an der angegebenen Spaltenposition angibt.</returns>
+      <param name="name">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetSchemaTable">
+      <summary>Ruft eine Tabelle ab, die das Schema beschreibt.</summary>
+      <returns>Ein <see cref="T:System.Data.DataTable" />-Systemobjektwert, der eine Beschreibung des Schemas angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetStream(System.Int32)">
+      <summary>Ruft den Datenstrom ab.</summary>
+      <returns>Ein <see cref="T:System.IO.Stream" />-Systemobjektwert, der den Datenstrom an der Spaltenposition angibt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der die Daten abgerufen werden.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetString(System.Int32)">
+      <summary>Ruft einen <see cref="T:System.String" />-Wert an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition angibt, an der die Daten abgerufen werden.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetTimeSpan(System.Int32)">
+      <summary>Ruft einen <see cref="T:System.TimeSpan" />-Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.TimeSpan" />-Systemwert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetValue(System.Int32)">
+      <summary>Ruft einen Wert des Datenwerts an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Object" />-Systemwert, der die Daten an der angegebenen Spaltenposition darstellt.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.GetValues(System.Object[])">
+      <summary>Ruft ein Wertarray aus dem Datenwert an der angegebenen Spaltenposition ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der im Array zurückgegebenen Objekte angibt.</returns>
+      <param name="values">Ein Array von <see cref="T:System.Object" />-Werten, das die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReader.IsClosed">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob der Reader für die Ablaufverfolgung geschlossen ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Reader für die Ablaufverfolgung geschlossen ist.Bei True ist der Reader für die Ablaufverfolgung geschlossen.Bei False (Standardwert) ist der Reader für die Ablaufverfolgung geöffnet.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.IsDBNull(System.Int32)">
+      <summary>Gibt an, ob die angegebene Spalte auf NULL festgelegt ist. </summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die angegebene Spalte auf NULL festgelegt ist.True gibt an, dass der Wert NULL ist.False gibt an, dass der Wert ungleich NULL ist.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.IsNull(System.Int32)">
+      <summary>Ruft einen <see cref="T:System.Boolean" />-Wert ab, der angibt, ob der Wert der Daten an der angegebenen Spaltenposition NULL ist.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob der Wert der Daten an der angegebenen Spalte NULL ist.True gibt an, dass der Wert NULL ist.False gibt an, dass der Wert ungleich NULL ist.</returns>
+      <param name="ordinal">Ein <see cref="T:System.Int32" />-Wert, der die Spaltenposition der Daten angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReader.Item(System.Int32)">
+      <summary>Ruft die angegebene Spalte nach Indexposition ab.</summary>
+      <returns>Ein <see cref="T:System.Object" />-Systemobjektwert, der die Spalte angibt.</returns>
+      <param name="index">Ein <see cref="T:System.Int32" />-Wert, der die Indexposition der Spalte im Datensatz angibt.</param>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReader.Item(System.String)">
+      <summary>Ruft die Spalte mit dem angegebenen Namen ab.</summary>
+      <returns>Ein <see cref="T:System.Object" />-Systemobjektwert, der die Spalte angibt.</returns>
+      <param name="name">Ein <see cref="T:System.String" />-Wert, der den Namen der Spalte angibt.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.NextResult">
+      <summary>Wechselt zum nächsten Ereignis in der Ablaufverfolgung.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob das nächste Ergebnis vorhanden ist.True gibt an, dass das nächste Ergebnis vorhanden ist.False gibt an, dass das nächste Ergebnis nicht vorhanden und ein Methodenfehler aufgetreten ist.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.Read">
+      <summary>Liest den Ablaufverfolgungsdatensatz.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Methode beim Lesen des Ablaufverfolgungsdatensatzes erfolgreich war.True gibt an, dass das Lesen der Ablaufverfolgung erfolgreich war.False gibt an, dass die Ablaufverfolgung nicht gelesen wurde.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReader.RecordsAffected">
+      <summary>Ruft die Anzahl von Datensätzen ab.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der Datensätze angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReader.TranslateSubclass(System.String,System.String,System.Int32)">
+      <summary>Übersetzt die Unterklasse.</summary>
+      <returns>Ein <see cref="T:System.String" />-Wert, der die Übersetzung der Unterklasse angibt.</returns>
+      <param name="eventClass">Ein <see cref="T:System.String" />-Wert, der die Ereignisklasse angibt.</param>
+      <param name="column">Ein <see cref="T:System.String" />-Wert, der die Spalte angibt.</param>
+      <param name="subclass">Ein <see cref="T:System.Int32" />-Wert, der die Unterklasse angibt.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceReaderWriter">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReaderWriter" />-Klasse ist eine abstrakte Ablaufverfolgungsobjektklasse, die bei der Erstellung der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Klasse und der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Klasse verwendet wird. </summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReaderWriter.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReaderWriter" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReaderWriter.Close">
+      <summary>Schließt den Reader und Writer der Ablaufverfolgung.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReaderWriter.Write">
+      <summary>Schreibt die Ablaufverfolgung in die Ablaufverfolgungsdatei oder die Ablaufverfolgungstabelle.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Ablaufverfolgung erfolgreich in die Ablaufverfolgungsdatei oder Ablaufverfolgungstabelle geschrieben wurde.True gibt an, dass die Ablaufverfolgung erfolgreich geschrieben wurde.False gibt an, dass die Ablaufverfolgung nicht erfolgreich geschrieben wurde.</returns>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.TraceReaderWriter.WriteNotify">
+      <summary>Löst ein Ereignis aus, wenn die Ablaufverfolgung in die Ablaufverfolgungsdatei oder Ablaufverfolgungstabelle geschrieben wird.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceReplay">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReplay" />-Objekt ist ein Wiedergabeobjekt, das den Wiedergabevorgang für Ablaufverfolgungsprotokolldateien und Ablaufverfolgungstabellen darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplay.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReplay" />-Klasse.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplay.Connection">
+      <summary>Ruft die Verbindung mit einer SQL Server-Instanz ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Verbindung mit einer SQL Server-Instanz angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplay.Dispose">
+      <summary>Löscht die Ablaufverfolgungsinformationen.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplay.Finalize">
+      <summary>Schließt die Wiedergabe der Ablaufverfolgung ab.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplay.Options">
+      <summary>Ruft die Konfigurationsoptionen für die Wiedergabe der Ablaufverfolgung ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReplayOptions" />-Objektwert, der die Konfigurationsoptionen für die Wiedergabe der Ablaufverfolgung angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplay.OutputFile">
+      <summary>Ruft den Namen einer optionalen Datei ab, in die die Ausgabe der Ablaufverfolgungswiedergabe gestreamt wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceFile" />-Objektwert, der die Ausgabedatei angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplay.OutputTable">
+      <summary>Ruft den Namen einer optionalen Tabelle ab, in die die Ausgabe der Ablaufverfolgungswiedergabe gestreamt wird, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Objektwert, der die Ausgabetabelle angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplay.Pause">
+      <summary>Hält die Wiedergabe der Ablaufverfolgung an.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.TraceReplay.ReplayEvent">
+      <summary>Ruft den Handler auf, bevor ein Ereignis wiedergegeben wird.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.TraceReplay.ReplayPause">
+      <summary>Ruft den Handler auf, bevor die Wiedergabe einer Ablaufverfolgung angehalten wird.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.TraceReplay.ReplayResultEvent">
+      <summary>Ruft den Handler auf, bevor ein Ergebnis von einem wiedergegebenen Ereignis zurückgegeben wird.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.TraceReplay.ReplayStart">
+      <summary>Ruft den Handler auf, bevor die Wiedergabe der Ablaufverfolgung gestartet wird.</summary>
+    </member>
+    <member name="E:Microsoft.SqlServer.Management.Trace.TraceReplay.ReplayStop">
+      <summary>Ruft den Handler auf, bevor die Wiedergabe der Ablaufverfolgung beendet wird.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplay.Source">
+      <summary>Ruft das <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Objekt ab, das die wiederzugebende Ablaufverfolgung enthält, oder legt es fest.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Objektwert, der die Quelle der Ablaufverfolgung angibt.</returns>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplay.Start">
+      <summary>Startet die Wiedergabe der Ablaufverfolgung.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplay.Stop">
+      <summary>Beendet die Wiedergabe der Ablaufverfolgung.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceReplayOptions">
+      <summary>Das <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReplayOptions" />-Objekt ist ein Wiedergabeobjekt, das die für die Wiedergabe einer Ablaufverfolgung erforderlichen Konfigurationseinstellungen darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReplayOptions" />-Klasse.</summary>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.BlockedProcessesEnabled">
+      <summary>Ruft einen Wert ab, der angibt, ob die Überwachung blockierter Prozesse nach blockierten oder blockierenden Prozessen sucht, oder legt ihn fest.</summary>
+      <returns>True, wenn die Überwachung blockierter Prozesse nach blockierten oder blockierenden Prozessen sucht, andernfalls false (Standardwert).</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.BlockedProcessesWaitInterval">
+      <summary>Ruft den Schwellenwert in Sekunden ab, bei dem Berichte zu blockierten Prozessen generiert werden, oder legt ihn fest.</summary>
+      <returns>Der Schwellenwert in Sekunden, bei dem blockierte Prozessberichte generiert werden.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.DisplayPerfEvent">
+      <summary>Ruft einen Wert ab, der angibt, ob ein zusätzliches Ereignis, das die Ausführungszeit meldet, für jedes wiedergegebene Ereignis angezeigt wird, oder legt ihn fest.</summary>
+      <returns>True, wenn das zusätzliche Ereignis für jedes wiedergegebene Ereignis angezeigt wird, andernfalls false (Standardwert).</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.HealthMonitorPollInterval">
+      <summary>Ruft das Intervall zwischen den Überprüfungen nicht verwendeter Threads in Sekunden ab oder legt es fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der das Intervall zwischen den Überprüfungen nicht verwendeter Threads in Sekunden angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.HealthMonitorWaitInterval">
+      <summary>Ruft die maximal zulässige Lebensdauer eines nicht verwendeten Threads ab oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die maximale zulässige Lebensdauer eines nicht verwendeten Threads angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.KeepResults">
+      <summary>Ruft den <see cref="T:System.Boolean" />-Eigenschaftswert ab, der angibt, ob die Wiedergabeergebnisse beibehalten werden sollen, oder legt ihn fest.</summary>
+      <returns>Ein <see cref="T:System.Boolean" />-Wert, der angibt, ob die Ergebnisse beibehalten werden sollen.True gibt an, dass die Ergebnisse beibehalten werden.False (Standardwert) gibt an, dass die Ergebnisse nicht beibehalten werden.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.Mode">
+      <summary>Ruft ab oder legt fest, ob die Wiedergabe der Ablaufverfolgung sequenziell oder synchronisiert ist.</summary>
+      <returns>Ein <see cref="T:Microsoft.SqlServer.Management.Trace.ReplayMode" />-Objektwert, der den Ablaufverfolgungsmodus angibt.</returns>
+    </member>
+    <member name="P:Microsoft.SqlServer.Management.Trace.TraceReplayOptions.NumberOfReplayThreads">
+      <summary>Ruft die Anzahl der Threads ab, die bei der Wiedergabe der Ablaufverfolgung verwendet werden, oder legt sie fest.</summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der die Anzahl der Threads angibt, die bei der Wiedergabe der Ablaufverfolgung verwendet werden.</returns>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceServer">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.TraceServer" />-Klasse ist ein Ablaufverfolgungsobjekt, das eine neue Ablaufverfolgung für eine SQL Server-Instanz darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceServer.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceServer" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceServer.InitializeAsReader(Microsoft.SqlServer.Management.Common.ConnectionInfoBase,System.String)">
+      <summary>Initialisiert den Server als Reader für die Ablaufverfolgung.</summary>
+      <param name="serverConnInfo">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Verbindungsinformationen angibt, die zum Herstellen einer Verbindung mit der SQL Server-Instanz erforderlich sind, für die eine Ablaufverfolgung ausgeführt werden soll.</param>
+      <param name="profileFileName">Ein <see cref="T:System.String" />-Wert, der den Pfad und den Namen der Datei angibt, die das SQL Server Profiler-Ablaufverfolgungsprofil enthält.Weitere Informationen zum manuellen Erstellen eines Ablaufverfolgungsprofils mit SQL Server Profiler finden Sie unter SQL Server Profiler Procedures.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceServer.Pause">
+      <summary>Hält die Ablaufverfolgung an.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceServer.Restart">
+      <summary>Startet die Ablaufverfolgung erneut.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceServer.Stop">
+      <summary>Beendet die Ablaufverfolgung.</summary>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.TraceTable">
+      <summary>Die <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Klasse ist ein Ablaufverfolgungsobjekt, das eine Tabelle mit Ablaufverfolgungsinformationen darstellt.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceTable.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceTable.InitializeAsReader(Microsoft.SqlServer.Management.Common.ConnectionInfoBase,System.String,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Klasse zum Lesen von Ablaufverfolgungsdaten.</summary>
+      <param name="serverConnInfo">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Informationen angibt, die zum Herstellen einer Verbindung mit der Microsoft SQL Server-Instanz erforderlich sind, die die Ablaufverfolgungstabelle enthält.</param>
+      <param name="tableName">Ein <see cref="T:System.String" />-Wert, der den Namen der Ablaufverfolgungstabelle angibt.</param>
+      <param name="tableOwner">Ein <see cref="T:System.String" />-Wert, der das Schema angibt, dem die Ablaufverfolgungstabelle angehört.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceTable.InitializeAsReplayOutputWriter(Microsoft.SqlServer.Management.Common.ConnectionInfoBase,System.String)">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Klasse zum Schreiben von Informationen der Ablaufverfolgungswiedergabe.</summary>
+      <param name="serverConnInfo">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Informationen angibt, die zum Herstellen einer Verbindung mit der Microsoft SQL Server-Instanz erforderlich sind, die die Ablaufverfolgungstabelle enthält.</param>
+      <param name="destinationTableName">Ein <see cref="T:System.String" />-Wert, der den Namen der Ablaufverfolgungstabelle angibt, in die die Ausgabedaten der Ablaufverfolgungswiedergabe geschrieben werden.</param>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Trace.TraceTable.InitializeAsWriter(Microsoft.SqlServer.Management.Trace.TraceReader,Microsoft.SqlServer.Management.Common.ConnectionInfoBase,System.String)">
+      <summary>Initialisiert das angegebene <see cref="T:Microsoft.SqlServer.Management.Trace.TraceTable" />-Objekt zum Lesen von Ablaufverfolgungsdaten aus einem <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Objekt, wobei die Daten analysiert und in die Ablaufverfolgungstabelle geschrieben werden, auf die verwiesen wird.</summary>
+      <param name="source">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceReader" />-Objektwert, der die Quelle der Ablaufverfolgungsdaten angibt.Dieses Objekt kann eine Ablaufverfolgungstabelle oder eine Ablaufverfolgungsdatei darstellen.</param>
+      <param name="serverConnInfo">Ein <see cref="T:Microsoft.SqlServer.Management.Common.SqlConnectionInfo" />-Objektwert, der die Informationen angibt, die zum Herstellen einer Verbindung mit der Microsoft SQL Server-Instanz erforderlich sind, die die Ablaufverfolgungstabelle enthält.</param>
+      <param name="destinationTableName">Ein <see cref="T:System.String" />-Wert, der den Namen der Ablaufverfolgungstabelle angibt, in die die Ausgabedaten der Ablaufverfolgungswiedergabe geschrieben werden.</param>
+    </member>
+    <member name="T:Microsoft.SqlServer.Management.Trace.WriteNotifyEventHandler">
+      <summary>Stellt den <see cref="T:Microsoft.SqlServer.Management.Trace.WriteNotifyEventHandler" />-Handler dar.</summary>
+      <param name="sender">Ein <see cref="T:System.Object" />-Wert, der die Quelle des Ereignisses angibt.</param>
+      <param name="args">Ein <see cref="T:Microsoft.SqlServer.Management.Trace.TraceEventArgs" />-Objekt, das die Ereignisdaten enthält. </param>
+    </member>
+  </members>
+</doc>

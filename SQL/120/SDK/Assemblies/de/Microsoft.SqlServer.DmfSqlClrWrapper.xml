@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SqlServer.DmfSqlClrWrapper</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SqlServer.Management.Dmf.PolicyEvaluationWrapper">
+      <summary>Stellt eine Wrapperklasse für die Richtlinienauswertung dar.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Dmf.PolicyEvaluationWrapper.#ctor">
+      <summary>Initialisiert eine neue Instanz der <see cref="T:Microsoft.SqlServer.Management.Dmf.PolicyEvaluationWrapper" />-Klasse.</summary>
+    </member>
+    <member name="M:Microsoft.SqlServer.Management.Dmf.PolicyEvaluationWrapper.EvaluateAutomatedPolicy(System.String,System.Data.SqlTypes.SqlXml,System.Int64@)">
+      <summary>Wertet eine automatisierte Richtlinie aus. </summary>
+      <returns>Ein <see cref="T:System.Int32" />-Wert, der den Erfolg der Richtlinienauswertung bestimmt.</returns>
+      <param name="policy">Ein <see cref="T:System.String" />-Wert, der die auszuwertende Richtlinie angibt.</param>
+      <param name="eventData">Ein <see cref="T:Microsoft.Data.SqlTypes.SqlXml" />-Systemobjektwert, der die beim Auswerten der Richtlinie generierten Ereignisse enthält.</param>
+      <param name="historyId">Ein <see cref="T:System.Int64" />-Wert, der den ID-Wert des Auswertungsverlaufs enthält.</param>
+    </member>
+  </members>
+</doc>
